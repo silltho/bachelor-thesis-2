@@ -1,0 +1,672 @@
+\section{Einleitung}
+
+Für Javascript Webentwickler ist das NPM Registry eines der wichtigsten Werkzeuge. Es bietet eine Plattform für Entwickler, um Sourcecode mit anderen zu teilen, bestehende Module herunterzuladen und in die eigenen Anwendung zu integrieren. Seit dem Release wurden über 600.000 verschiedene Software Pakete hinzugefügt und mit mehr als einer Millarden Downloads pro Woche ist es zu einer zentralen Bibliothek von Frameworks, Libaries und Werkzeuge für die Javascript Entwicklung geworden. \autocite{Npmdocs}
+
+Die Anzahl der Module und deren komplexe Abhängigkeiten zueinander führten jedoch im Bereich der Frontendentwicklung zu fundamentalen Problemen. Neben der Dependency Hell, dem wohl bekannteste dieser Probleme, ist ebenso entscheidend die an den Browser zu übertragende Datenmenge möglichst gering zu halten. Um dies zu erreichen muss der Entwickler oder die Entwicklerin unnötige Versions Duplikate und unerreichbare Zweige im Programmcode vermeiden.\autocite{DominikWilkowski}
+
+\section{Static Module Bundler}
+Static Module Bundler wie Webpack und RollupJS ermittelt alle für die Anwendung benötigten Module und bündelt diese anschließend in einer oder mehrere Dateien. Dafür wird ausgehend von konfigurierten Einstiegspunkten ein Baum aus Abhängigkeiten erzeugt. Neben dem eigenen Programmcode beinhaltet dieser auch Npm Packete und sogar statische Assets wie Bilder oder CSS Dateien. Die Abhängigkeiten werden aufgelöst um daraus wieder je nach Konfiguration eine oder mehrere Bundle Dateien zu erzeugen. Je nach Anwendungsfall kann es von Vorteil sein den Programmcode als eine größere Datei oder in mehreren Teilen an den Browser auszuliefern, um ein möglichst schnelles laden der Webseite zu gewährleisten.
+\autocite{RollupJSDocs,WebpackConcepts}
+
+(Bundler so wie Webpack umhüllen jedes Code Module in Funktionen. Damit wird eine Browser freundliche Implementierung und das Laden der Assets je nach Bedarf gewährleistet. Wenn jedoch viele kleine Module benötigt werden führt dies zu einigen Schwierigkeiten. \autocite{RichHarris})
+
+\section{Modules in JavaScript}
+\label{section:modules_in_javaScript}
+In traditionellen JavaScript Webprojekten werden alle Abhängigkeiten als Liste aus \lstinline{<script>} tags definiert. Es ist die Aufgabe des Entwicklers oder der Entwicklerin sicherzustellen das diese in der richtigen Reihenfolge zur Verfügung gestellt werden. Je komplexer die Abhängigkeiten zwischen dem  Programmcode, Frameworks und Libaries werden, desto schwieriger wird die Wartung und die richtige Platzierung neuer Einträge in der richtigen Reihenfolge. Es wurden bereits mit verschiedenen Modul Spezifikationen versucht diese Schwierigkeiten für Entwickler und Entwicklerinnen zu vereinfachen. \autocite{SebastianPeyrott}
+
+\subsection{CommonJS}
+Das Ziel von CommonJS ist eine Modul Spezifikation zur Erleichterung der Entwicklung von Serverseitigen JavaScript Anwendungen.NodeJS Entwickler verfolgte anfangs diesen Ansatz, entschieden sich im späteren Verlauf jedoch dagegen. Dennoch wurde die Implementierung stark von der CommonJS Spezifikation beeinflusst. \autocite{SebastianPeyrott}
+
+\begin{lstlisting}[
+    label=listing:commonjs,
+	caption=CommonJS Module,
+	language=JavaScript
+]
+// In circle.js
+const PI = Math.PI;
+
+exports.area = (r) => PI * r * r;
+
+exports.circumference = (r) => 2 * PI * r;
+
+// In some file
+const circle = require('./circle.js');
+console.log( `The area of a circle of radius 4 is ${circle.area(4)}`);
+\end{lstlisting}
+
+Sowohl bei CommonJS als auch bei der NodeJS Implementierung gibt es zwei Elemente um mit dem Modul System zu interagieren: \lstinline{require} und \lstinline{exports}. \lstinline{require} wird benötigt um ein anderes Modul in den aktuellen Scope zu importieren. Dabei wird als Parameter die Modul-id angegeben. Diese ist entweder der Name des Moduls innerhalb des \lstinline{node_modules} Ordner oder der gesamte Pfad. \lstinline{exports} dient zur Definition einer Modul Schnittstelle. Jede Property des \lstinline{exports} Objekts wird als öffentliches Element exportiert. Der Unterschied zwischen NodeJS und CommonJS liegt vorallem im \lstinline{module.exports} Objekt. Dies erfüllt die selbe Aufgabe wie bei CommonJS das \lstinline{exports} Objekt. Abschließend bleibt zu erwähnen das die Module synchron geladen werden. Sprich in dem Moment und in der Reihnfolge in der sie mit \lstinline{require} angegeben wurden.\autocite{SebastianPeyrott}
+
+\subsection{Asynchronous Model Definition (AMD)}
+
+Das Entwickler Team von AMD spaltete sich wärend der Entwicklung von CommonJS ab. Der Haupt Unterschied zwischen diese beiden Systemen liegt in dem asynchronen laden von Ressourcen. \autocite{SebastianPeyrott}
+
+\begin{lstlisting}[
+    label=listing:amd,
+	caption=Asynchronous Model Definition,
+	language=JavaScript
+]
+//Calling define with a dependency array and a factory function
+define(['dep1', 'dep2'], function (dep1, dep2) {
+
+    //Define the module value by returning a value.
+    return function () {};
+});
+
+// Or:
+define(function (require) {
+    var dep1 = require('dep1'),
+        dep2 = require('dep2');
+
+    return function () {};
+});
+\end{lstlisting}
+
+Das asynchrone Laden wird ermöglicht durch einen Funktionsaufruf nach dem anfordern der  Abhängigkeiten. Libaries die nicht voneinander abhängig sind können somit zur selben Zeit geladen werden. Dies ist besonders wichtig für die Frontend Entwicklung, da dort die Startzeit einer Anwendung essenziell für ein gutes Benutzererlebnis ist. \autocite{SebastianPeyrott}
+
+\subsection{ECMAScript 6}
+Ziel der ECMAScript 6 Modules war es ein Format zu kreieren, welches sowohl AMD, als auch CommonJS User zufriedenstellen. Die Spezifikation besitzt eine kompaktere Syntax als CommonJS und ähnlich zu AMD wird asynchrones Nachladen direkt unterstützt. Neben diesen Vorteilen wurde auch die Möglichkeit der statischen Code Analyse für Optimierungen geschaffen. 
+
+ES6 bietet 2 Arten von Exporte: Named Exports (mehrere pro Modul) und Default Exports (einen pro Modul). \autocite{AxelRauschmayer}
+
+\subsubsection{Named Exports}
+\label{subsubsection:named_exports}
+
+Mit Hilfe des Präfixes \lstinline{export} ist es möglich mehrere Elemente aus einem Modul zu exportieren. Dies gilt sowohl für Variablen, als auch Funktionen und Klassen. Sie werden anhand ihres Namens unterschieden und werden deshalb auch als Named Exports bezeichnet. \autocite{AxelRauschmayer}
+
+\begin{lstlisting}[
+    label=listing:named_exports,
+	caption=Named Exports,
+	language=JavaScript
+]
+//------ lib.js ------
+export const sqrt = Math.sqrt;
+export function square(x) {
+    return x * x;
+}
+export function diag(x, y) {
+    return sqrt(square(x) + square(y));
+}
+
+//------ main.js ------
+import { square, diag } from 'lib';
+console.log(square(11)); // 121
+console.log(diag(4, 3)); // 5
+\end{lstlisting}
+
+Neben dem Beispiel in \ref{listing:named_exports}, gibt es noch weitere Wege um Named Exports zu erzeugen. Diese werden im Kapitel \ref{subsubsection:Syntax} als Überblick dargestellt.
+
+\subsubsection{Default Exports}
+\label{subsubsection:default_exports}
+
+Es gibt den Fall das ein Modul auch nur ein Objekt exportiert. In der Frontendentwicklung tritt dies häufig auf wenn nur eine Klasse oder einen Konstruktor implementiert wird. Dabei wird er Default Export verwendet. Er ist wichtigste Element eines ECMAScript 6 Moduls und daher auch sehr leicht zu importieren. \autocite{AxelRauschmayer}
+
+\begin{lstlisting}[
+    label=listing:default_exports,
+	caption=Default Exports,
+	language=JavaScript
+]
+//------ myFunc.js ------
+export default function () { ... };
+
+//------ main1.js ------
+import myFunc from 'myFunc';
+myFunc();
+
+//------ MyClass.js ------
+export default class { ... };
+
+//------ main2.js ------
+import MyClass from 'MyClass';
+let inst = new MyClass();
+\end{lstlisting}
+
+Wie \ref{listing:default_exports} veranschaulicht, besitzt der Default Export keinen Namen. Beim Importieren wird daher meist der Modul Name für die Identifizierung verwendet.
+
+In Wirklichkeit ist der Default Export auch ein Named Export mit dem speziellen Namen \lstinline{default}. Somit sind die folgenden Import Deklarationen in dem Beispiel \ref{listing:default_exports2} gleichbedeutend. \autocite{AxelRauschmayer}
+
+ \begin{lstlisting}[
+    label=listing:default_exports2,
+    caption=Import Deklaration,
+	language=JavaScript
+]
+import { default as foo } from 'lib';
+import foo from 'lib';
+\end{lstlisting}
+
+Das gleiche gilt für den Export von Elementen.
+
+\begin{lstlisting}[
+    label=listing:default_exports3,
+    caption=Export Deklaration,
+	language=JavaScript
+]
+//------ module1.js ------
+export default 123;
+
+//------ module2.js ------
+const D = 123;
+export { D as default };
+\end{lstlisting}
+
+\subsubsection{Static Module Structure}
+Bei anderen Module Systeme wie CommonJS muss man den Pragrammcode ausführen, um herrauszufinden welche Importe und Exporte verwendet werden. Die Spezifikation von ES 6 zwingen den Entwickler oder die Entwicklerin zu einer statischen Modul Struktur. In diesem Kapitel wird erläutert was dies bedeutet und welche Vorteile dadurch entstehen.
+\autocite{AxelRauschmayer}
+
+Eine statische Modul Struktur ermöglicht es durch kompilieren des Codes die darin befindlichen Importe und Exporte zu ermitteln. Es ist nicht nötig den Sourcecode auszuführen. In den folgenden Beispiel \ref{listing:commonjs_nonstatic} wird gezeigt warum dies bei CommonJS nicht möglich ist. \autocite{AxelRauschmayer}
+
+\begin{lstlisting}[
+    label=listing:commonjs_nonstatic,
+    caption=Flexibele Struktur bei CommonJS,
+	language=JavaScript
+]
+var mylib;
+if (Math.random()) {
+    mylib = require('foo');
+} else {
+    mylib = require('bar');
+}
+
+if (Math.random()) {
+    exports.baz = ...;
+}
+\end{lstlisting}
+
+Bei der CommonJS Deklaration aus Beispiel \ref{listing:commonjs_nonstatic} wird erst bei der Ausführung des Codes entschieden welcher Import beziehungsweise Export verwendet wird. Es6 Module besitzen nicht diese Flexibilität. Sie zwingen den Entwickler oder die Entwicklerin dazu eine flache und statische Modul Strukturen zu verwenden.Neben den Verlust der Flexibilität bringt dies jedoch einige Vorteile mit sich. \autocite{AxelRauschmayer}
+
+\subsubsection{Vorteile}
+
+\textbf{1. Schnellerer Lookup}
+
+CommonJS liefert beim Anfordern von abhängigen Modulen ein Objekt zurück. Beim Aufruf von zum Beispiel \lstinline{lib.someFunc();} muss ein langsamer Property Lookup durchgeführt werden.
+
+Im Gegensatz dazu sind die Inhalte bei dem Import einer ES6 Moduls bekannt. Der Zugriff auf die Properties kann daher optimiert werden. \autocite{AxelRauschmayer}
+
+\bigskip
+
+\textbf{2. Variablen Überprüfung}
+
+Dank der statischen Modul Struktur, sind die verfügbaren Variablen innerhalb eines Moduls immer bekannt. Dazu zählen:
+\begin{itemize}
+\item Globale Variablen
+\item Modul Importe
+\item Modul Variablen
+\end{itemize}
+Dies bietet eine große Hilfe für Entwickler und Entwicklerinnen. Durch eine statische Überprüfung mit einem Linter werden frühzeitige Tippfehler oder auch nicht verfügbare Variablen erkannt.\autocite{AxelRauschmayer}
+
+\bigskip
+
+\textbf{3. Macro Support}
+
+(scheint nicht wirklich viel verwendet zu werden weiterer research nötig)
+
+\begin{lstlisting}[
+    label=listing:sweetjs_macro,
+    caption=Macros in Javascript,
+	language=JavaScript
+]
+syntax hi = function (ctx) {
+  return #`console.log('hello, world!')`;
+};
+hi
+\end{lstlisting}
+
+
+
+\bigskip
+
+\textbf{4. Type Support}
+
+(scheint nicht wirklich viel verwendet zu werden weiterer research nötig)
+
+\bigskip
+
+\textbf{5. Unterstützung mehrerer Sprachen}
+
+(scheint nicht wirklich viel verwendet zu werden weiterer research nötig)
+
+\subsubsection{Syntax}
+\label{subsubsection:Syntax}
+
+\begin{lstlisting}[
+    label=listing:imports,
+	caption=Import Möglichkeiten in ES6,
+	language=JavaScript
+]
+import name from "module-name";
+import * as name from "module-name";
+import { member } from "module-name";
+import { member as alias } from "module-name";
+import { member1 , member2 } from "module-name";
+import { member1 , member2 as alias2 , [...] } from "module-name";
+import defaultMember, { member [ , [...] ] } from "module-name";
+import defaultMember, * as alias from "module-name";
+import defaultMember from "module-name";
+import "module-name";
+\end{lstlisting}
+
+\begin{lstlisting}[
+    label=listing:exports,
+	caption=Export Möglichkeiten in ES6,
+	language=JavaScript
+]
+export { name1, name2, ..., nameN };
+export { variable1 as name1, variable2 as name2, ..., nameN };
+export let name1, name2, ..., nameN; // oder: var
+export let name1 = ..., name2 = ..., ..., nameN; // oder: var, const
+
+export default expression;
+export default function (...) { ... } // oder: class, function*
+export default function name1(...) { ... } // oder: class, function*
+export { name1 as default, ... };
+
+export * from ...;
+export { name1, name2, ..., nameN } from ...;
+export { import1 as name1, import2 as name2, ..., nameN } from ...;
+\end{lstlisting}
+
+\section{Dependency Graph}
+
+\section{Tree shaking}
+
+Tree Shaking bedeutet im Javascript Umfeld Dead-Code Elimination. Der Begriff und das dahinterliegende Konzept wurde durch den ES2015 Modul Bundler Rollup populär. Das Konzept des Tree Shaking beruht auf der statischen Struktur von ES6 Modulen. Diese werden im Zusammenhang mit Bundlern wie Webpack oder RollupJS oft auch als Pure Modules oder Modules oder Harmony Modules bezeichnet. \autocite{WebpackTreeShaking}
+
+Wie bereits im Kapitel \ref{section:modules_in_javaScript} gezeigt wurde, ermöglicht die ES6 Spezifikation, sowohl die statische Analyse von Modulen, als auch die Verwendung einer Teilmenge der zur Verfügung gestellten Exporte.
+Für das nachfolgende Beispiel wurde Webpack verwendet.
+
+\begin{lstlisting}[
+    label=listing:treeshacking_helpers,
+	caption=helpers.js,
+	language=JavaScript
+]
+export function hello() {
+  return 'hello';
+}
+export function world() {
+  return 'world';
+}
+
+export default {
+  hello,
+  world
+}
+\end{lstlisting}
+
+\begin{lstlisting}[
+    label=listing:treeshacking_index,
+	caption=index.js,
+	language=JavaScript
+]
+import {hello} from './helpers';
+
+let elem = document.getElementById('output');
+elem.innerHTML = `Output: ${hello()}`;
+\end{lstlisting}
+
+Listing \ref{listing:treeshacking_index} zeigt die Verwendung des zuvor Implementierten \lstinline{helpers.js} Moduls. Dabei ist zu beachten das die lediglich die Methode \lstinline{hello} importiert und verwendet wird. \lstinline{world} gilt somit als Dead Code oder Unused Export und wird in der gebündelten Anwendung nicht benötigt.
+
+Damit Webpack
+
+\begin{lstlisting}[
+    label=listing:treeshacking_bundle,
+	caption=bundle.js,
+	language=JavaScript,
+    firstnumber=79
+]
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = hello;
+/* unused harmony export world */
+function hello() {
+  return 'hello';
+}
+function world() {
+  return 'world';
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = ({
+  hello: hello,
+  world: world
+});
+\end{lstlisting}
+
+Um die unnötigne Codezeilen zu entfernen werden diese zuerst von Webpack makiert. In Listing \ref{listing:treeshacking_bundle} wurde, sowohl der Default Export, als auch die \lstinline{world} Funktion mit \lstinline{unused harmony} makiert.
+
+Webpack entfernt den unerwünschten Code nicht, erst der darauf folgenden Minifier erkennt die \lstinline{unused harmony} Annotationen und entfernt diese Segmente.
+
+Die daraus resultierende Bundle Datei beinhaltet eine stark verkleinerte \lstinline{hello} Funktion und die nicht benötigte Methode \lstinline{world} wurde aus der Datei entfernt. Auch wenn in diesem Beispiel der Gewinn nicht groß ist, kann Tree Shaking dazu beitragen die Bundle Datei in größeren Projekte signifikant zu verkleinern.
+\autocite{WebpackTreeShaking}
+
+\subsection{Webpack}
+
+Um Tree Shaking mit Webpack zu ermöglichen sind einige Konfigurationen nötig. 
+Zuvor ist es wichtig einen genaueren Blick darauf zu werfen wie Webpack mit ES6 Modulen arbeitet.
+
+Eine große Schwierigkeit bei der Verwendung von ES6 ist die Browser Inkompatibilität. Erstens dauert es eine gewisse Zeit bis die neuen Spezifikationen in den Browsern von den Herstellern implementiert werden können \autocite{CanIUseES6}. Zweitens benutzt ein beachtlicher Teil der Clients nicht die aktuellste verfügbare Version \autocite{CanIUseUsageTable}.
+
+Um das Problem mit der Inkompatibilität zu umgehen werden JavaScript Compiler wie Babel verwendet. Diese verwandeln Es6 in einen für die meisten Browser Kompatiblen JavaScript Code. Somit können Entwickler und Entwicklerinnen bereits die neusten Funktionen verwenden ,ohne das diese von dem Großteil der Browser unterstützt werden muss.\autocite{Babel}
+
+Per Default wird von Babel jedes JavaScript Modul in CommonJS konvertiert. Durch die dynamische Implementierung von CommonJS Modulen können diese jedoch nicht statisch Analysiert werden. Es ist daher entscheidend um ein erfolgreiches Tree Shaking zu ermöglichen, dies zu ändern.\autocite{Babel}
+
+\begin{lstlisting}[
+    label=listing:treeshacking_config,
+	caption=webpack.config.js,
+	language=JavaScript,
+]
+{
+  entry: './index.js',
+  output: {
+    filename: 'dist/es6-modules/bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: [
+            ['es2015', { modules: false }]
+          ]
+        }
+      }
+    ]
+  }
+}
+});
+\end{lstlisting}
+
+Listing \ref{listing:treeshacking_config} zeigt eine typische Tree Shaking Konfiguration von Babel und Webpack. Besonders wichtig ist der \lstinline{modules: false} Flag von Babel. Mit dieser kann man die automatische Modul Transformationen verändern. Neben dem \lstinline{false} Wert der diese komplett deaktiviert, ist es ebenfalls möglich andere Optionen anzugeben (\lstinline{"amd" | "umd" | "systemjs" | "commonjs"}). \autocite{Babel}
+
+\subsection{RollupJS}
+Neben Webpack wurde das Tree shaking Konzept vor allem durch den ES6 Module Bundler RollupJS bekannt \autocite{WebpackTreeShaking}. Dieser wird vor allem empfohlen beim Entwickeln von Libaries. Webpack wiederum bietet eine bessere Unterstützung für Assets wie Bilder oder CSS und gilt daher als besseres geeignet für die Erstellung von Apps. \autocite{RichHarris}
+
+Der Unterschied zwischen den Bundlern liegt in der Art und weise wie die einzelnen Module im Bundle File verpackt sind. Webpack hüllt jedes Modul in eine Funktion mit einer browser-freundlichen Implementierung von \lstinline{require} \autocite{RichHarris}. Features wie On-demand Loading werden dadurch erst möglich. \textcite{NolanLawson} konnte jedoch zeigen das dies im weiteren auch dazu führt, dass je mehr Module verwendet werden auch der damit einhergehende Overhead wächst.
+
+RollupJS verwendet im Gegensatz die Möglichkeiten von ES6. Der gesamte Code landet an einem Platz und wird in einem Durchgang verarbeitet. Damit wird der Code schlanker und kann schneller starten. \autocite{RichHarris}
+
+\subsection{Hindernisse}
+\label{section:schwierigkeiten_beim_tree_shaking}
+In dieser Arbeit wird Tree Shaking aus der Perspektive zweier Entwicklergruppen betrachtet. 
+
+Zum einen jene Entwickler und Entwicklerinnen welche viel projektinternen JavaScript Code in ihren Webpack Projekten verwenden. Ihr Ziel ist es eine oder mehrere möglichst kleiner Bundle Dateien an den Client auszuliefern, für schnelle Seitenaufrufe und eine angenehmes Benutzererlebnis.
+
+Die zweite Gruppe ist jene der Javascript Libary und Framework Entwickler. Ihr Sourcecode wird von vielen Projekten in verschiedener Art und Weise verwendet. In vielen Fällen wird in den Javascript Projekten nur ein kleiner klein der importierten Libaries verwendet. Wenn diese Tree Shaking unterstützt, können jedoch Bundler wie Webpack, den unnötig Code beim kompilieren der Bundle Datei entfernen.
+
+In diesem Kapitel werden meherere Hindernisse für die beiden Benutzergruppen veranschaulicht und in weitere Folge Maßnahmen zu Vermeidung dieser ermittelt. 
+
+(http://www.syntaxsuccess.com/viewarticle/tree-shaking-with-webpack)
+
+\subsubsection{Richtiges Importieren und Exportieren}
+
+Wie bereits in den Kapitel \ref{subsubsection:default_exports} und \ref{subsubsection:named_exports} beschrieben können Javascript Module mittels Namend oder Default Export
+
+nicht
+	import Test from 'module1'
+    Test.func1()
+besser 
+	import {func1} from 'module1'
+
+\subsubsection{Exportieren}
+keine default exporte ?
+
+alles was importiert wird sollte auch exportiert werden (stimmt nicht ganz es können sideeffects enthalten sein sideeffect: [*.css])
+
+\subsubsection{Side Effects}
+\label{subsubsection:side_effects}
+Umfangreiche und weitverbreitete JavaScript Libaries wie zum Beispiel Lodash\footnote{https://lodash.com/ - besucht am 26.05.2018} und jQuery\footnote{https://jquery.com/ - besucht am 26.05.2018} bieten eine große Anzahl an nützlichen Tools. Sie werden meistens als NPM Modul installiert und anschließend in den Projektdateien als Import eingebunden. Zu meist werden nur Teile von den zu Verfügung gestellten Funktionalitäten auch wirklich verwendet. Das kann dazuführen das ein erheblich Teil der von Webpack erzeugten Bundledatei aus nicht benötigten Code besteht. Plugins wie der Webpack Visualizer bieten eine einfache Möglichkeit, um festzustellen, welche Module in der von Webpack generierten Bundle Datei am meisten Speicherplatz einnehmen.
+
+Jedoch bietet unter anderem Webpack eine Möglichkeit für Libary Entwickler und Entwicklerinnen diese so zu Implementieren ,dass der nicht benötigte Libary Sourcecode beim builden entfernt wird.
+Durch die Verwendung von \lstinline{sideEffects: false} in der package.json Datei innerhalb der Libary, wird Webpack mitgeteilt das Tree Shaking nicht nur auf den üblichen Projektcode anzuwenden, sondern ebenfalls auf den Code der sich im Libary Ordner befindet.
+
+Dabei werden Importdeklarationen wie \lstinline|import {a, b} from "big-module-with-flag"| von Webpack erkannt und beim Bau der Applikation zu \lstinline|import a from "big-module-with-flag/a" import b from "big-module-with-flag/b"| umgeschrieben. Somit werden in der Bundle Datei auch nur die zwei von dem Entwickler oder der Entwicklerin verwendeten Methoden importiert und der restliche Libary Code entfernt \autocite{WebpackTreeShaking}.Zur Veranschaulichung dient ein ausführlich dokumentiertes Beispiel\footnote{https://github.com/webpack/webpack/tree/master/examples/side-effects - besucht am 26.05.2018}. 
+
+Wenn mit Hilfe von \lstinline{sideEffects: false} ein Modul als Rein bezeichnet wird, werden alle nicht verwendeten Methoden, Klassen oder Objekte aus dem Code entfernt. Dies kann jedoch die Funktionsweise erheblich stören. Side Effects sind somit Code Segmente, welche beim Tree Shaking nicht entfernt werden dürfen. Dies möchte ich mittels eines Beispiels näher erläutern.
+
+\begin{lstlisting}[
+    label=listing:sideeffects,
+	caption=webpack.config.js,
+	language=JavaScript,
+]
+	import a from 'a'
+    import b from 'b'
+    
+    console.log("das ist ein sideeffect")
+    
+    export default {
+    	a,
+        b
+    }
+\end{lstlisting}
+
+
+
+
+
+-------------BSP von webpack------------------
+
+-vorallem wichtig für libary entwickler
+-was sind sideeffects?
+-wie schaut eine übliche sideeffect freie libary aus?
+-Aus den ES Specs wurden folgende AST Nodes ermittelt (ImportDeclaration, ExportNamedDeclaration, ExportDefaultDeclaration)
+-des weiteren muss jeder import auch exportiert werden
+-kann auch ein array von files angegeben werden (diese besitzen sideeffects)
+
+\autocite{TamasSallai}
+
+\section{Linting}
+Der Begriff Lint wurde erstmals in den 1970er in Verbindung mit der Softwareentwicklung erwähnt. \textcite{Johnson1978} entwicklete es an den Bell Laboratories um die Schwächen der damaligen C Compiler auszugleichen und undendteckte Fehlerin bereits kompilierten Programmen zu finden.
+
+Es existieren viele Wege um die Anzahl an Bugs innerhalb einer Anwendung zu minimieren. Neben dem schreiben von Unit Tests, bieten Code Reviews laut \textcite{Louridas2006} wohl die beste Möglichkeit Bugs und Code Smells aufzufinden und zu eliminieren. Es fordert jedoch einen großen Zeitaufwand mehrere Entwickler zusammenzubringen und die gesamte Codebasis einer Anwendung gemeinsam zu reviewen.
+
+Die meisten Fehler fallen in die Kategorie Known Errors. Dies sind häufig auftretende sich wiederholende Fälle in dennen die Entwickler und Entwicklerinnen immer wieder hinnenstoplern. Mit Linting möchte man die sich ständig wiederholenden Fehler oder auch Code Smells so früh es möglich ist finden und ausbessern. \autocite{Louridas2006}
+
+Im Gegensatz zu einem Compiler muss beim Linting der Code nicht ausgeführt werden. So genannte Static Checker durchlaufen den Programmcode auf der Suche nach bestimmten Mustern, diesen Prozess wird als Statische Code Analyse bezeichnet. \autocite{Louridas2006}
+
+Es gibt verschiedene Wege um eine Statische Code Analyse durchzuführen. Wie zum Beispiel auf Anfrage eines Entwicklers oder einer Entwicklerin, kontinuierlich wärend der Erstellung einer Anwendung oder aber direkt bevor ein Entiwckler oder eine Entwicklerin Codeänderungen auf ein Repository comittet will. Je nach Projekt können somit Fehler entdeckt und behoben werden bevor diese in der Codebasis am Repository landen.\autocite{Johnson}
+
+Es exisitiert bereits reichlich Literatur zur Statischen Code Analyse. Dabei wurden nicht nur Aspekte wie Performance und Genauigkeit untersucht \autocite{Bessey2010}, sondern auch verschiedene Einsatzgebiete gezeigt \autocite{Bush}.
+
+\textcite{Johnson} erforschten in ihrer Arbeit den Gebrauch und die Verbreitung von Statische Analyse Tools. Ein Teil davon war die Ermittlung was Entwickler und Entwicklerinnen als bei dem Gebrauch diese Werkzeuge als störend empfinden. Ergebnis davon war der nicht zu unterschätzende Anteil an false postives, sprich die Anzahl an Warnungen die keine wirklichen Fehler sind. Im weiteren wurde auch noch die hohe Arbeitslast von Entwicklern und Entwicklerinnen genannt. Laut \textcite{Johnson} sollten zukünftige Tools, sowohl eine besser Integration in den Arbeitsabläufen von Entwicklern und Entwicklerinnen bieten, als auch die Arbeit in einem Team besser unterstüzen.
+
+\textcite{Bush} implementierte ein statisches Analyse Tool zum auffinden von dynamischen Fehler in C und C++. Dazu zählen unter anderem die Verwendung von nicht intitialisierten Speicher oder falschen Operation auf Dateien (zum Beispiel das Schließen einer Datei die bereit geschloßen wurde). Das aus der Arbeit entstandene Tool wurde PREFix getauft. Zur Analyse von Code wird der Abstract Syntax Tree generiert und anschließend die Funktionsaufrufe mittels eines Topolischen Algorithmus sortiert. Die Funktionen werden daraufhin simuliert und darin befindliche Defekte gemeldet. Als Teil dieser Arbeit wird ein Plugin erstellt, welches wie bei \textcite{Bush} den Abstract Syntax Tree auf ähnliche Art und weise untersucht. Jedoch soll dies für die Programmiersprache JavaScript erfolgen und sich lediglich auf fehlerhafte Muster in der Verwendung von ES6 Imports und Exports fokussieren.
+
+\subsection{ES Lint}
+2013 erschuff der Entwickler Nicholas C. Zakas ESLint. Ein Erweiterbares Linting Tool für JavaScript und JSX. Neben vielen bereits vorhandenen Linting Regeln bietet  ES Lint eine Möglichkeit für Entwickler und Entwicklerinnen solche auch selbst zu implementieren. Durch hinzufügen oder entfernen von Regeln wird der Linting Process je nach Projekt und Team konfiguriert. Dabei gilt für jede Regel die folgenden drei Grundsätze:
+\begin{itemize}
+  \item Jede Regel sollte Eigenständig funktionieren
+  \item Bietet eine Möglichkeit zum An und Abschalten (nicht darf als zu wichtig zum deaktivieren gelten)
+  \item Es kann zwischen Warnung und Fehler gewechselt werden
+\end{itemize}
+Um nicht jede Regel einzeln zu importieren gibt es ebenfalls die Möglichkeit mehrere Regeln als Bundle auszuliefern. \autocite{ESLintAbout}
+
+Ziel dieser Arbeit ist es bereits implementierte Regeln für die Optimierung von ES6 Exports und Imports zu identifizieren und diese zu einem Bundle zusammenzufügen. Des weiteren werden ebenfalls eigene Regeln für ESLint erstellt, welche weitere schlechte Muster im Programmcode aufdeckt und auch Lösungen dafür anzeigt. \autocite{ESLintAbout}
+
+(Kurzer Einleitungstext für die nächsten Kapitel)
+
+\subsubsection{Core Rules}
+\label{subsubsection:core_rules}
+
+ESLint wird bereits mit mehr als 200 allgemein gültige Regeln ausgeliefert. Diese werden als Core Regeln bezeichnet. Gemäß \autocite{ESLintNewRules} muss eine eigene Regel die folgenden 6 Eigenschaften erfüllen um diese der Core Liste hinzuzufügen:
+
+
+\textbf{1. Allgemeine Anwendbarkeit}
+Core Regeln sollten relevant für eine große Anzahl an Entwickler und Entwicklerinnen sein. Regeln für Individuelle Präferenzen oder Edge Cases werden nicht akzeptiert.
+
+\textbf{2. Generisch}
+Neue Regeln sollten möglichst generisch sein. Ein Benutzer oder eine Benutzerin darf kein Poblem haben zu verstehen wann diese zu benutzen ist. Als Richtlinie gilt eine Regel ist zu spezifisch wenn man zur Beschreibung was sie macht mehr als zwei "und" benötigt. (zum Beispiel: Wenn a und b und c und d, dann wird der Benutzer oder die Benutzerin gewarnt)
+
+\textbf{3. Atomar}
+Regeln sollten vollkommen selbstständig funktionieren. Abhängikeiten zwischen zwei oder mehreren Regeln sind nicht erlaubt.
+
+\textbf{4. Einzigartig}
+Überschneidung zwischen Regeln sind ebenfalls nicht erlaubt. Jede sollte eine eigenen Warunug erzeugen. Somit wird der Benutzer nicht unnötig verwirrt.
+
+\textbf{5. Unabhängig}
+Regeln dürfen nur auf der JavaScript Laufzeitumgebung basieren und unabhängig von Libaries oder Frameworks sein. Core Regeln sollten stehts anwendbar sein und nicht davon abhängen ob spezielle Libaries wie JQuery verwendet werden. Hingegen existieren bereits einige Regeln die nur angewendet werden wenn die Laufzeitumgebung NodeJS vorhanden ist.
+
+\textbf{6. Ohne Konflikte}
+Keine Regel sollte sich mit anderen Regeln überschneiden. Zum Beispiel gibt es eine Regel, welche von einem Entwickler oder eioner Entwicklerin verlang jedes Statement mit einem Semikolon zu beenden. Es ist nicht erlaubt eine neue Regel zu entwerfen, die Semikolons verbietet. Statt dessen existiert die Regel Semi, diese kann beides und kann mit Hilfe der Konfiguration gesteuert werden.
+
+(ich mache keine core regeln wegen dem 1. punkt - die anderen Eigenschaften sollten jedoch erfüllt werden)
+
+
+https://eslint.org/docs/developer-guide/working-with-rules
+
+(Runtime Rules vs Core Rules)
+
+\subsubsection{Komponenten eines Plugins}
+https://eslint.org/docs/developer-guide/working-with-plugins
+(kurze einleitung  danach wie wird das in meinem plugin verwendet?)
+\textbf{Rules}
+\textbf{Environments}
+\textbf{Configs}
+\textbf{Processors}
+
+\subsubsection{How to use}
+Client config verwendung
+
+\subsubsection{Formatters}
+https://eslint.org/docs/user-guide/formatters/
+
+\subsection{Dependency Graph}
+Neben statischen Mustern wie nicht initialisierten Funktionen und Variablen oder Formatierungsfehler, gibt es eine weitere Kategorie, die der dynamischen Bugs. Dabei werden unter anderen die Ausführungspfade innerhalb des Applikation Codes verfolgt und Fehler in der dynamischen Natur einer Programmiersprache entdeckt. \autocite{Bush}
+
+-----todo-----
+
+Static Checker können Fehler in verschiedener Art entdecken und makieren. Dazu zählen: Code Smells, Formatierungs Fehler und Fehler im Ablauf 
+
+\section{Analyse von NPM Module}
+Es existieren bereits Projekte auf NPM die Tree Shaking verwenden. Durch eine Sourcecode Analyse sollen zusätzliche Erkenntnisse gewonnen werden. Über die zum Einsatz kommenden Design Pattern und Möglichkeiten die Entwickler und Entwicklerinnen mit Linting bei der Implementierung dieser zu unterstützen.
+
+In weitere Folge werden am Ende dieser Arbeit, die ausgewählten Projekte mit dem ES Lint Tree Shaking Plugin auf Fehler und Warnings getestet. Dabei sollten keine Fehler angezeigt werden, um die richtige Funktionweise des Plugins sicherzustellen.
+
+\subsection{Auswahlkriterien}
+Die wichtigsten Kriterien für die zur Analyse ausgewählten Projekte ist zum einen die Verwendung eines Static Bundler und zum anderen eine bereits bestehende Implementierung von Tree Shaking. Um dies festzustellen wird zuerst geprüft ob eine package.json Datei im Repository existiert. Anschließend wird in dieser nach \lstinline{sideeffects} gesucht. Wie bereits im Kapitel \ref{subsubsection:side_effects}
+
+Die ausgewählten JavaScript Repositories sollten von einer großen Zahl an Entwicklern und Entwicklerinnen gewartet werden und regelmäßig 
+
+----
+Es gib t veraltetet repos
+die die ich auswähle sollten eine große anzahl an mitwirkenden besitzen und regelmäßig neue commits erhalten
+wichtig ist auch das das repo von vielen verwendet wird
+---
+
+Weitere Wichtige Aspekte ist die Anzahl an Mitwirkende und der Zeitpunkt des letzten Commits.
+
+
+Es existiert bereits eine umfangreiche Liste\footnote{https://gist.github.com/anvaka/8e8fa57c7ee1350e3491 - besucht am 06.06.2018} von NPM Packages, welche in einer Vielzahl von Projekten verwendet werden.
+
+\section{Erstellen des Plugins}
+\subsection{Setup}
+Um die Projektstruktur aufzusetzen verwende ich die von \textcite{ESLintNewRules} empfohlene Vorgehensweise. Ein wichtige Voraussetzung um ein ES Lint PLugin zu erstellen sind NPM und NodeJS, diese müssen zuerst installiert werden. In dieser Arbeit wird NodeJS v8.0.0 und NPM 5.8.0 verwendet.
+
+Des weiteren wird das Commandline Tool Yeoman benötigt. Die aktuellste Version ist 2.0.2, diese wird mit dem Befehl \lstinline{npm install -g yo} global installiert und steht somit in der Konsole an jedem Ort zur Verfügung. Zuletzt wird das NPM Modul eslint-generator installiert es dient dazu ein leeres Gerüst für den Plugin Code zu erstellen.
+
+Nach der Installation wird mit dem Befehl \lstinline{yo eslint:plugin} der Generator gestartet. Folgende Daten wurden dabei angegeben:
+\begin{itemize}
+	\item \textbf{Name:} silltho
+    \item \textbf{Plugin-Id:} threeshaking
+    \item \textbf{Beschreibung:} --todo--
+    \item \textbf{Werden Benutzerdefinierte Regeln verwendet?:} Ja
+    \item \textbf{Werden Processors verwendet?:} Nein
+\end{itemize}
+
+Die daraus resultierende package.json Datei sieht wie folgt aus:
+
+\begin{lstlisting}[
+    label=listing:package.json,
+	caption=generierte package.json Datei,
+	language=JavaScript,
+]
+{
+  "name": "eslint-plugin-treeshaking",
+  "version": "0.0.0",
+  "description": "test",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "silltho",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "~3.9.1",
+    "mocha": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
+\end{lstlisting}
+
+In weiterer Folge wurde neben der \lstinline{README.md} Datei auch ein \lstinline{lib} und \lstinline{tests} Ordner im Projektverzeichnis erstellt. Der Ordner \lstinline{lib/rules} wird später den Programmcode für die neu erstellten Regeln beinhalten.
+
+\subsection{Entwicklungsumgebung}
+Für die Programmierung wird die integrierte Entwicklungsumgebung (IDE) WebStorm von JetBrains in der Version 2018.1.2 verwendet. 
+
+-eslint 3.9.1
+-astexplorer
+-mocha test suite
+-prettier
+-husky
+
+
+\section{Die Implementierung neuer Regeln}
+Yeoman und der ESLint-Generator bietet ebenfalls Unterstützung bei dem Anlegen neuer Regeln innerhalb des Plugins. Die dafür nötigen Dateien werden mit dem Befehl \lstinline{yo eslint:rule} erzeugt. Die neu erstellten Regeln innerhalb des Plugins sollen die Aufmerksamkeit von Entwickler und Entwicklerinnen auf die Probleme aus \ref{section:schwierigkeiten_beim_tree_shaking} richten und Wege aufzeigen um diese zu vermeiden. In diesem Kapitel wird dokumentiert wie die Regeln erstellt wurden. 
+
+Beim Aufruf des Generators mit \lstinline{yo eslint:rule} müssen mehrere Fragen beantwortet werden:
+
+\begin{itemize}
+	\item What is your name?
+    \item Where will this rule be published?
+    \item What is the rule ID?
+    \item Type a short description of this rule
+    \item Type a short example of the code that will fail
+\end{itemize}
+
+In dieser Arbeit wird als Name silltho verwendet. Für den Publishing Ort kann zwischen ESLint Core und ESLint Plugin gewählt werden. Wie bereits im Kapitel \ref{subsubsection:core_rules} beschrieben wurde, eignen sich die in dieser Arbeit erstellten Regeln nicht als Core Regeln, es wird somit bei allen Regeln die Option ESLint Plugin gewählt. 
+
+Alle weiteren Fragen können je nach Regel unterschiedlich beantwortet. In weiterer Folge werden diese als Tabelle bei der Implementierung jeder Regel dargestellt.
+
+Vom Generator werden abschließend die folgenden Dateien im Projektverzeichnis erzeugt:
+\begin{itemize}
+	\item \textbf{docs/rules/(rule-id).md} - Dokumentation der Regel und der Konfiguration Möglichkeiten.
+    \item \textbf{lib/rules/(rule-id).js} - Programmcode.
+    \item \textbf{tests/lib/rules/(rule-id).js} - Tests um sicherzustellen das die Regel wie gewünscht funktioniert.
+\end{itemize}
+
+Die nachfolgenden Kapitel beschreiben die Implementierung der Regeln die benötigt werden um Code Smells beim Tree Shaking für Entwickler und Entwicklerinnen anzuzeigen.
+
+\subsection{Sideeffects}
+
+\begin{table}[h]
+\centering
+\caption{Yeoman Generator: Sideeffects}
+\label{tbl:sideeffects}
+\begin{tabular}{|l|l|}
+\hline
+Rule-ID: & sideeffects \\ \hline
+Beschreibung: & todo \\ \hline
+Beispiel für fehlerhaften Code: & todo \\ \hline
+\end{tabular}
+\end{table}
+
+-modulebody besteht aus mehreren Moduleitems -> ImportDeclaration, ExportDeclaration, StatementListItem
+
+\section{Verwendung bestehender Core Regeln}
+
+
+
+
+
+
+
