@@ -537,26 +537,28 @@ Neben statischen Mustern wie nicht initialisierten Funktionen und Variablen oder
 
 Static Checker können Fehler in verschiedener Art entdecken und makieren. Dazu zählen: Code Smells, Formatierungs Fehler und Fehler im Ablauf 
 
-\section{Analyse von NPM Module}
-Es existieren bereits Projekte auf NPM die Tree Shaking verwenden. Durch eine Sourcecode Analyse sollen zusätzliche Erkenntnisse gewonnen werden. Über die zum Einsatz kommenden Design Pattern und Möglichkeiten die Entwickler und Entwicklerinnen mit Linting bei der Implementierung dieser zu unterstützen.
+\section{Untersuchung von JavaScript Libaries}
+Es existieren bereits Projekte auf NPM die Tree Shaking verwenden. Durch eine Sourcecode Analyse sollen zusätzliche Erkenntnisse gewonnen werden, über die zum Einsatz kommenden Design Patterns und Möglichkeiten die Entwickler und Entwicklerinnen mit Linting bei der Implementierung dieser zu unterstützen.
 
-In weitere Folge werden am Ende dieser Arbeit, die ausgewählten Projekte mit dem ES Lint Tree Shaking Plugin auf Fehler und Warnings getestet. Dabei sollten keine Fehler angezeigt werden, um die richtige Funktionweise des Plugins sicherzustellen.
+In weitere Folge werden am Ende dieser Arbeit, die ausgewählten Projekte mit dem ES Lint Tree Shaking Plugin auf Fehler und Warnungen getestet. Dabei sollten keine Fehler angezeigt werden, um die richtige Funktionweise des Plugins sicherzustellen.
 
 \subsection{Auswahlkriterien}
-Die wichtigsten Kriterien für die zur Analyse ausgewählten Projekte ist zum einen die Verwendung eines Static Bundler und zum anderen eine bereits bestehende Implementierung von Tree Shaking. Um dies festzustellen wird zuerst geprüft ob eine package.json Datei im Repository existiert. Anschließend wird in dieser nach \lstinline{sideeffects} gesucht. Wie bereits im Kapitel \ref{subsubsection:side_effects}
+Die wichtigsten Kriterien für die zur Analyse ausgewählten Projekte ist zum einen die Verwendung eines Static Bundler und zum anderen eine bereits bestehende Implementierung von Tree Shaking. Um dies festzustellen wird zuerst geprüft ob eine package.json Datei im Repository existiert. Anschließend wird in dieser nach \lstinline{sideeffects} gesucht. Wie bereits im Kapitel \ref{subsubsection:side_effects} veranschaulicht diehnt die \lstinline{sideeffect} Einstellung dazu dem Bundler anzuzeigen, dass nur die verwendeten Exporte in dem gebuildeten Programmcode benötigt werden.
 
-Die ausgewählten JavaScript Repositories sollten von einer großen Zahl an Entwicklern und Entwicklerinnen gewartet werden und regelmäßig 
+Die ausgewählten JavaScript Repositories sollten  für eine möglichst große Anzahl an Entwicklern und Entwicklerinnen von relevanter Bedeutung sein. Für die Auswahl werden daher jene NPM Module verwendet, welche am häufigsten in Webprojekten verwendeten werden. Es existiert bereits eine generische Liste \footnote{https://www.npmjs.com/browse/depended - besucht am 06.06.2018} die diese Module beinhaltet.
 
-----
-Es gib t veraltetet repos
-die die ich auswähle sollten eine große anzahl an mitwirkenden besitzen und regelmäßig neue commits erhalten
-wichtig ist auch das das repo von vielen verwendet wird
----
-
-Weitere Wichtige Aspekte ist die Anzahl an Mitwirkende und der Zeitpunkt des letzten Commits.
+Auf NPM befinden sich neben Bibliotheken welche ES6 verwenden, auch welche die für NodeJS entwicklert wurden. Dabei werden der NodeJS Module verwendet und sind daher für diese Arbeit nicht geeignet \autocite{NodeJSModules}. Ein weiteres Kriterium für die Auswahl der zu untersuchenden Projekte ist daher die Verwendung von ES6 Modulen.
 
 
-Es existiert bereits eine umfangreiche Liste\footnote{https://gist.github.com/anvaka/8e8fa57c7ee1350e3491 - besucht am 06.06.2018} von NPM Packages, welche in einer Vielzahl von Projekten verwendet werden.
+\subsection{Ausgewählte Libaries}
+Anhand Auswahlkriterien wurde folgende fünf Projekte ermittelt die bereits Tree Shaking und ES6  implemnentieren:
+
+\begin{itemize}
+	\item{lodash\footnote{https://github.com/lodash/lodash - besucht am 15.06.2018}}
+	\item{rxjs\footnote{https://github.com/ReactiveX/rxjs - besucht am 15.06.2018}}
+	\item{vue\footnote{https://github.com/vuejs/vue - besucht am 15.06.2018}}
+	\item{graphql\footnote{https://github.com/graphql/graphql-js - besucht am 15.06.2018}}
+\end{itemize}
 
 \section{Erstellen des Plugins}
 \subsection{Setup}

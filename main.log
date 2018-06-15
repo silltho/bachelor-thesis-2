@@ -1,0 +1,1189 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  15 JUN 2018 09:19
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(./mmt.cls
+Document Class: mmt 2016/10/25 MultiMediaTechnology
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count80
+\U@D=\dimen102
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count81
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-german/ngerman.ldf
+Language: ngerman 2018/03/29 v2.10 German support for babel (post-1996 orthogra
+phy)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2018/03/29 v2.10 German support for babel (post-1996 orthogr
+aphy)
+Package babel Info: Making " an active character on input line 121.
+))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-german/ngerman.ldf
+Language: ngerman 2018/03/29 v2.10 German support for babel (post-1996 orthogra
+phy)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2018/03/29 v2.10 German support for babel (post-1996 orthogr
+aphy)
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count90
+\Gm@cntv=\count91
+\c@Gm@tempcnt=\count92
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
+\Gm@dimlist=\toks15
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen114
+\captionmargin@=\dimen115
+\captionwidth=\dimen116
+\caption@tempdima=\dimen117
+\caption@indent=\dimen118
+\caption@parindent=\dimen119
+\caption@hangindent=\dimen120
+)
+\c@ContinuedFloat=\count93
+)
+\c@KVtest=\count94
+\sf@farskip=\skip43
+\sf@captopadj=\dimen121
+\sf@capskip=\skip44
+\sf@nearskip=\skip45
+\c@subfigure=\count95
+\c@subfigure@save=\count96
+\c@lofdepth=\count97
+\c@subtable=\count98
+\c@subtable@save=\count99
+\c@lotdepth=\count100
+\sf@top=\skip46
+\sf@bottom=\skip47
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count101
+\float@exts=\toks16
+\float@box=\box26
+\@float@everytoks=\toks17
+\@floatcapt=\box27
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count102
+\lst@gtempboxa=\box28
+\lst@token=\toks20
+\lst@length=\count103
+\lst@currlwidth=\dimen122
+\lst@column=\count104
+\lst@pos=\count105
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count106
+\lst@lineno=\count107
+\lst@maxwidth=\dimen125
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count108
+\lst@skipnumbers=\count109
+\lst@framebox=\box29
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+\col@sep=\dimen126
+\ar@mcellbox=\box30
+\extrarowheight=\dimen127
+\NC@list=\toks21
+\extratabsurround=\skip48
+\backup@length=\skip49
+\ar@cellbox=\box31
+)
+\rotheadsize=\dimen128
+\c@nlinenum=\count110
+\TeXr@lab=\toks22
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/breakurl/breakurl.sty
+Package: breakurl 2013/04/10 v1.40 Breakable hyperref URLs
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
+)
+\XKV@depth=\count111
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+
+Package breakurl Warning: You are using breakurl while processing via pdflatex.
+
+(breakurl)                \burl will be just a synonym of \url.
+(breakurl)                 on input line 48.
+
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks25
+\ex@=\dimen129
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen130
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count112
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count113
+\leftroot@=\count114
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count115
+\DOTSCASE@=\count116
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen131
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count117
+\c@MaxMatrixCols=\count118
+\dotsspace@=\muskip10
+\c@parentequation=\count119
+\dspbrk@lvl=\count120
+\tag@help=\toks26
+\row@=\count121
+\column@=\count122
+\maxfields@=\count123
+\andhelp@=\toks27
+\eqnshift@=\dimen132
+\alignsep@=\dimen133
+\tagshift@=\dimen134
+\tagwidth@=\dimen135
+\totwidth@=\dimen136
+\lineht@=\dimen137
+\@envbody=\toks28
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count124
+)
+\csq@reset=\count125
+\csq@gtype=\count126
+\csq@glevel=\count127
+\csq@qlevel=\count128
+\csq@maxlvl=\count129
+\csq@tshold=\count130
+\csq@ltx@everypar=\toks30
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)
+Package csquotes Info: Enabling multilingual quotes.
+Package csquotes Info: Redefining alias 'german' -> 'german/guillemets'.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/frankenstein/abbrevs.sty
+Package: abbrevs 2001/09/08 v1.4 abbreviation macros (Frankenstein's briefs)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/frankenstein/moredefs.sty
+Package: moredefs 2001/08/31 v1.8 more defining commands (Frankenstein's brain)
+
+\sc@toks@a=\toks31
+\sc@toks@b=\toks32
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/frankenstein/slemph.sty
+Package: slemph 1999/02/25 v1.2 slanted emphasis (Frankenstein's gait)
+LaTeX Info: Redefining \itswitch on input line 177.
+LaTeX Info: Redefining \slswitch on input line 186.
+LaTeX Info: Redefining \textitswitch on input line 195.
+LaTeX Info: Redefining \textslswitch on input line 196.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/frankenstein/slemph.cfg
+File: slemph.cfg 
+))
+\c@tm@util=\count131
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/frankenstein/abbrevs.cfg
+File: abbrevs.cfg 
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex-chicago/biblatex-chicago
+.sty
+Package: biblatex-chicago 2018/01/10 v 3.10 biblatex style
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count132
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write3
+\integerpart=\count133
+\decimalpart=\count134
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@tabx@nest=\count135
+\c@listtotal=\count136
+\c@listcount=\count137
+\c@liststart=\count138
+\c@liststop=\count139
+\c@citecount=\count140
+\c@citetotal=\count141
+\c@multicitecount=\count142
+\c@multicitetotal=\count143
+\c@instcount=\count144
+\c@maxnames=\count145
+\c@minnames=\count146
+\c@maxitems=\count147
+\c@minitems=\count148
+\c@citecounter=\count149
+\c@savedcitecounter=\count150
+\c@uniquelist=\count151
+\c@uniquename=\count152
+\c@refsection=\count153
+\c@refsegment=\count154
+\c@maxextratitle=\count155
+\c@maxextratitleyear=\count156
+\c@maxextradate=\count157
+\c@maxextraalpha=\count158
+\c@abbrvpenalty=\count159
+\c@highnamepenalty=\count160
+\c@lownamepenalty=\count161
+\c@maxparens=\count162
+\c@parenlevel=\count163
+\blx@tempcnta=\count164
+\blx@tempcntb=\count165
+\blx@tempcntc=\count166
+\blx@maxsection=\count167
+\blx@maxsegment@0=\count168
+\blx@notetype=\count169
+\blx@parenlevel@text=\count170
+\blx@parenlevel@foot=\count171
+\blx@sectionciteorder@0=\count172
+\labelnumberwidth=\skip53
+\labelalphawidth=\skip54
+\biblabelsep=\skip55
+\bibitemsep=\skip56
+\bibnamesep=\skip57
+\bibinitsep=\skip58
+\bibparsep=\skip59
+\bibhang=\skip60
+\blx@bcfin=\read1
+\blx@bcfout=\write4
+\c@mincomprange=\count173
+\c@maxcomprange=\count174
+\c@mincompwidth=\count175
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'chicago-authordate.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count176
+\c@savedafterword=\count177
+\c@annotator=\count178
+\c@savedannotator=\count179
+\c@author=\count180
+\c@savedauthor=\count181
+\c@bookauthor=\count182
+\c@savedbookauthor=\count183
+\c@commentator=\count184
+\c@savedcommentator=\count185
+\c@editor=\count186
+\c@savededitor=\count187
+\c@editora=\count188
+\c@savededitora=\count189
+\c@editorb=\count190
+\c@savededitorb=\count191
+\c@editorc=\count192
+\c@savededitorc=\count193
+\c@foreword=\count194
+\c@savedforeword=\count195
+\c@holder=\count196
+\c@savedholder=\count197
+\c@introduction=\count198
+\c@savedintroduction=\count199
+\c@namea=\count266
+\c@savednamea=\count267
+\c@nameb=\count268
+\c@savednameb=\count269
+\c@namec=\count270
+\c@savednamec=\count271
+\c@translator=\count272
+\c@savedtranslator=\count273
+\c@shortauthor=\count274
+\c@savedshortauthor=\count275
+\c@shorteditor=\count276
+\c@savedshorteditor=\count277
+\c@labelname=\count278
+\c@savedlabelname=\count279
+\c@institution=\count280
+\c@savedinstitution=\count281
+\c@lista=\count282
+\c@savedlista=\count283
+\c@listb=\count284
+\c@savedlistb=\count285
+\c@listc=\count286
+\c@savedlistc=\count287
+\c@listd=\count288
+\c@savedlistd=\count289
+\c@liste=\count290
+\c@savedliste=\count291
+\c@listf=\count292
+\c@savedlistf=\count293
+\c@location=\count294
+\c@savedlocation=\count295
+\c@organization=\count296
+\c@savedorganization=\count297
+\c@origlocation=\count298
+\c@savedoriglocation=\count299
+\c@origpublisher=\count300
+\c@savedorigpublisher=\count301
+\c@publisher=\count302
+\c@savedpublisher=\count303
+\c@language=\count304
+\c@savedlanguage=\count305
+\c@origlanguage=\count306
+\c@savedoriglanguage=\count307
+\c@pageref=\count308
+\c@savedpageref=\count309
+\shorthandwidth=\skip61
+\shortjournalwidth=\skip62
+\shortserieswidth=\skip63
+\shorttitlewidth=\skip64
+\shortauthorwidth=\skip65
+\shorteditorwidth=\skip66
+\locallabelnumberwidth=\skip67
+\locallabelalphawidth=\skip68
+\localshorthandwidth=\skip69
+\localshortjournalwidth=\skip70
+\localshortserieswidth=\skip71
+\localshorttitlewidth=\skip72
+\localshortauthorwidth=\skip73
+\localshorteditorwidth=\skip74
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+\c@textcitecount=\count310
+\c@textcitetotal=\count311
+\c@textcitemaxnames=\count312
+\c@biburlnumpenalty=\count313
+\c@biburlucpenalty=\count314
+\c@biburllcpenalty=\count315
+\c@smartand=\count316
+)
+Package biblatex Info: Trying to load bibliography style 'chicago-authordate'..
+.
+Package biblatex Info: ... file 'chicago-authordate.bbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex-chicago/chicago-authorda
+te.bbx
+File: chicago-authordate.bbx 2018/01/11 v 3.10 biblatex bibliography style
+\lositemsep=\skip75
+\c@bbx:relatedcount=\count317
+\c@bbx:relatedtotal=\count318
+)
+Package biblatex Info: Trying to load citation style 'chicago-authordate'...
+Package biblatex Info: ... file 'chicago-authordate.cbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex-chicago/chicago-authorda
+te.cbx
+File: chicago-authordate.cbx 2018/01/11 v 3.10 biblatex citation style
+Package biblatex Info: Trying to load citation style 'chicago-dates-common'...
+Package biblatex Info: ... file 'chicago-dates-common.cbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex-chicago/chicago-dates-co
+mmon.cbx
+File: chicago-dates-common.cbx 2018/01/11 v 3.10 biblatex citation style
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\footfullcite'.
+Package biblatex Info: Redefining '\fullcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\footcites'.
+Package biblatex Info: Redefining '\footcitetexts'.
+Package biblatex Info: Patching 'autolang=other' option.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)))
+\@input{_configuration.aux}
+\openout2 = `_configuration.aux'.
+
+(./_configuration.tex)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package biblatex Info: Trying to load language 'ngerman' -> 'cms-ngerman'...
+Package biblatex Info: ... file 'cms-ngerman.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex-chicago/cms-ngerman.lbx
+File: cms-ngerman.lbx 2018/01/09 v 3.10 biblatex localization
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
+File: ngerman.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german' -> 'cms-german'...
+Package biblatex Info: ... file 'cms-german.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex-chicago/cms-german.lbx
+File: cms-german.lbx 2018/01/09 v 3.10 biblatex localization
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
+File: ngerman.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german' -> 'cms-german'...
+Package biblatex Info: ... file 'cms-german.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex-chicago/cms-german.lbx
+File: cms-german.lbx 2018/01/09 v 3.10 biblatex localization
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+))))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 116.
+
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=635.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-1.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=14.8pt plus 6.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count319
+\scratchdimen=\dimen138
+\scratchbox=\box34
+\nofMPsegments=\count320
+\nofMParguments=\count321
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen139
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
+\everyMPtoPDFconversion=\toks34
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count325
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
+Package biblatex Info: Reference section=0 on input line 116.
+Package biblatex Info: Reference segment=0 on input line 116.
+(./title.tex
+<images/FHSLogo.jpg, id=1, 516.93124pt x 333.245pt>
+File: images/FHSLogo.jpg Graphic file (type jpg)
+<use images/FHSLogo.jpg>
+Package pdftex.def Info: images/FHSLogo.jpg  used on input line 76.
+(pdftex.def)             Requested size: 142.26378pt x 91.71129pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20.79> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 83.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.79> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
+
+ []
+
+[1
+
+
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
+s/FHSLogo.jpg>]) (./affidavit.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 27
+.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 27
+.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 27
+.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 27
+.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
+) [1
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 149.
+
+(./kurzfassung.tex) [2] (./abstract.tex) [3] (./main.toc [4])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [5] (./body.tex
+
+LaTeX Warning: Citation 'Npmdocs' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation 'DominikWilkowski' on page 1 undefined on input line 5.
+
+
+
+Overfull \hbox (124.1707pt too wide) in paragraph at lines 5--6
+\OT1/ptm/m/n/12 Ent-wick-le-rin unn[]otige Ver-si-ons Du-pli-ka-te und un-er-re
+ich-ba-re Zwei-ge im Pro-gramm-co-de vermeiden.([]) 
+ []
+
+
+LaTeX Warning: Citation 'RollupJSDocs' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'WebpackConcepts' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'RichHarris' on page 1 undefined on input line 11.
+
+
+Overfull \hbox (6.63556pt too wide) in paragraph at lines 11--12
+\OT1/ptm/m/n/12 je-doch vie-le klei-ne Mo-du-le ben[]otigt wer-den f[]uhrt dies
+ zu ei-ni-gen Schwie-rig-kei-ten. ([])) 
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+LaTeX Warning: Citation 'SebastianPeyrott' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Citation 'SebastianPeyrott' on page 1 undefined on input line 18
+.
+
+[1
+
+]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 26.
+
+
+LaTeX Warning: Citation 'SebastianPeyrott' on page 2 undefined on input line 37
+.
+
+
+LaTeX Warning: Citation 'SebastianPeyrott' on page 2 undefined on input line 41
+.
+
+[2]
+
+LaTeX Warning: Citation 'SebastianPeyrott' on page 3 undefined on input line 64
+.
+
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 3 undefined on input line 69.
+
+
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 3 undefined on input line 74.
+
+
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 3 undefined on input line 101
+.
+
+[3]
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 4 undefined on input line 125
+.
+
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 4 undefined on input line 153
+.
+
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 4 undefined on input line 155
+.
+
+[4]
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 5 undefined on input line 174
+.
+
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 5 undefined on input line 182
+.
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 190.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 190.
+
+
+LaTeX Warning: Citation 'AxelRauschmayer' on page 5 undefined on input line 194
+.
+
+
+Overfull \hbox (13.00783pt too wide) in paragraph at lines 194--195
+\OT1/ptm/m/n/12 Dies bie-tet ei-ne gro^^Ye Hil-fe f[]ur Ent-wick-ler und Ent-wi
+ck-le-rin-nen. Durch ei-ne sta-ti-sche []Uberpr[]ufung
+ []
+
+
+Overfull \hbox (88.62709pt too wide) in paragraph at lines 194--195
+\OT1/ptm/m/n/12 mit ei-nem Lin-ter wer-den fr[]uhzeitige Tipp-feh-ler oder auch
+ nicht verf[]ugbare Va-ria-blen erkannt.([]) 
+ []
+
+[5]
+
+LaTeX Warning: Citation 'WebpackTreeShaking' on page 6 undefined on input line 
+271.
+
+[6] [7]
+
+LaTeX Warning: Citation 'WebpackTreeShaking' on page 8 undefined on input line 
+339.
+
+
+LaTeX Warning: Citation 'CanIUseES6' on page 8 undefined on input line 346.
+
+
+LaTeX Warning: Citation 'CanIUseUsageTable' on page 8 undefined on input line 3
+46.
+
+
+LaTeX Warning: Citation 'Babel' on page 8 undefined on input line 348.
+
+
+LaTeX Warning: Citation 'Babel' on page 8 undefined on input line 350.
+
+[8]
+
+LaTeX Warning: Citation 'Babel' on page 9 undefined on input line 380.
+
+
+LaTeX Warning: Citation 'WebpackTreeShaking' on page 9 undefined on input line 
+383.
+
+
+LaTeX Warning: Citation 'RichHarris' on page 9 undefined on input line 383.
+
+
+LaTeX Warning: Citation 'RichHarris' on page 9 undefined on input line 385.
+
+
+LaTeX Warning: Citation 'NolanLawson' on page 9 undefined on input line 385.
+
+
+LaTeX Warning: Citation 'RichHarris' on page 9 undefined on input line 387.
+
+[9]
+
+LaTeX Warning: Citation 'WebpackTreeShaking' on page 10 undefined on input line
+ 423.
+
+[10]
+
+LaTeX Warning: Citation 'TamasSallai' on page 11 undefined on input line 456.
+
+
+LaTeX Warning: Citation 'Johnson1978' on page 11 undefined on input line 459.
+
+
+LaTeX Warning: Citation 'Louridas2006' on page 11 undefined on input line 461.
+
+
+LaTeX Warning: Citation 'Louridas2006' on page 11 undefined on input line 463.
+
+[11]
+
+LaTeX Warning: Citation 'Louridas2006' on page 12 undefined on input line 465.
+
+
+LaTeX Warning: Citation 'Johnson' on page 12 undefined on input line 467.
+
+
+LaTeX Warning: Citation 'Bessey2010' on page 12 undefined on input line 469.
+
+
+LaTeX Warning: Citation 'Bush' on page 12 undefined on input line 469.
+
+
+LaTeX Warning: Citation 'Johnson' on page 12 undefined on input line 471.
+
+
+LaTeX Warning: Citation 'Johnson' on page 12 undefined on input line 471.
+
+
+LaTeX Warning: Citation 'Bush' on page 12 undefined on input line 473.
+
+
+LaTeX Warning: Citation 'Bush' on page 12 undefined on input line 473.
+
+[12]
+
+LaTeX Warning: Citation 'ESLintAbout' on page 13 undefined on input line 482.
+
+
+LaTeX Warning: Citation 'ESLintAbout' on page 13 undefined on input line 484.
+
+
+LaTeX Warning: Citation 'ESLintNewRules' on page 13 undefined on input line 491
+.
+
+[13]
+
+LaTeX Warning: Citation 'Bush' on page 14 undefined on input line 534.
+
+[14]
+
+LaTeX Warning: Citation 'NodeJSModules' on page 15 undefined on input line 550.
+
+
+
+LaTeX Warning: Citation 'ESLintNewRules' on page 15 undefined on input line 565
+.
+
+[15] [16]
+Overfull \hbox (4.27852pt too wide) in paragraph at lines 644--645
+[]\OT1/ptm/b/n/12 docs/rules/(rule-id).md \OT1/ptm/m/n/12 - Do-ku-men-ta-ti-on 
+der Re-gel und der Kon-fi-gu-ra-ti-on M[]oglichkeiten. 
+ []
+
+[17]
+Overfull \hbox (6.23654pt too wide) in paragraph at lines 665--666
+[]\OT1/ptm/m/n/12 -modulebody be-steht aus meh-re-ren Mo-du-lei-tems -> Im-port
+-De-cla-ra-ti-on, Ex-port-De-cla-ra-ti-on, State-
+ []
+
+) [18] (./abbreviations.tex) (./main.lof)
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ (./main.lol)
+\tf@lol=\write7
+\openout7 = `main.lol'.
+
+ (./main.lot)
+\tf@lot=\write8
+\openout8 = `main.lot'.
+
+ [19
+
+]
+
+LaTeX Warning: Empty bibliography on input line 201.
+
+(./appendix.tex
+Overfull \hbox (12.60927pt too wide) in paragraph at lines 26--27
+[]\OT1/ptm/m/n/12 Rohdaten und auf-be-rei-te-te Da-ten der Eva-lu-ie-run-gen (L
+og-Daten, Ta-bel-len, Gra-phen, Scripts,
+ []
+
+
+Overfull \hbox (20.95569pt too wide) in paragraph at lines 31--32
+[]$\OT1/pcr/m/n/12 https : / / gitlab . mediacube . at / fhs123456 / Abschlussa
+rbeiten-[]Max-[]Muster$[] 
+ []
+
+
+Overfull \hbox (12.75569pt too wide) in paragraph at lines 40--41
+$\OT1/pcr/m/n/12 http : / / web . archive . org / web / 20160526143921 / http :
+ / / www . gamedev . net /
+ []
+
+
+Overfull \hbox (183.85562pt too wide) in paragraph at lines 40--41
+\OT1/pcr/m/n/12 page / resources / _ / technical / game-[]programming / underst
+anding-[]component-[]entity-[]systems-[]r3013$\OT1/ptm/m/n/12 ,
+ []
+
+
+Overfull \hbox (5.5557pt too wide) in paragraph at lines 42--43
+[]$\OT1/pcr/m/n/12 http : / / web . archive . org / web / 20160526144551 / http
+ : / / scottbilas . com /
+ []
+
+) [20
+
+] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 15754 strings out of 492649
+ 267047 string characters out of 6129622
+ 1118157 words of memory out of 5000000
+ 19352 multiletter control sequences out of 15000+600000
+ 31814 words of font info for 64 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 79i,9n,129p,1050b,8267s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on main.pdf (26 pages, 198482 bytes).
+PDF statistics:
+ 122 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
