@@ -549,16 +549,22 @@ Die ausgewählten JavaScript Repositories sollten  für eine möglichst große A
 
 Auf NPM befinden sich neben Bibliotheken welche ES6 verwenden, auch welche die für NodeJS entwicklert wurden. Dabei werden der NodeJS Module verwendet und sind daher für diese Arbeit nicht geeignet \autocite{NodeJSModules}. Ein weiteres Kriterium für die Auswahl der zu untersuchenden Projekte ist daher die Verwendung von ES6 Modulen.
 
-
-\subsection{Ausgewählte Libaries}
-Anhand Auswahlkriterien wurde folgende fünf Projekte ermittelt die bereits Tree Shaking und ES6  implemnentieren:
+Anhand dieser Auswahlkriterien wurde folgende drei Projekte ermittelt, welche Tree Shaking und ES6  implementieren:
 
 \begin{itemize}
-	\item{lodash\footnote{https://github.com/lodash/lodash - besucht am 15.06.2018}}
+	\item{lodash\footnote{https://github.com/lodash/lodash/tree/es - besucht am 15.06.2018}}
 	\item{rxjs\footnote{https://github.com/ReactiveX/rxjs - besucht am 15.06.2018}}
-	\item{vue\footnote{https://github.com/vuejs/vue - besucht am 15.06.2018}}
 	\item{graphql\footnote{https://github.com/graphql/graphql-js - besucht am 15.06.2018}}
 \end{itemize}
+
+
+\subsection{Implementierung von Tree Shaking}
+In allen drei Bibliotheken dient das in der \lstinline{package.json} definierte 
+
+entry point (https://webpack.js.org/configuration/entry-context/) bestehen lediglich aus imports und exports
+die restliche libary logik liegt in von einander unabhängigen modulen
+
+
 
 \section{Erstellen des Plugins}
 \subsection{Setup}
