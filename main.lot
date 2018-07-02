@@ -5,4 +5,10 @@
 \babel@toc {english}{}
 \babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Yeoman Generator: Sideeffects\relax }}{18}
+\contentsline {table}{\numberline {1}{\ignorespaces Local und Export Namen verschiedene Export Varianten\relax }}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {2}{\ignorespaces Yeoman Generator: Empty Imports\relax }}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3}{\ignorespaces Yeoman Generator: Named Exports SideEffects\relax }}{24}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4}{\ignorespaces Yeoman Generator: Entry Point SideEffects\relax }}{28}

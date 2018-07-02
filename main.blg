@@ -1,0 +1,22 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[42] biber-darwin:313> INFO - === Mon Jul  2, 2018, 12:31:30
+[70] Biber.pm:371> INFO - Reading 'main.bcf'
+[209] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[223] Biber.pm:3976> INFO - Processing section 0
+[234] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[235] bibtex.pm:1500> INFO - LaTeX decoding ...
+[261] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[264] Utils.pm:193> WARN - Duplicate entry key: 'RichHarris' in file 'bibliography.bib', skipping ...
+[298] Utils.pm:193> WARN - month field 'feb' in entry 'Bessey2010' is not an integer - this will probably not sort properly.
+[339] Utils.pm:193> WARN - month field 'November' in entry 'Vandevoorde:2002' is not an integer - this will probably not sort properly.
+[362] Utils.pm:193> WARN - Name "matbad {Snapstromegon, Kani1013, michaelze, yampus, yannick{\_}versley, BennyAlex, Marzelpan, schlagi123, Breaker222, Simmarith}" has too many commas: skipping name
+[380] Utils.pm:193> WARN - Name "sbusch schlagi123, Snapstromegon, thomaskempel, yampus, rroehrig, tuffi111" has too many commas: skipping name
+[438] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[438] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[438] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'level = 4' with 'level = 2'
+[439] Biber.pm:3804> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'de-DE'
+[439] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[466] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[481] bbl.pm:720> INFO - Output to main.bbl
+[482] Biber.pm:110> INFO - WARNINGS: 5

@@ -1,3 +1,4 @@
+\nocite{*}
 \section{Einleitung}
 
 Für Javascript Webentwickler ist das NPM Registry eines der wichtigsten Werkzeuge. Es bietet eine Plattform für Entwickler, um Sourcecode mit anderen zu teilen, bestehende Module herunterzuladen und in die eigenen Anwendung zu integrieren. Seit dem Release wurden über 600.000 verschiedene Software Pakete hinzugefügt und mit mehr als einer Millarden Downloads pro Woche ist es zu einer zentralen Bibliothek von Frameworks, Libaries und Werkzeuge für die Javascript Entwicklung geworden. \autocite{Npmdocs}
@@ -66,12 +67,12 @@ Das asynchrone Laden wird ermöglicht durch einen Funktionsaufruf nach dem anfor
 \subsection{ECMAScript 6}
 Ziel der ECMAScript 6 Modules war es ein Format zu kreieren, welches sowohl AMD, als auch CommonJS User zufriedenstellen. Die Spezifikation besitzt eine kompaktere Syntax als CommonJS und ähnlich zu AMD wird asynchrones Nachladen direkt unterstützt. Neben diesen Vorteilen wurde auch die Möglichkeit der statischen Code Analyse für Optimierungen geschaffen. 
 
-ES6 bietet 2 Arten von Exporte: Named Exports (mehrere pro Modul) und Default Exports (einen pro Modul). \autocite{AxelRauschmayer}
+ES6 bietet 2 Arten von Exporte: Named Exports (mehrere pro Modul) und Default Exports (einen pro Modul). \autocite{AxelRauschmayer2014}
 
 \subsubsection{Named Exports}
 \label{subsubsection:named_exports}
 
-Mit Hilfe des Präfixes \lstinline{export} ist es möglich mehrere Elemente aus einem Modul zu exportieren. Dies gilt sowohl für Variablen, als auch Funktionen und Klassen. Sie werden anhand ihres Namens unterschieden und werden deshalb auch als Named Exports bezeichnet. \autocite{AxelRauschmayer}
+Mit Hilfe des Präfixes \lstinline{export} ist es möglich mehrere Elemente aus einem Modul zu exportieren. Dies gilt sowohl für Variablen, als auch Funktionen und Klassen. Sie werden anhand ihres Namens unterschieden und werden deshalb auch als Named Exports bezeichnet. \autocite{AxelRauschmayer2014}
 
 \begin{lstlisting}[
     label=listing:named_exports,
@@ -98,7 +99,7 @@ Neben dem Beispiel in \ref{listing:named_exports}, gibt es noch weitere Wege um 
 \subsubsection{Default Exports}
 \label{subsubsection:default_exports}
 
-Es gibt den Fall das ein Modul auch nur ein Objekt exportiert. In der Frontendentwicklung tritt dies häufig auf wenn nur eine Klasse oder einen Konstruktor implementiert wird. Dabei wird er Default Export verwendet. Er ist wichtigste Element eines ECMAScript 6 Moduls und daher auch sehr leicht zu importieren. \autocite{AxelRauschmayer}
+Es gibt den Fall das ein Modul auch nur ein Objekt exportiert. In der Frontendentwicklung tritt dies häufig auf wenn nur eine Klasse oder einen Konstruktor implementiert wird. Dabei wird er Default Export verwendet. Er ist wichtigste Element eines ECMAScript 6 Moduls und daher auch sehr leicht zu importieren. \autocite{AxelRauschmayer2014}
 
 \begin{lstlisting}[
     label=listing:default_exports,
@@ -122,7 +123,7 @@ let inst = new MyClass();
 
 Wie \ref{listing:default_exports} veranschaulicht, besitzt der Default Export keinen Namen. Beim Importieren wird daher meist der Modul Name für die Identifizierung verwendet.
 
-In Wirklichkeit ist der Default Export auch ein Named Export mit dem speziellen Namen \lstinline{default}. Somit sind die folgenden Import Deklarationen in dem Beispiel \ref{listing:default_exports2} gleichbedeutend. \autocite{AxelRauschmayer}
+In Wirklichkeit ist der Default Export auch ein Named Export mit dem speziellen Namen \lstinline{default}. Somit sind die folgenden Import Deklarationen in dem Beispiel \ref{listing:default_exports2} gleichbedeutend. \autocite{AxelRauschmayer2014}
 
  \begin{lstlisting}[
     label=listing:default_exports2,
@@ -150,9 +151,9 @@ export { D as default };
 
 \subsubsection{Static Module Structure}
 Bei anderen Module Systeme wie CommonJS muss man den Pragrammcode ausführen, um herrauszufinden welche Importe und Exporte verwendet werden. Die Spezifikation von ES 6 zwingen den Entwickler oder die Entwicklerin zu einer statischen Modul Struktur. In diesem Kapitel wird erläutert was dies bedeutet und welche Vorteile dadurch entstehen.
-\autocite{AxelRauschmayer}
+\autocite{AxelRauschmayer2014}
 
-Eine statische Modul Struktur ermöglicht es durch kompilieren des Codes die darin befindlichen Importe und Exporte zu ermitteln. Es ist nicht nötig den Sourcecode auszuführen. In den folgenden Beispiel \ref{listing:commonjs_nonstatic} wird gezeigt warum dies bei CommonJS nicht möglich ist. \autocite{AxelRauschmayer}
+Eine statische Modul Struktur ermöglicht es durch kompilieren des Codes die darin befindlichen Importe und Exporte zu ermitteln. Es ist nicht nötig den Sourcecode auszuführen. In den folgenden Beispiel \ref{listing:commonjs_nonstatic} wird gezeigt warum dies bei CommonJS nicht möglich ist. \autocite{AxelRauschmayer2014}
 
 \begin{lstlisting}[
     label=listing:commonjs_nonstatic,
@@ -171,7 +172,7 @@ if (Math.random()) {
 }
 \end{lstlisting}
 
-Bei der CommonJS Deklaration aus Beispiel \ref{listing:commonjs_nonstatic} wird erst bei der Ausführung des Codes entschieden welcher Import beziehungsweise Export verwendet wird. Es6 Module besitzen nicht diese Flexibilität. Sie zwingen den Entwickler oder die Entwicklerin dazu eine flache und statische Modul Strukturen zu verwenden.Neben den Verlust der Flexibilität bringt dies jedoch einige Vorteile mit sich. \autocite{AxelRauschmayer}
+Bei der CommonJS Deklaration aus Beispiel \ref{listing:commonjs_nonstatic} wird erst bei der Ausführung des Codes entschieden welcher Import beziehungsweise Export verwendet wird. Es6 Module besitzen nicht diese Flexibilität. Sie zwingen den Entwickler oder die Entwicklerin dazu eine flache und statische Modul Strukturen zu verwenden.Neben den Verlust der Flexibilität bringt dies jedoch einige Vorteile mit sich. \autocite{AxelRauschmayer2014}
 
 \subsubsection{Vorteile}
 
@@ -179,7 +180,7 @@ Bei der CommonJS Deklaration aus Beispiel \ref{listing:commonjs_nonstatic} wird 
 
 CommonJS liefert beim Anfordern von abhängigen Modulen ein Objekt zurück. Beim Aufruf von zum Beispiel \lstinline{lib.someFunc();} muss ein langsamer Property Lookup durchgeführt werden.
 
-Im Gegensatz dazu sind die Inhalte bei dem Import einer ES6 Moduls bekannt. Der Zugriff auf die Properties kann daher optimiert werden. \autocite{AxelRauschmayer}
+Im Gegensatz dazu sind die Inhalte bei dem Import einer ES6 Moduls bekannt. Der Zugriff auf die Properties kann daher optimiert werden. \autocite{AxelRauschmayer2014}
 
 \bigskip
 
@@ -191,7 +192,7 @@ Dank der statischen Modul Struktur, sind die verfügbaren Variablen innerhalb ei
 \item Modul Importe
 \item Modul Variablen
 \end{itemize}
-Dies bietet eine große Hilfe für Entwickler und Entwicklerinnen. Durch eine statische Überprüfung mit einem Linter werden frühzeitige Tippfehler oder auch nicht verfügbare Variablen erkannt.\autocite{AxelRauschmayer}
+Dies bietet eine große Hilfe für Entwickler und Entwicklerinnen. Durch eine statische Überprüfung mit einem Linter werden frühzeitige Tippfehler oder auch nicht verfügbare Variablen erkannt.\autocite{AxelRauschmayer2014}
 
 \bigskip
 
@@ -223,6 +224,88 @@ hi
 \textbf{5. Unterstützung mehrerer Sprachen}
 
 (scheint nicht wirklich viel verwendet zu werden weiterer research nötig)
+
+\subsubsection{Imports}
+\label{subsubsection:importes}
+
+CommonJS sind Importe Kopien der exportierten Werte. Module Importe in ECMAScript 6 hingegen sind schreibgeschützte Views auf die exportierten Entitäten. Dies bedeutet das Variablen die innerhalb eines Modules deklariert wurden wärend der gesamten Programmlaufzeit bestehen bleiben. \autocite{AxelRauschmayer2018}
+
+
+\begin{lstlisting}[
+    label=listing:views,
+    caption=Importe sind Views auf exportierte Entitäten,
+	language=JavaScript
+]
+//------ lib.js ------
+export let counter = 3;
+export function incCounter() {
+    counter++;
+}
+
+//------ main1.js ------
+import { counter, incCounter } from './lib';
+
+// The imported value `counter` is live
+console.log(counter); // 3
+incCounter();
+console.log(counter); // 4
+
+// The imported value can't be changed.
+counter++; // TypeError
+\end{lstlisting}
+
+In anderen Worten jeder Import ist eine Live-Verbindung zu den exportierten Daten. \textcite{AxelRauschmayer2018} zeigt die Unterschiede zwischen verschiedenen Importen in ES6:
+\begin{itemize}
+\item Unqualified imports wie zum Beispiel \lstinline{import x from 'foo'} verhalten sich wie mit \lstinline{const} deklarierte Variablen.
+\item Wird ein gesamtes Module Objekt importiert \lstinline{import * as foo from 'foo'}, so verält es sich wie  ein mit \lstinline{Object.freeze} geschütztes Objekt.
+\end{itemize}
+
+Gemäß \textcite{ECMAScript} erzeugt die Methode \lstinline{CreateImportBinding(N, M, N2)} eine unveränderbare indirekte Bindung zu dem Exporten eines anderen Moduls. Dabei wird überprüft ob bereits ein Binding mit dem Namen \textbf{N} existiert. \textbf{M} ist die Bezeichnung des Moduls und \textbf{N2} ist der Name des von \textbf{M} exportierten Objekts.
+Im Weiteren is ebenfalls zu beachten, dass es nicht möglich ist die Werte von Importen zu ändern, man kann jedoch die Objekte ändern auf welche verwiesen wird. \autocite{AxelRauschmayer2018}
+
+\begin{lstlisting}[
+    label=listing:readonly_imports,
+    caption=Importe sind Views auf exportierte Entitäten,
+	language=JavaScript
+]
+//------ lib.js ------
+export let obj = {};
+
+//------ main.js ------
+import { obj } from './lib';
+
+obj.prop = 123; // OK
+obj = {}; // TypeError
+\end{lstlisting}
+
+Exporte in ES6 werden über den Export Eintrag verwaltet. Bis auf reexportierte Module besitzten alle Einträgen die folgenden 2 Namen: 
+
+\begin{itemize}
+\item Local Name: Ist der Name unter dem der Export im Module gespeichert ist.
+\item Export Name: Importierende Module verwenden diesen Namen, um Zugang zu dem Export zu erhalten. Nachdem importieren einer Entität, wird diese stehts mittels des Pointers erreicht. Der Pointer besteht dabei aus 2 Teilen Modul und Local Name und referenziert auf ein Binding innerhalb des Moduls.
+\end{itemize}
+\autocite{AxelRauschmayer2018}
+
+Die nachfolgende angepasste Tabelle aus \textcite{ECMAScript} gibt einen Überblick über die Local und Export Namen verschiedener Export Varianten:
+
+\begin{table}[H]
+\centering
+\caption{Local und Export Namen verschiedene Export Varianten}
+\label{local_export_names}
+\begin{tabular}{|l|l|l|}
+\hline
+Export Statement Form            & Export Name & Local Name \\ \hline
+export var v;                    & v           & v          \\ \hline
+export default function f()\{\}; & default     & f          \\ \hline
+export default function()\{\};   & default     & *default*  \\ \hline
+export default 42;               & default     & *default*  \\ \hline
+export \{x\};                    & x           & x          \\ \hline
+export \{v as x\};               & x           & v          \\ \hline
+export \{x\} from "mod";         & x           & null       \\ \hline
+export \{v as x\} from "mod";    & x           & null       \\ \hline
+export * from "mod";             & null        & null       \\ \hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Syntax}
 \label{subsubsection:Syntax}
@@ -264,9 +347,8 @@ export { name1, name2, ..., nameN } from ...;
 export { import1 as name1, import2 as name2, ..., nameN } from ...;
 \end{lstlisting}
 
-\section{Dependency Graph}
 
-\section{Tree shaking}
+\section{Tree Shaking}
 
 Tree Shaking bedeutet im Javascript Umfeld Dead-Code Elimination. Der Begriff und das dahinterliegende Konzept wurde durch den ES2015 Modul Bundler Rollup populär. Das Konzept des Tree Shaking beruht auf der statischen Struktur von ES6 Modulen. Diese werden im Zusammenhang mit Bundlern wie Webpack oder RollupJS oft auch als Pure Modules oder Modules oder Harmony Modules bezeichnet. \autocite{WebpackTreeShaking}
 
@@ -377,7 +459,7 @@ Per Default wird von Babel jedes JavaScript Modul in CommonJS konvertiert. Durch
 });
 \end{lstlisting}
 
-Listing \ref{listing:treeshacking_config} zeigt eine typische Tree Shaking Konfiguration von Babel und Webpack. Besonders wichtig ist der \lstinline{modules: false} Flag von Babel. Mit dieser kann man die automatische Modul Transformationen verändern. Neben dem \lstinline{false} Wert der diese komplett deaktiviert, ist es ebenfalls möglich andere Optionen anzugeben (\lstinline{"amd" | "umd" | "systemjs" | "commonjs"}). \autocite{Babel}
+Listing \ref{listing:treeshacking_config} zeigt eine typische Tree Shaking Konfiguration von Babel und Webpack. Besonders wichtig ist die \lstinline{modules: false} Option von Babel. Mit dieser kann man die automatische Modul Transformationen verändern. Neben dem \lstinline{false} Wert der diese komplett deaktiviert, ist es ebenfalls möglich andere Optionen anzugeben (\lstinline{"amd" | "umd" | "systemjs" | "commonjs"}). \autocite{Babel}
 
 \subsection{RollupJS}
 Neben Webpack wurde das Tree shaking Konzept vor allem durch den ES6 Module Bundler RollupJS bekannt \autocite{WebpackTreeShaking}. Dieser wird vor allem empfohlen beim Entwickeln von Libaries. Webpack wiederum bietet eine bessere Unterstützung für Assets wie Bilder oder CSS und gilt daher als besseres geeignet für die Erstellung von Apps. \autocite{RichHarris}
@@ -418,15 +500,15 @@ alles was importiert wird sollte auch exportiert werden (stimmt nicht ganz es k�
 Umfangreiche und weitverbreitete JavaScript Libaries wie zum Beispiel Lodash\footnote{https://lodash.com/ - besucht am 26.05.2018} und jQuery\footnote{https://jquery.com/ - besucht am 26.05.2018} bieten eine große Anzahl an nützlichen Tools. Sie werden meistens als NPM Modul installiert und anschließend in den Projektdateien als Import eingebunden. Zu meist werden nur Teile von den zu Verfügung gestellten Funktionalitäten auch wirklich verwendet. Das kann dazuführen das ein erheblich Teil der von Webpack erzeugten Bundledatei aus nicht benötigten Code besteht. Plugins wie der Webpack Visualizer bieten eine einfache Möglichkeit, um festzustellen, welche Module in der von Webpack generierten Bundle Datei am meisten Speicherplatz einnehmen.
 
 Jedoch bietet unter anderem Webpack eine Möglichkeit für Libary Entwickler und Entwicklerinnen diese so zu Implementieren ,dass der nicht benötigte Libary Sourcecode beim builden entfernt wird.
-Durch die Verwendung von \lstinline{sideEffects: false} in der package.json Datei innerhalb der Libary, wird Webpack mitgeteilt das Tree Shaking nicht nur auf den üblichen Projektcode anzuwenden, sondern ebenfalls auf den Code der sich im Libary Ordner befindet.
+Durch die Verwendung von \lstinline{sideEffects: false} in der package.json Datei innerhalb der Libary, wird Webpack mitgeteilt das Tree Shaking nicht nur auf den üblichen Projektcode anzuwenden, sondern ebenfalls auf den Code der sich im Libary Ordner \lstinline{node_modules} befindet.
 
-Dabei werden Importdeklarationen wie \lstinline|import {a, b} from "big-module-with-flag"| von Webpack erkannt und beim Bau der Applikation zu \lstinline|import a from "big-module-with-flag/a" import b from "big-module-with-flag/b"| umgeschrieben. Somit werden in der Bundle Datei auch nur die zwei von dem Entwickler oder der Entwicklerin verwendeten Methoden importiert und der restliche Libary Code entfernt \autocite{WebpackTreeShaking}.Zur Veranschaulichung dient ein ausführlich dokumentiertes Beispiel\footnote{https://github.com/webpack/webpack/tree/master/examples/side-effects - besucht am 26.05.2018}. 
+Dabei werden Importdeklarationen wie \lstinline|import {a, b} from "big-module-with-flag"| von Webpack erkannt und beim Bau der Applikation zu \lstinline|import a from "big-module-with-flag/a" import b from "big-module-with-flag/b"| umgeschrieben. Somit werden in der Bundle Datei auch nur die zwei von dem Entwickler oder der Entwicklerin verwendeten Methoden importiert und der restliche Libary Code entfernt \autocite{WebpackTreeShaking}. Zur Veranschaulichung dient ein ausführlich dokumentiertes Beispiel\footnote{https://github.com/webpack/webpack/tree/master/examples/side-effects - besucht am 26.05.2018}. 
 
-Wenn mit Hilfe von \lstinline{sideEffects: false} ein Modul als Rein bezeichnet wird, werden alle nicht verwendeten Methoden, Klassen oder Objekte aus dem Code entfernt. Dies kann jedoch die Funktionsweise erheblich stören. Side Effects sind somit Code Segmente, welche beim Tree Shaking nicht entfernt werden dürfen. Dies möchte ich mittels eines Beispiels näher erläutern.
+Wenn mit Hilfe von \lstinline{sideEffects: false} ein Modul als rein bezeichnet wird, werden alle nicht verwendeten Methoden, Klassen oder Objekte aus dem Code entfernt. Dies kann jedoch die Funktionsweise erheblich stören und SideEffects können entstehen. Diese sind Code Segmente, welche beim Tree Shaking nicht entfernt werden dürfen. Dies wird im Weiteren mittels eines Beispiels näher erläutert.
 
 \begin{lstlisting}[
-    label=listing:sideeffects,
-	caption=webpack.config.js,
+    label=listing:lib.js,
+	caption=Libary mit Side Effects,
 	language=JavaScript,
 ]
 	import a from 'a'
@@ -434,24 +516,87 @@ Wenn mit Hilfe von \lstinline{sideEffects: false} ein Modul als Rein bezeichnet 
     
     console.log("das ist ein sideeffect")
     
-    export default {
-    	a,
-        b
+    export {
+    		a,
+    		b
     }
 \end{lstlisting}
 
+\begin{lstlisting}[
+    label=listing:app.js,
+	caption=Verwendung der Libary,
+	language=JavaScript,
+]
+	import { a } from 'lib'
+    
+    console.log("a:", a)
+\end{lstlisting}
 
+Listing \ref{listing:lib.js} zeigt eine Beispiel für einen Libary Entry Point. Dieser exportiert alle Funktionalitäten die zur Verfügung gestellt werden.
 
+Beim Tree Shaking werden alle Imports umgeschrieben. Dabei wird \lstinline|import { a } from 'lib'| in Listing \ref{listing:app.js} zu \lstinline{import a from 'lib/a'} und somit wird jeglicher Programm Code in lib.js nicht ausgeführt. DIe \lstinline{console.log} Nachricht in Zeile 4 wirs somit nie angezeigt. Dies führt vorallem dann zu Problemen, wenn sich Side Effects auf Exporte in der Datei auswirken. 
 
+\begin{lstlisting}[
+    label=listing:lib.js_with_sideeffect,
+	caption=Side Effect mit Auswirkung auf Exporte,
+	language=JavaScript,
+]
+	import { a } from 'lib'
+    
+	a.value = 'this value is dangerous'    
+    
+     export {
+    		a
+    }
+\end{lstlisting}
+
+In Listing \ref{listing:lib.js_with_sideeffect} wird wie in Listing \ref{listing:lib.js} \lstinline{a} exportiert. Davor wird in der Zeile 3 die \lstinline{importantValue} Eigenschaft hinzugefügt. Bei aktivem Tree Shaking wird \lstinline{a} jedoch direkt mit \lstinline{import a from 'lib/a'} importiert. \lstinline{a.value} wird somit nie angelegt und kann nicht verwendet werden. Diese Unterschiede sind in spätere Folge für Benutzer und Benutzerinnen nur schwer nachzuvoll ziehen und Entwickler und Entwicklerinnen sollten bei der Erstellung einer Libary unbedingt diese vermeiden.\autocite{WebpackTreeShaking}
+
+Mit \lstinline{sideEffects: false} betrachtet Webpack den gesamten Projektcode als rein von Side Effects. Sind für die Ordnungsgemäße Ausführung jedoch einige Importe nötig, können Entwickler und Entwicklerinnen diese als String Array angegeben. Dieses akzeptiert relative Pfade , absolute Pfade und glob Pattern zu den relevaten Dateien. Webpack verwendet Micromatch \footnote{https://github.com/micromatch/micromatch - besucht am 21.06.2018} zur Auflösung der Pfade.\autocite{WebpackTreeShaking}
+
+CSS Dateien sind ein gutes Beispiel für Importe die in jedem Fall in dem gebündelten Programmcode enthalten sein müssen. Bei der Verwendung des CSS-Loader und dem Importieren in einer Projektdatei, wird der CSS Code analysiert und die darin befindlichen Klassen stehen zur Verfügung. Sollten diese aber durch Tree Shaking entfernt werden, fehlen die CSS Klassen und die dazugehörigen Styles in der Anwendung.
+\autocite{WebpackTreeShaking}
+
+\begin{lstlisting}[
+    label=listing:sideeffectful.js,
+	caption=sideeffectful.js mit CSS Side Effect,
+	language=JavaScript,
+]
+	import './styles.css'
+
+	console.log('sideeffectful file')
+
+	export const sideeffect = 'sideeffect'
+\end{lstlisting}
+
+\begin{lstlisting}[
+    label=listing:styles.css,
+	caption=styles.css,
+	language=HTML,
+]
+	.myClass {
+    		background-color: blue;
+	}
+\end{lstlisting}
+
+Listing \ref{listing:sideeffectful.js} zeigt ein JavaScript Modul, welches die CSS Datei \lstinline{styles.css} importiert. Mit der \lstinline{sideEffects: false} Webpack Konfiguration wird \lstinline{import './styles.css'} in Zeile 1 als "unused export" erkannt und ist in den gebündelten Anwendung nicht mehr vorhanden. \lstinline{console.log('sideeffectful file')} und \lstinline{export const sideeffect = 'sideeffect'} werden jedoch noch ausgeführt.
+Im Gegensatz dazu wird \lstinline{sideEffects: ["*.css"]} in der Konfigurationsdatei verwendet. Wird der CSS Import mit in die Bundle Datei übernommen. Auch wenn dies wegen dem Minify Schritt nicht sofort erkenntlich ist. Ist folgendes Code Segment darin zu finden \lstinline|function(e,n,o){(e.exports=o(2)(!1)).push([e.i,".myClass {\n    background-color: blue;\n}",""])}|.\autocite{WebpackTreeShaking}
+
+Anhand dieser Eigenschaften wurden die folgenden Annahmen in Bezug zur Vermeidung von Side Effects ermittelt, diese werden bei der Implementierung berücksichtigt und am Ende diese Arbeit auf ihre Wirksamkeit überprüft.
+
+\begin{itemize}
+\item Besitzt ein Modul Named Exports ist darauf zu achten, dass auf diese keine SideEffects wirken.
+\item Bei der Verwendung eines Default Exports wird die Gesamte Datei eingebunden. Jegliche Side Effects innerhalb der Datei werden somit inkludiert.
+\item Importe welche den Body eines Moduls ausführen werden von \textcite{Rauschmayer2018} als Empty Imports bezeichnet, können beim bündlen entfernt werden und müssen deshalb als SideEffect in der \lstinline{package.json} Datei vermerkt werden.
+\item Der Entry Point einer Libary sollte für sich eigenständige Module importieren und diese als Named Exports zur Verfügung stellen. Dieser sollte keine SideEffects beinhalten.
+\end{itemize}
+
+(named export sind ok solange se nicht nur imports sind)
 
 -------------BSP von webpack------------------
 
--vorallem wichtig für libary entwickler
--was sind sideeffects?
--wie schaut eine übliche sideeffect freie libary aus?
--Aus den ES Specs wurden folgende AST Nodes ermittelt (ImportDeclaration, ExportNamedDeclaration, ExportDefaultDeclaration)
 -des weiteren muss jeder import auch exportiert werden
--kann auch ein array von files angegeben werden (diese besitzen sideeffects)
+https://stackoverflow.com/questions/49160752/what-does-webpack-4-expect-from-a-package-with-sideeffects-false
 
 \autocite{TamasSallai}
 
@@ -559,12 +704,11 @@ Anhand dieser Auswahlkriterien wurde folgende drei Projekte ermittelt, welche Tr
 
 
 \subsection{Implementierung von Tree Shaking}
-In allen drei Bibliotheken dient das in der \lstinline{package.json} definierte 
+In den ausgewählten Repositories wurde Tree Shaking mit \lstinline{SideEffects: false} in der pakage.json Datei aktiviert. Somit werden bei der Verwendung Named Imports wie zum Beispiel \lstinline|import {add} from 'lodash'|, diese aufgelöst zu \lstinline{import add from 'lodash/add'}. In der weiteren Folge wird sämtlicher nicht genutzter Programmcode der Libary entfernt und nur die verwendeten Module in die Bundle Datei integriert.
 
-entry point (https://webpack.js.org/configuration/entry-context/) bestehen lediglich aus imports und exports
-die restliche libary logik liegt in von einander unabhängigen modulen
+Webpack startet mit der Erzeugung des Bundles bei dem definierten Entry Point. In den untersuchten Repositories dient diese Datei, um die gewünschten Funktionalitäten nach außen zu exportieren. Wie bereits im Kapitel \ref{subsubsection:side_effects} festgestellt wurde können mögliche Sideeffects in dieser Datei entfernt werden. In allen drei Fällen werden daher lediglich \lstinline{import} und \lstinline{export} verwendet.
 
-
+Da Programmcode außerhalb des benötigten Moduls nicht garantiert in der Bundle Datei enthalten ist, wurde der gesamte Sourcecode in für sich eigenständige Module aufgeteilt. Dies bedeudet, dass Module wie zum Beispiel \lstinline{add.js} alle Resourcen, welche für die ordnungsgemäße Funktionalität benötigt werden, importieren müssen.
 
 \section{Erstellen des Plugins}
 \subsection{Setup}
@@ -629,7 +773,7 @@ Für die Programmierung wird die integrierte Entwicklungsumgebung (IDE) WebStorm
 
 
 \section{Die Implementierung neuer Regeln}
-Yeoman und der ESLint-Generator bietet ebenfalls Unterstützung bei dem Anlegen neuer Regeln innerhalb des Plugins. Die dafür nötigen Dateien werden mit dem Befehl \lstinline{yo eslint:rule} erzeugt. Die neu erstellten Regeln innerhalb des Plugins sollen die Aufmerksamkeit von Entwickler und Entwicklerinnen auf die Probleme aus \ref{section:schwierigkeiten_beim_tree_shaking} richten und Wege aufzeigen um diese zu vermeiden. In diesem Kapitel wird dokumentiert wie die Regeln erstellt wurden. 
+Yeoman und der ESLint-Generator unterstützen Entwickler und Entwicklerinnen nicht nur beim Erzeugen der Projektdateiendateien sondern ebenfalls bei dem Anlegen neuer Regeln innerhalb des Plugins. Die dafür nötigen Dateien werden mit dem Befehl \lstinline{yo eslint:rule} erzeugt. Die neu erstellten Regeln innerhalb des Plugins sollen die Aufmerksamkeit von Entwickler und Entwicklerinnen auf die Probleme aus \ref{section:schwierigkeiten_beim_tree_shaking} richten und Wege aufzeigen um diese zu vermeiden. In diesem Kapitel wird dokumentiert wie die Regeln erstellt wurden. 
 
 Beim Aufruf des Generators mit \lstinline{yo eslint:rule} müssen mehrere Fragen beantwortet werden:
 
@@ -654,27 +798,433 @@ Vom Generator werden abschließend die folgenden Dateien im Projektverzeichnis e
 
 Die nachfolgenden Kapitel beschreiben die Implementierung der Regeln die benötigt werden um Code Smells beim Tree Shaking für Entwickler und Entwicklerinnen anzuzeigen.
 
-\subsection{Sideeffects}
+\subsection{Empty Imports}
 
 \begin{table}[h]
 \centering
-\caption{Yeoman Generator: Sideeffects}
-\label{tbl:sideeffects}
+\caption{Yeoman Generator: Empty Imports}
+\label{tbl:empty_imports}
 \begin{tabular}{|l|l|}
 \hline
-Rule-ID: & sideeffects \\ \hline
+Rule-ID: & empty-imports \\ \hline
 Beschreibung: & todo \\ \hline
 Beispiel für fehlerhaften Code: & todo \\ \hline
 \end{tabular}
 \end{table}
 
--modulebody besteht aus mehreren Moduleitems -> ImportDeclaration, ExportDeclaration, StatementListItem
+Gemäß den Erkenntnissen aus  Kapitel\ref{subsubsection:side_effects}, müssen Empty Imports wie zum Beispiel \lstinline{import 'module1'} als Side effect gekennzeichnet werden. Diese werden sonst beim bündeln des Programmcodes als Unused Imports erkannt und entfernt. Ziel dieser Regel ist es die Aufmerksamkeit von Entwicklern und Entwicklerinnen auf diese Art von Imports zu richten und sie daran zu erinnern diese in der  \lstinline{package.json} Datei als SideEffect zu vermerken.
 
-\section{Verwendung bestehender Core Regeln}
+Um diese Funktionsweise zu gewährleisten wurden folgende Test Datei \lstinline{test/lib/rules/empty-imports.js} erstellt: 
+
+\begin{lstlisting}[
+    label=listing:empty_import_test,
+	caption=Empty Imports Unit Tests,
+	language=JavaScript,
+]
+var ruleTester = new RuleTester();
+ruleTester.run("empty-imports", rule, {
+
+    valid: [
+      {
+        options: [['empty-import']],
+        code: `
+          import 'empty-import'
+          import lib1 from 'lib1'
+          export const export1 = 'export1'
+          export default 'default'
+        `,
+        errors: []
+      },
+      {
+        options: [],
+        code: `
+          import name from "module-name";
+          import * as name2 from "module-name";
+          import { member } from "module-name";
+          import { member as alias } from "module-name";
+          import { member1 , member2 } from "module-name";
+          import { member3 , member2 as alias2 } from "module-name";
+          import defaultMember, { member4 } from "module-name";
+          import defaultMember2, * as alias3 from "module-name";
+          import defaultMember3 from "module-name";
+        `,
+        errors: []
+      }
+    ],
+
+    invalid: [
+        {
+            code: `
+                import 'empty-import'
+                import lib1 from 'lib1'
+                export const export1 = 'export1'
+                export default 'default'
+            `,
+            errors: [{
+                message: 'empty imports are removed by tree shaking. Make sure you add empty-import to package.json sideEffects option.',
+                type: 'ImportDeclaration'
+            }]
+        }
+    ]
+});
+\end{lstlisting}
+
+Als ersten Schritt werden mit dem AstExplorer \footcite{https://astexplorer.net/ - besucht am 26.06.2018} die 
+verschiedenen Import Nodes aus dem Kapitel \ref{subsubsection:Syntax} analysiert. Der NodeType für Importe in ES6 ist \lstinline{ImportDeclaration}. In weiterer folge konnte festgestellt werden, dass Empty Import Nodes keine specifier besitzen, somit ist \lstinline{importNode.specifiers.length === 0} true, falls es sich um einen Empty Import handelt. Mit Hilfe dieser Erkenntnisse ist es bereits möglich Empty Imports aufzuspüren und zu kennzeichnen.
+
+\begin{lstlisting}[
+    label=listing:empty_import_rule_1,
+	caption=Code zum Aufspüren von Empty Imports,
+	language=JavaScript,
+]
+        function isEmptyImport(importNode) {
+            if(importNode.specifiers.length === 0) {
+              reportEmptyImport(importNode)
+            }
+        }
+
+        return {
+          'ImportDeclaration': isEmptyImport
+        };
+\end{lstlisting}
+
+Nach der Implementiern von Listing \ref{empty_import_rule_1} werden zwei der drei Tests bereits erfolgreich durchgeführt.  Beim ersten validen Test wird jedoch der Fehler \lstinline{AssertionError [ERR_ASSERTION]: Should have no errors but had 1} angezeigt. Empty Imports können in der \lstinline{package.json} Datei als SideEffects vermerkt werden. Diese werden anschließend im Programmcode inkludiert und können verwendet werden. Die Empty Imports Regel sollte dahingehend konfigurierbar sein.
+
+Hierfür sollte man als Option ein Array von Pfaden und Glob Pattern übergeben, gleich zu der SideEffects Einstellung von Webpack. \textcite{WebpackTreeShaking} zeigt, dass für die Auflösung der SideEffect Property die Bibliothek Micromatch \footnote{https://github.com/micromatch/micromatch - besucht am 26.06.2018} verwendet wird. Für die Auflösung der Array Daten innerhalb der Regel wird die selbe Libary verwendet, um die Unterschiede zwischen Webpack und Regel Konfiguration möglichst gering zu halten.
+
+Damit die Empty Imports Regel ein Array von Strings als Property akzepiert muss die Schema Konfiguration in \lstinline{lib/rules/empty-imports.js} wie folgt angepasst werden:
+
+\begin{lstlisting}[
+    label=listing:empty_import_rule_2,
+	caption=Empty Import Option Schema,
+	language=JavaScript,
+]
+      schema: [
+        {
+          type: 'array'
+        }]
+    }
+\end{lstlisting}
+
+Anschließend kann auf die Konfiguration mittels \lstinline{context.options[0]} zugegriffen werden.
+
+\begin{lstlisting}[
+    label=listing:empty_import_rule_3,
+	caption=isKnownSideEffect Funktion,
+	language=JavaScript,
+]
+        function isKnownSideEffect(emptyImportNode) {
+          return mm.any(emptyImportNode.source.value, knownSideEffects, null)
+        }
+\end{lstlisting}
+
+In weiterer Folge wird eine zusätzliche Funktion \lstinline{isKnownSideEffect} implementiert. Diese vergleicht den Value eines Imports mit den übergebenen Array. Micromatch bietet dafür die Methode \lstinline{any(str, patterns, options)} an. Diese vergleicht den übergebenen String mit dem Patternsarray und liefert true falls ein beliebiges Pattern in dem Array mit dem String übereinstimmt.
+
+Zuletzt muss noch die isEmptyImport angepasst werden, um mit der neuen Funktion alle Empty Imports zu überprüfen.
+
+\begin{lstlisting}[
+    label=listing:empty_import_rule_3,
+	caption=isKnownSideEffect Funktion,
+	language=JavaScript,
+]
+        function isEmptyImport(importNode) {
+            if(importNode.specifiers.length === 0 && !isKnownSideEffect(importNode)) {
+              reportEmptyImport(importNode)
+            }
+        }
+\end{lstlisting}
+
+Beim erneuten Ausführen der Tests werden alle erfolgreich abgeschloßen. Die Regel ist somit erfolgreich Implementiert und wird am Ende dieser Arbeit auf ihre Wirksamkeit geprüft.
+
+\subsection{Named Exports SideEffects}
+
+\begin{table}[h]
+\centering
+\caption{Yeoman Generator: Named Exports SideEffects}
+\label{tbl:empty_imports}
+\begin{tabular}{|l|l|}
+\hline
+Rule-ID: & named-exports-sideeffects \\ \hline
+Beschreibung: & todo \\ \hline
+Beispiel für fehlerhaften Code: & todo \\ \hline
+\end{tabular}
+\end{table}
+
+Ein weiterer Code Smell aus Kapitel \ref{subsubsection:side_effects} ist der Gebrauch von SideEffects auf Named Exports.
+
+\begin{lstlisting}[
+    label=listing:counter.js,
+	caption=counter.js,
+	language=JavaScript,
+]
+let counter = 1
+
+const incCounter = (newValue) => {
+	counter++
+}
+
+export {
+	incCounter,
+	counter
+}
+\end{lstlisting}
+
+\begin{lstlisting}[
+    label=listing:named_exports_sideeffects_rule_1,
+	caption=lib.js,
+	language=JavaScript,
+]
+	import { counter, incCounter } from "counter";
+	incCounter();
+	export { counter }
+\end{lstlisting}
+
+\begin{lstlisting}[
+    label=listing:named_exports_sideeffects_rule_2,
+	caption=index.js,
+	language=JavaScript,
+]
+	import { counter } from "lib";
+	console.log(counter) // 1
+\end{lstlisting}
+
+Listing \ref{listing:counter.js}, \ref{listing:named_exports_sideeffects_rule_1} und \ref{listing:named_exports_sideeffects_rule_2} zeigen ein Beispiel für einen solchen SideEffect. Obwohl die Methode \lstinline{incCounter} in \lstinline{lib.js} aufgerufen wird, wird durch Tree Shaking \lstinline|import { counter } from "lib"| zu \lstinline|import { counter } from "counter"|. Somit wird die Datei \lstinline{lib.js} nicht inkludiert und auch der \lstinline{incCounter} Aufruf geht in weiterer Folge verloren.
+
+Für die Implementierung werden Imports (\lstinline{import}), Named Exports  (\lstinline{export}) und Expressions (\lstinline{incCounter} oder \lstinline{counter.test = '123'}) benötigt. Mit dem ASTexplorer wurden erneut die dem entsprechenden Node Typen ImportDeclaration, ExportNamedDeclaration und ExpressionStatement ermittelt.
+
+Die folgende Test Datei, soll die Funktionsfähigkeit der Regel sicherstellen. Insgesamt wurden 4 valide und 4 invalide Szenarien ausgearbeitet.
+
+\begin{lstlisting}[
+    label=listing:named_exports_sideeffects_test,
+	caption=Named Exports SideEffects Unit Tests,
+	language=JavaScript,
+]
+var ruleTester = new RuleTester()
+ruleTester.run('named-exports-sideeffects', rule, {
+  valid: [
+    {
+      options: [],
+      code: `
+          import name from "module-name";
+          import name2 from "module-name2";
+          name2.sideeffect = 'sideeffect'
+          export {
+            name
+          }
+          export default name2
+        `,
+      errors: []
+    },
+    {
+      options: [],
+      code: `
+          testFunction = () => {
+            console.log('test')
+          }
+          export {
+            testFunction
+          }
+        `,
+      errors: []
+    },
+    {
+      options: [],
+      code: `
+          import name from "module-name";
+          import name2 from "module-name2";
+          console.log('test123')
+          export default name2
+        `,
+      errors: []
+    },
+    {
+      options: [],
+      code: `
+          import name from "module-name";
+          import name2 from "module-name2";
+          const tmp = 'tmp'
+          export {
+            tmp as name,
+            name as name2
+          }
+        `,
+      errors: []
+    }
+  ],
+
+  invalid: [
+    {
+      options: [],
+      code: `
+            import test2 from "module-name2";
+            test2.sideeffect = 'sideeffect'
+            export { test2 }
+    `,
+      errors: [
+        {
+          message:
+            'Effects on reexported modules (test2) could be prune by TreeShaking.',
+          type: 'ExpressionStatement'
+        }
+      ]
+    },
+    {
+      options: [],
+      code: `
+          import test2 from "module-name2";
+          test2.init('initSomeThing')
+          export { test2 }
+        `,
+      errors: [
+        {
+          message:
+            'Effects on reexported modules (test2) could be prune by TreeShaking.',
+          type: 'ExpressionStatement'
+        }
+      ]
+    },
+    {
+      options: [],
+      code: `
+          import { counter as temp1, incCounter as temp2 } from "module-name2";
+          temp2();
+          export { temp1 as tmp }
+        `,
+      errors: [
+        {
+          message:
+            'Effects on reexported modules (temp1) could be prune by TreeShaking.',
+          type: 'ExpressionStatement'
+        }
+      ]
+    },
+    {
+      options: [],
+      code: `
+          import { counter, incCounter } from "module-name2";
+          incCounter();
+          export { counter }
+        `,
+      errors: [
+        {
+          message:
+            'Effects on reexported modules (counter) could be prune by TreeShaking.',
+          type: 'ExpressionStatement'
+        }
+      ]
+    }
+  ]
+})
+
+\end{lstlisting}
+
+Die invaliden Testfälle aus Listing \ref{listing:named_exports_sideeffects_test} können in zwei Kategorien eingeteilt werden. Zum einen direkte SideEffects wie zum Beispiel \lstinline{test2.init('initSomeThing')}. Dieser wirkt direkt auf das zuvor importierte \lstinline{test2} Modul, welches anschließend als Named Export exportiert wird. Die zweite Kategorie werden in dieser Arbeit als indirekte SideEffects bezeichnet. Ein Beipiel dafür ist der Aufruf der Methode \lstinline{incCounter()} in Listing \ref{listing:named_exports_sideeffects_rule_1}. Dieser hat Auswirkungen auf den Export von \lstinline{counter}. Da die Variable \lstinline{counter} jedoch nie verwendet oder verändert wird, sind diese wesentlich schwerer zu erkennen als direkte Side Effects. 
+
+Für die Erkennung der direkten Side Effects werden alle Imports und Named Exports in einem Array gespeichert. Dies geschieht mit der Hilfe des \lstinline{ImportDeclaration} und \lstinline{ExportNamedDeclaration} Node Selectors. Diese rufen die Funktionen \lstinline{saveImport}  und \lstinline{saveNamedExport} auf. Darin werden die einzelnen Specifier zu in Array gespeichert. Zum Beispiel bei folgenden Export \lstinline|export {test1, test2}| werden jeweils die Specifier Node \lstinline{test1} und \lstinline{test2} gespeichert. Als nächsten werden alle SideEffects mit dem \lstinline{ExpressionStatement} Selector und der Funktion \lstinline{saveExpression} ebenfalls in einem Array vermerkt. Schließlich kann mit dem Selector \lstinline{Program:exit} am Ende eines jeden Moduls, der Identifier jeder gespeicherten Expression mit den Named Exports und Imports verglichen werden und bei Überschneidungen diese Expression Node als SideEffect melden.
+Somit werden SideEffects die direkt einen Named Export betreffen erkannt und eine entsprechende Warnung dem Benutzer oder der Benutzerin angezeigt.
+
+Das Erkennen von indirekten SideEffects hingegen gestaltet sich komplizierter. Zuerst werden alle  Named Imports wie zum Beispiel \lstinline|import {counter, incCounter} from 'counter'| ebenfalls in einem Array gespeichert. Der dafür verwendete Node Selector ist \lstinline{ImportDeclaration}. 
+Für indirekte SideEffects können entstehen wenn Importe mehrer Specifier besitzen. Als Beispiel die Import Specifier aus Listing \ref{listing:named_exports_sideeffects_rule_1} sind \lstinline{counter} und \lstinline{incCounter}, der Import deklariert also zwei Variablen aus dem selben Modul. Wenn nun eine der Expressions sich mit einem der Einträge in \lstinline{import} übereinstimmt und das Modul einen im selben Import befindlicher Specifier als Named Export exportiert, wird davon ausgegangen das es sich dabei um einen SideEffect handelt. Die entsprechende Expression Node wird somit reported und der Benutzer erhält einen Hinweis, dass dies zu ungewollten Effekten in seinem Programm führen kann.
+
+Indirekte SideEffects wie \lstinline{incCounter()} aus Listing \ref{listing:named_exports_sideeffects_rule_1} werden somit zusätzlich zu den direkten SideEffects erkannt und alle Tests werden erfolgreich abgeschloßen.
 
 
+\subsection{Entry Point SideEffects}
 
+\begin{table}[h]
+\centering
+\caption{Yeoman Generator: Entry Point SideEffects}
+\label{tbl:sideeffects}
+\begin{tabular}{|l|l|}
+\hline
+Rule-ID: & entry-point-sideeffects \\ \hline
+Beschreibung: & todo \\ \hline
+Beispiel für fehlerhaften Code: & todo \\ \hline
+\end{tabular}
+\end{table}
 
+Die Startdatei oder Entry Point einer JavaScript Libary ist ein wichtiger Bestandteil für die Effektivität von Tree Shaking. (einleitungsteil)
 
+\begin{lstlisting}[
+    label=listing:entry_point_sideeffects_test,
+	caption=Entry Point SideEffects Unit Tests,
+	language=JavaScript,
+]
+var ruleTester = new RuleTester()
+ruleTester.run('entry-point-sideeffects', rule, {
+  valid: [
+    {
+      options: [],
+      filename: 'test/usr/src/entry.js',
+      code: `
+        import module from 'module'
+        console.log('sideeffect')
+        export const export1 = 'export1'
+        export default 'default'
+      `,
+      errors: []
+    },
+    {
+      options: [],
+      filename: 'test/usr/src/entry.js',
+      code: `
+        import module from 'module'
+        module.test = 'tmp'
+        export const export1 = 'export1'
+        export default 'default'
+      `,
+      errors: []
+    },
+    {
+      options: [],
+      filename: 'test/usr/src/entry.js',
+      code: `
+        import module from 'module'
+        console.log('test')
+        export const export1 = 'export1'
+        export default 'default'
+      `,
+      errors: []
+    }
+  ],
 
+  invalid: [
+    {
+      options: ['**/src/entry.js'],
+      filename: 'test/usr/src/entry.js',
+      code: `
+        import module from 'module'
+        module.test = 'tmp'
+        export const export1 = 'export1'
+        export default 'default'
+      `,
+      errors: [
+        {
+          message: 'Sideeffects in the entry-point are not allowed.',
+          type: 'ExpressionStatement'
+        }
+      ]
+    },
+    {
+      options: ['**/src/entry.js'],
+      filename: 'test/usr/src/entry.js',
+      code: `
+        import module from 'module'
+        console.log('test')
+        export const export1 = 'export1'
+        export default 'default'
+      `,
+      errors: [
+        {
+          message: 'Sideeffects in the entry-point are not allowed.',
+          type: 'ExpressionStatement'
+        }
+      ]
+    }
+  ]
+})
+\end{lstlisting}
 
+Die Regel soll, jede Node im Entry Point bei der es sich weder um einen Import noch einen Export handelt, für Entwickler  und Entwicklerinnen eine Meldung anzeigen. Für die Implementierung werden die Node Types \lstinline{ImportDeclaration}, \lstinline{ExportNamedDeclaration}, \lstinline{ExportDefaultDeclaration} und \lstinline{Program} benötigt. In weiterer Folge wird zusätzlich der \lstinline{:not} Selector benötigt. Eine Beischreibung dazu lieferte der ESLint Selector Guide\footcite{https://eslint.org/docs/developer-guide/selectors - besucht am 29.06.2018}. Der gesamte Selector um alle möglichen SideEffects in einem Modul zu finden ist: \lstinline{Program > :not(ImportDeclaration, ExportNamedDeclaration, ExportDefaultDeclaration)}.
+
+Anschließend muss noch überprüft werden, ob es sich bei dem aktuellen Modul, um den Entry Point handelt. Der Benutzer oder die Benutzerin kann dies durch eine Option steuern. Die Entry Point SideEffects Regel erwartet als Parameter einen Golb Pattern String. Dieser diehnt dazu den Entry Point festzulegen. Nur dieser soll absolut frei von SideEffects sein und darf lediglich Importe und Exporte Deklarationen beinhalten.

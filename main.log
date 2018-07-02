@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  15 JUN 2018 09:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  2 JUL 2018 12:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -693,7 +693,14 @@ Package biblatex Info: ... file 'english.lbx' found.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `listing:empty_import_rule_3' multiply defined.
+
+
+LaTeX Warning: Label `tbl:empty_imports' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
@@ -792,12 +799,27 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' not found.
+Package biblatex Info: ... file 'main.bbl' found.
 
-No file main.bbl.
+(./main.bbl
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'ES6Exports':
+(biblatex)                - Name \OT1\ss busch schlagi123, Snapstromegon, thoma
+skempel, yampus, rroehrig, tuffi111"has too many commas: skipping name.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'ES6Imports':
+(biblatex)                - Name "matbad {Snapstromegon, Kani1013, michaelze, y
+ampus, yannick{\global\let \OT1\textunderscore \unhbox \voidb@x \kern .06em\vbo
+x {\hrule width.3em}\OT1\textunderscore }versley, BennyAlex, Marzelpan, schlagi
+123, Breaker222, Simmarith}"has too many commas: skipping name.
+
+)
 Package biblatex Info: Reference section=0 on input line 116.
 Package biblatex Info: Reference segment=0 on input line 116.
-(./title.tex
+ (./title.tex
 <images/FHSLogo.jpg, id=1, 516.93124pt x 333.245pt>
 File: images/FHSLogo.jpg Graphic file (type jpg)
 <use images/FHSLogo.jpg>
@@ -862,245 +884,181 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 
  [5] (./body.tex
 
-LaTeX Warning: Citation 'Npmdocs' on page 1 undefined on input line 3.
+LaTeX Warning: Citation 'Npmdocs' on page 1 undefined on input line 4.
 
-
-LaTeX Warning: Citation 'DominikWilkowski' on page 1 undefined on input line 5.
-
-
-
-Overfull \hbox (124.1707pt too wide) in paragraph at lines 5--6
-\OT1/ptm/m/n/12 Ent-wick-le-rin unn[]otige Ver-si-ons Du-pli-ka-te und un-er-re
-ich-ba-re Zwei-ge im Pro-gramm-co-de vermeiden.([]) 
- []
-
-
-LaTeX Warning: Citation 'RollupJSDocs' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Citation 'WebpackConcepts' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Citation 'RichHarris' on page 1 undefined on input line 11.
-
-
-Overfull \hbox (6.63556pt too wide) in paragraph at lines 11--12
-\OT1/ptm/m/n/12 je-doch vie-le klei-ne Mo-du-le ben[]otigt wer-den f[]uhrt dies
- zu ei-ni-gen Schwie-rig-kei-ten. ([])) 
- []
-
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 16.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Warning: Citation 'SebastianPeyrott' on page 1 undefined on input line 15
-.
-
-
-LaTeX Warning: Citation 'SebastianPeyrott' on page 1 undefined on input line 18
-.
-
-[1
+) [1
 
 ]
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 26.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 27.
+ [2]
+
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 3 undefined on input line
+ 70.
 
 
-LaTeX Warning: Citation 'SebastianPeyrott' on page 2 undefined on input line 37
-.
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 3 undefined on input line
+ 75.
 
 
-LaTeX Warning: Citation 'SebastianPeyrott' on page 2 undefined on input line 41
-.
-
-[2]
-
-LaTeX Warning: Citation 'SebastianPeyrott' on page 3 undefined on input line 64
-.
-
-
-LaTeX Warning: Citation 'AxelRauschmayer' on page 3 undefined on input line 69.
-
-
-
-LaTeX Warning: Citation 'AxelRauschmayer' on page 3 undefined on input line 74.
-
-
-
-LaTeX Warning: Citation 'AxelRauschmayer' on page 3 undefined on input line 101
-.
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 3 undefined on input line
+ 102.
 
 [3]
 
-LaTeX Warning: Citation 'AxelRauschmayer' on page 4 undefined on input line 125
-.
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 4 undefined on input line
+ 126.
 
 
-LaTeX Warning: Citation 'AxelRauschmayer' on page 4 undefined on input line 153
-.
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 4 undefined on input line
+ 154.
 
 
-LaTeX Warning: Citation 'AxelRauschmayer' on page 4 undefined on input line 155
-.
+Overfull \hbox (10.656pt too wide) in paragraph at lines 153--155
+\OT1/ptm/m/n/12 wird erl[]autert was dies be-deu-tet und wel-che Vor-tei-le da-
+durch ent-ste-hen. ([]) 
+ []
+
+
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 4 undefined on input line
+ 156.
+
+
+Overfull \hbox (18.17899pt too wide) in paragraph at lines 156--157
+\OT1/ptm/m/n/12 den Bei-spiel 7[] wird ge-zeigt warum dies bei Com-mon-JS nicht
+ m[]oglich ist. ([]) 
+ []
 
 [4]
 
-LaTeX Warning: Citation 'AxelRauschmayer' on page 5 undefined on input line 174
-.
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 5 undefined on input line
+ 175.
 
 
-LaTeX Warning: Citation 'AxelRauschmayer' on page 5 undefined on input line 182
-.
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 5 undefined on input line
+ 183.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 190.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 191.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 190.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 191.
 
 
-LaTeX Warning: Citation 'AxelRauschmayer' on page 5 undefined on input line 194
-.
+LaTeX Warning: Citation 'AxelRauschmayer2014' on page 5 undefined on input line
+ 195.
 
 
-Overfull \hbox (13.00783pt too wide) in paragraph at lines 194--195
+Overfull \hbox (13.00783pt too wide) in paragraph at lines 195--196
 \OT1/ptm/m/n/12 Dies bie-tet ei-ne gro^^Ye Hil-fe f[]ur Ent-wick-ler und Ent-wi
 ck-le-rin-nen. Durch ei-ne sta-ti-sche []Uberpr[]ufung
  []
 
 
-Overfull \hbox (88.62709pt too wide) in paragraph at lines 194--195
+Overfull \hbox (112.62709pt too wide) in paragraph at lines 195--196
 \OT1/ptm/m/n/12 mit ei-nem Lin-ter wer-den fr[]uhzeitige Tipp-feh-ler oder auch
  nicht verf[]ugbare Va-ria-blen erkannt.([]) 
  []
 
 [5]
 
-LaTeX Warning: Citation 'WebpackTreeShaking' on page 6 undefined on input line 
-271.
-
-[6] [7]
-
-LaTeX Warning: Citation 'WebpackTreeShaking' on page 8 undefined on input line 
-339.
+LaTeX Warning: Citation 'AxelRauschmayer2018' on page 6 undefined on input line
+ 231.
 
 
-LaTeX Warning: Citation 'CanIUseES6' on page 8 undefined on input line 346.
+LaTeX Warning: Citation 'AxelRauschmayer2018' on page 6 undefined on input line
+ 257.
 
 
-LaTeX Warning: Citation 'CanIUseUsageTable' on page 8 undefined on input line 3
-46.
+Overfull \hbox (60.58844pt too wide) in paragraph at lines 257--258
+[]\OT1/ptm/m/n/12 In an-de-ren Wor-ten je-der Im-port ist ei-ne Live-Verbindung
+ zu den ex-por-tier-ten Da-ten. []
+ []
 
 
-LaTeX Warning: Citation 'Babel' on page 8 undefined on input line 348.
+LaTeX Warning: Citation 'AxelRauschmayer2018' on page 6 undefined on input line
+ 264.
 
+[6]
 
-LaTeX Warning: Citation 'Babel' on page 8 undefined on input line 350.
+LaTeX Warning: Citation 'AxelRauschmayer2018' on page 7 undefined on input line
+ 287.
 
-[8]
+[7] [8] [9] [10] [11]
+Overfull \hbox (0.22581pt too wide) in paragraph at lines 502--504
+\OT1/ptm/m/n/12 jekt-co-de an-zu-wen-den, son-dern eben-falls auf den Co-de der
+ sich im Li-ba-ry Ord-ner [][]
+ []
 
-LaTeX Warning: Citation 'Babel' on page 9 undefined on input line 380.
+[12] [13] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
+Overfull \hbox (62.85092pt too wide) in paragraph at lines 598--600
+[]\OT1/ptm/m/n/12 -des wei-te-ren muss je-der im-port auch ex-por-tiert wer-den
+ https://stackoverflow.com/questions/49160752/what-
+ []
 
-
-LaTeX Warning: Citation 'WebpackTreeShaking' on page 9 undefined on input line 
-383.
-
-
-LaTeX Warning: Citation 'RichHarris' on page 9 undefined on input line 383.
-
-
-LaTeX Warning: Citation 'RichHarris' on page 9 undefined on input line 385.
-
-
-LaTeX Warning: Citation 'NolanLawson' on page 9 undefined on input line 385.
-
-
-LaTeX Warning: Citation 'RichHarris' on page 9 undefined on input line 387.
-
-[9]
-
-LaTeX Warning: Citation 'WebpackTreeShaking' on page 10 undefined on input line
- 423.
-
-[10]
-
-LaTeX Warning: Citation 'TamasSallai' on page 11 undefined on input line 456.
-
-
-LaTeX Warning: Citation 'Johnson1978' on page 11 undefined on input line 459.
-
-
-LaTeX Warning: Citation 'Louridas2006' on page 11 undefined on input line 461.
-
-
-LaTeX Warning: Citation 'Louridas2006' on page 11 undefined on input line 463.
-
-[11]
-
-LaTeX Warning: Citation 'Louridas2006' on page 12 undefined on input line 465.
-
-
-LaTeX Warning: Citation 'Johnson' on page 12 undefined on input line 467.
-
-
-LaTeX Warning: Citation 'Bessey2010' on page 12 undefined on input line 469.
-
-
-LaTeX Warning: Citation 'Bush' on page 12 undefined on input line 469.
-
-
-LaTeX Warning: Citation 'Johnson' on page 12 undefined on input line 471.
-
-
-LaTeX Warning: Citation 'Johnson' on page 12 undefined on input line 471.
-
-
-LaTeX Warning: Citation 'Bush' on page 12 undefined on input line 473.
-
-
-LaTeX Warning: Citation 'Bush' on page 12 undefined on input line 473.
-
-[12]
-
-LaTeX Warning: Citation 'ESLintAbout' on page 13 undefined on input line 482.
-
-
-LaTeX Warning: Citation 'ESLintAbout' on page 13 undefined on input line 484.
-
-
-LaTeX Warning: Citation 'ESLintNewRules' on page 13 undefined on input line 491
-.
-
-[13]
-
-LaTeX Warning: Citation 'Bush' on page 14 undefined on input line 534.
-
-[14]
-
-LaTeX Warning: Citation 'NodeJSModules' on page 15 undefined on input line 550.
-
-
-
-LaTeX Warning: Citation 'ESLintNewRules' on page 15 undefined on input line 565
-.
-
-[15] [16]
-Overfull \hbox (4.27852pt too wide) in paragraph at lines 644--645
+[14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (4.27852pt too wide) in paragraph at lines 794--795
 []\OT1/ptm/b/n/12 docs/rules/(rule-id).md \OT1/ptm/m/n/12 - Do-ku-men-ta-ti-on 
 der Re-gel und der Kon-fi-gu-ra-ti-on M[]oglichkeiten. 
  []
 
-[17]
-Overfull \hbox (6.23654pt too wide) in paragraph at lines 665--666
-[]\OT1/ptm/m/n/12 -modulebody be-steht aus meh-re-ren Mo-du-lei-tems -> Im-port
--De-cla-ra-ti-on, Ex-port-De-cla-ra-ti-on, State-
+[21]
+
+LaTeX Warning: Citation 'https://astexplorer.net/ - besucht am 26.06.2018' on p
+age 22 undefined on input line 872.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 872.
+[22]
+
+LaTeX Warning: Reference `empty_import_rule_1' on page 23 undefined on input li
+ne 891.
+
+
+Overfull \hbox (18.75244pt too wide) in paragraph at lines 893--894
+\OT1/ptm/m/n/12 Aufl[]osung der Side-Ef-fect Pro-per-ty die Bi-blio-thek Mi-cro
+-match [] ver-wen-det wird. F[]ur die Aufl[]osung
  []
 
-) [18] (./abbreviations.tex) (./main.lof)
+[23] [24] [25] [26]
+Overfull \hbox (44.49753pt too wide) in paragraph at lines 1123--1125
+\OT1/ptm/m/n/12 Ar-ray ge-spei-chert. Dies ge-schieht mit der Hil-fe des [][][]
+[][][] und [][]
+ []
+
+[27]
+Overfull \hbox (14.42468pt too wide) in paragraph at lines 1126--1128
+\OT1/ptm/m/n/12 eben-falls in ei-nem Ar-ray ge-spei-chert. Der daf[]ur ver-wen-
+de-te No-de Se-lec-tor ist [][]
+ []
+
+[28] [29]
+
+LaTeX Warning: Citation 'https://eslint.org/docs/developer-guide/selectors - be
+sucht am 29.06.2018' on page 30 undefined on input line 1228.
+
+
+Overfull \hbox (71.05283pt too wide) in paragraph at lines 1228--1229
+\OT1/ptm/m/n/12 rung wer-den die No-de Ty-pes [][][][][][], [][][][][][], [][]
+ []
+
+
+Overfull \hbox (78.40799pt too wide) in paragraph at lines 1228--1229
+\OT1/ptm/m/n/12 Side-Ef-fects in ei-nem Mo-dul zu fin-den ist: [][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][]
+ []
+
+) [30] (./abbreviations.tex) (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
@@ -1108,51 +1066,47 @@ Overfull \hbox (6.23654pt too wide) in paragraph at lines 665--666
 \tf@lol=\write7
 \openout7 = `main.lol'.
 
- (./main.lot)
+ [31
+
+] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [19
 
-]
+[32]
+LaTeX Font Info:    Font shape `OMS/ptm/m/sl' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 201.
+ [33]
+Overfull \hbox (10.20839pt too wide) in paragraph at lines 202--202
+[][]\OT1/ptm/m/n/12 Sebastian Pey-rott. 2018. \OT1/ptm/m/sl/12 Ja-vaS-cript Mo-
+du-le Sys-tems Show-down: Com-mon-JS vs AMD vs ES2015.
+ []
 
-LaTeX Warning: Empty bibliography on input line 201.
-
-(./appendix.tex
-Overfull \hbox (12.60927pt too wide) in paragraph at lines 26--27
+[34] (./appendix.tex
+Overfull \hbox (12.60927pt too wide) in paragraph at lines 16--17
 []\OT1/ptm/m/n/12 Rohdaten und auf-be-rei-te-te Da-ten der Eva-lu-ie-run-gen (L
 og-Daten, Ta-bel-len, Gra-phen, Scripts,
  []
 
-
-Overfull \hbox (20.95569pt too wide) in paragraph at lines 31--32
+)
+Overfull \hbox (20.95569pt too wide) in paragraph at lines 19--216
 []$\OT1/pcr/m/n/12 https : / / gitlab . mediacube . at / fhs123456 / Abschlussa
-rbeiten-[]Max-[]Muster$[] 
+rbeiten-[]Max-[]Muster$[]
  []
 
 
-Overfull \hbox (12.75569pt too wide) in paragraph at lines 40--41
-$\OT1/pcr/m/n/12 http : / / web . archive . org / web / 20160526143921 / http :
- / / www . gamedev . net /
+Underfull \hbox (badness 10000) in paragraph at lines 19--216
+
  []
 
-
-Overfull \hbox (183.85562pt too wide) in paragraph at lines 40--41
-\OT1/pcr/m/n/12 page / resources / _ / technical / game-[]programming / underst
-anding-[]component-[]entity-[]systems-[]r3013$\OT1/ptm/m/n/12 ,
- []
-
-
-Overfull \hbox (5.5557pt too wide) in paragraph at lines 42--43
-[]$\OT1/pcr/m/n/12 http : / / web . archive . org / web / 20160526144551 / http
- : / / scottbilas . com /
- []
-
-) [20
+[35
 
 ] (./main.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -1164,11 +1118,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 15754 strings out of 492649
- 267047 string characters out of 6129622
- 1118157 words of memory out of 5000000
- 19352 multiletter control sequences out of 15000+600000
- 31814 words of font info for 64 fonts, out of 8000000 for 9000
+ 16256 strings out of 492649
+ 275406 string characters out of 6129622
+ 1123149 words of memory out of 5000000
+ 19839 multiletter control sequences out of 15000+600000
+ 36994 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  79i,9n,129p,1050b,8267s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1180,10 +1134,10 @@ s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (26 pages, 198482 bytes).
+Output written on main.pdf (41 pages, 241270 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 172 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
