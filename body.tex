@@ -1,15 +1,28 @@
-\nocite{*}
+
 \section{Einleitung}
 
 Für Javascript Webentwickler ist das NPM Registry eines der wichtigsten Werkzeuge. Es bietet eine Plattform für Entwickler, um Sourcecode mit anderen zu teilen, bestehende Module herunterzuladen und in die eigenen Anwendung zu integrieren. Seit dem Release wurden über 600.000 verschiedene Software Pakete hinzugefügt und mit mehr als einer Millarden Downloads pro Woche ist es zu einer zentralen Bibliothek von Frameworks, Libaries und Werkzeuge für die Javascript Entwicklung geworden. \autocite{Npmdocs}
 
-Die Anzahl der Module und deren komplexe Abhängigkeiten zueinander führten jedoch im Bereich der Frontendentwicklung zu fundamentalen Problemen. Neben der Dependency Hell, dem wohl bekannteste dieser Probleme, ist ebenso entscheidend die an den Browser zu übertragende Datenmenge möglichst gering zu halten. Um dies zu erreichen muss der Entwickler oder die Entwicklerin unnötige Versions Duplikate und unerreichbare Zweige im Programmcode vermeiden.\autocite{DominikWilkowski}
+Die Anzahl der Module und deren komplexe Abhängigkeiten zueinander führten jedoch im Bereich der Frontendentwicklung zu fundamentalen Problemen. Neben der Dependency Hell, dem wohl bekannteste dieser Probleme, ist ebenso entscheidend die an den Browser zu übertragende Datenmenge möglichst gering zu halten. Um dies zu erreichen sollten die Entwickler und die Entwicklerinnen unnötige Versions Duplikate und unerreichbare Zweige im Programmcode vermeiden.\autocite{DominikWilkowski}
+
+Die benötigte Datenmenge einer Webseite hat einen negativen Effekt auf Antwortzeit einer Webseite und es existiert bereits reichlich Literatur zu den Auswirkungen der Download Zeit zu der Nutzerzufriedenheit. Bereits 1997 erkannte \textcite{Nielson1997}, die Bedeutung der Lade Geschwindigkeit einer Webseite auf die User Experience. in den 90ern waren große Bilder einer der Hauptgründe für eine Schlechte Website Performance. Mehr als 10 Jahre später, ist die Bildergröße immer noch wichtig, jedoch Aufgrund der allgemein schnellern Internetverbindungen sind die Auswirkung auf die Ladezeit nicht mehr so schwerwiegend. Auch wenn die Gründe für eine langsame Webseite sich verändert haben, bleiben die Antwortzeit Limits die selben. \autocite{Nielson2010}
+
+\begin{itemize}
+\item 0.1 Sekunden gibt das Gefühl einer sofortigen Antwort. Das Ergebnis fühlt sich an, als wäre es vom Benutzer verursacht worden, nicht vom Computer. Dieses Level der Reaktionsfähigkeit wird von den Benutzern oder Benutzerinnen als direkte Manipulation empfunden.
+\item 1 Sekunde hält den Gedankenfluss des Benutzers nahtlos. Benutzer können eine Verzögerung wahrnehmen und somit wissen, dass der Computer das Ergebnis erzeugt, aber sie fühlen sich immer noch in der Kontrolle über das Gesamterlebnis und haben nicht das Gefühl auf den Computer zu warten. Dieser Grad an Reaktionsfähigkeit ist für eine gute Navigation erforderlich.
+\item 10 Sekunden hält die Aufmerksamkeit des Benutzers oder der Benutzerin. In dem Bereich von 1-10 Sekunden fühlen sich die Benutzer und Benutzerinnen auf jeden Fall dem Computer ausgeliefert und wünschen sich, dass es schneller geht. Nach 10 Sekunden fangen sie an, über andere Dinge nachzudenken, was es schwieriger macht, ihre Gehirne wieder in die Spur zu bringen, wenn der Computer endlich reagiert.
+\end{itemize}
+
+Jedes eingesparte Bit verringert die Zeit bis der Nutzer oder die Nutzerin eine Antwort erhält und hat somit eine positive Auswirkung auf die Benutzerzufriedenheit. Im Bereich der JavaScript Webentwicklung wird Verrrigerung die Datenmenge vorallem durch die Minification des Programmcode erreicht. Der Static Bundler Webpack bietet, seit der Veröffentlichung von Version 2 die Möglichkeit, mit Hilfe von Tree Shaking, nicht benutzten Code zu bereinigen und somit die Datenmenge noch mehr zu verkleinern. \autocite{WebpackTreeShaking}
+
 
 \section{Static Module Bundler}
-Static Module Bundler wie Webpack und RollupJS ermittelt alle für die Anwendung benötigten Module und bündelt diese anschließend in einer oder mehrere Dateien. Dafür wird ausgehend von konfigurierten Einstiegspunkten ein Baum aus Abhängigkeiten erzeugt. Neben dem eigenen Programmcode beinhaltet dieser auch Npm Packete und sogar statische Assets wie Bilder oder CSS Dateien. Die Abhängigkeiten werden aufgelöst um daraus wieder je nach Konfiguration eine oder mehrere Bundle Dateien zu erzeugen. Je nach Anwendungsfall kann es von Vorteil sein den Programmcode als eine größere Datei oder in mehreren Teilen an den Browser auszuliefern, um ein möglichst schnelles laden der Webseite zu gewährleisten.
+Static Module Bundler wie Webpack und RollupJS ermittelt alle für die Anwendung benötigten Module und bündelt diese anschließend in einer oder mehrere Dateien. Dafür wird ausgehend von konfigurierten Einstiegspunkten ein Baum aus Abhängigkeiten erzeugt. Neben dem eigenen Programmcode beinhaltet dieser auch Npm Packete und sogar statische Assets wie Bilder oder CSS Dateien. Die Abhängigkeiten werden aufgelöst um daraus wieder je nach Konfiguration eine oder mehrere Bundle Dateien zu erzeugen. Je nach Anwendungsfall kann es von Vorteil sein den Programmcode als eine größere Datei oder in mehreren Teilen an den Browser auszuliefern, um ein möglichst schnelles Laden der Webseite zu gewährleisten.
 \autocite{RollupJSDocs,WebpackConcepts}
 
-(Bundler so wie Webpack umhüllen jedes Code Module in Funktionen. Damit wird eine Browser freundliche Implementierung und das Laden der Assets je nach Bedarf gewährleistet. Wenn jedoch viele kleine Module benötigt werden führt dies zu einigen Schwierigkeiten. \autocite{RichHarris})
+Bundler so wie Webpack umhüllen jedes Code Module in Funktionen. Damit wird eine Browser freundliche Implementierung und das Laden der Assets je nach Bedarf gewährleistet \autocite{RichHarris}. Zu beachten ist der Unterschied zwischen Laden und Bündlen von Modulen. Werkzeuge wie SystemJS, wird verwendet, um Module zur Laufzeit im Browser zu laden und zu übertragen. Im Gegensatz dazu werden bei Webpack Module durch sogennante Loader transpiliert und gebündelt bevor die den Browser erreichen. \autocite{WebpackComparison}
+
+Dabei hat jede Methode ihre Vorteile und Nachteile. Das Laden und Übertragen von Modulen zur Laufzeit kann viel Aufwand für größere Sites und Anwendungen mit vielen Modulen verursachen. Aus diesem Grund ist SystemJS sinnvoller für kleinere Projekte, bei denen weniger Module benötigt werden. \autocite{WebpackComparison}
 
 \section{Modules in JavaScript}
 \label{section:modules_in_javaScript}
@@ -67,12 +80,12 @@ Das asynchrone Laden wird ermöglicht durch einen Funktionsaufruf nach dem anfor
 \subsection{ECMAScript 6}
 Ziel der ECMAScript 6 Modules war es ein Format zu kreieren, welches sowohl AMD, als auch CommonJS User zufriedenstellen. Die Spezifikation besitzt eine kompaktere Syntax als CommonJS und ähnlich zu AMD wird asynchrones Nachladen direkt unterstützt. Neben diesen Vorteilen wurde auch die Möglichkeit der statischen Code Analyse für Optimierungen geschaffen. 
 
-ES6 bietet 2 Arten von Exporte: Named Exports (mehrere pro Modul) und Default Exports (einen pro Modul). \autocite{AxelRauschmayer2014}
+ES6 bietet 2 Arten von Exporte: Named Exports (mehrere pro Modul) und Default Exports (einen pro Modul). \autocite{Rauschmayer2014}
 
 \subsubsection{Named Exports}
 \label{subsubsection:named_exports}
 
-Mit Hilfe des Präfixes \lstinline{export} ist es möglich mehrere Elemente aus einem Modul zu exportieren. Dies gilt sowohl für Variablen, als auch Funktionen und Klassen. Sie werden anhand ihres Namens unterschieden und werden deshalb auch als Named Exports bezeichnet. \autocite{AxelRauschmayer2014}
+Mit Hilfe des Präfixes \lstinline{export} ist es möglich mehrere Elemente aus einem Modul zu exportieren. Dies gilt sowohl für Variablen, als auch Funktionen und Klassen. Sie werden anhand ihres Namens unterschieden und werden deshalb auch als Named Exports bezeichnet. \autocite{Rauschmayer2014}
 
 \begin{lstlisting}[
     label=listing:named_exports,
@@ -99,7 +112,7 @@ Neben dem Beispiel in \ref{listing:named_exports}, gibt es noch weitere Wege um 
 \subsubsection{Default Exports}
 \label{subsubsection:default_exports}
 
-Es gibt den Fall das ein Modul auch nur ein Objekt exportiert. In der Frontendentwicklung tritt dies häufig auf wenn nur eine Klasse oder einen Konstruktor implementiert wird. Dabei wird er Default Export verwendet. Er ist wichtigste Element eines ECMAScript 6 Moduls und daher auch sehr leicht zu importieren. \autocite{AxelRauschmayer2014}
+Es gibt den Fall das ein Modul auch nur ein Objekt exportiert. In der Frontendentwicklung tritt dies häufig auf wenn nur eine Klasse oder einen Konstruktor implementiert wird. Dabei wird er Default Export verwendet. Er ist wichtigste Element eines ECMAScript 6 Moduls und daher auch sehr leicht zu importieren. \autocite{Rauschmayer2014}
 
 \begin{lstlisting}[
     label=listing:default_exports,
@@ -123,7 +136,7 @@ let inst = new MyClass();
 
 Wie \ref{listing:default_exports} veranschaulicht, besitzt der Default Export keinen Namen. Beim Importieren wird daher meist der Modul Name für die Identifizierung verwendet.
 
-In Wirklichkeit ist der Default Export auch ein Named Export mit dem speziellen Namen \lstinline{default}. Somit sind die folgenden Import Deklarationen in dem Beispiel \ref{listing:default_exports2} gleichbedeutend. \autocite{AxelRauschmayer2014}
+In Wirklichkeit ist der Default Export auch ein Named Export mit dem speziellen Namen \lstinline{default}. Somit sind die folgenden Import Deklarationen in dem Beispiel \ref{listing:default_exports2} gleichbedeutend. \autocite{Rauschmayer2014}
 
  \begin{lstlisting}[
     label=listing:default_exports2,
@@ -151,9 +164,9 @@ export { D as default };
 
 \subsubsection{Static Module Structure}
 Bei anderen Module Systeme wie CommonJS muss man den Pragrammcode ausführen, um herrauszufinden welche Importe und Exporte verwendet werden. Die Spezifikation von ES 6 zwingen den Entwickler oder die Entwicklerin zu einer statischen Modul Struktur. In diesem Kapitel wird erläutert was dies bedeutet und welche Vorteile dadurch entstehen.
-\autocite{AxelRauschmayer2014}
+\autocite{Rauschmayer2014}
 
-Eine statische Modul Struktur ermöglicht es durch kompilieren des Codes die darin befindlichen Importe und Exporte zu ermitteln. Es ist nicht nötig den Sourcecode auszuführen. In den folgenden Beispiel \ref{listing:commonjs_nonstatic} wird gezeigt warum dies bei CommonJS nicht möglich ist. \autocite{AxelRauschmayer2014}
+Eine statische Modul Struktur ermöglicht es durch kompilieren des Codes die darin befindlichen Importe und Exporte zu ermitteln. Es ist nicht nötig den Sourcecode auszuführen. In den folgenden Beispiel \ref{listing:commonjs_nonstatic} wird gezeigt warum dies bei CommonJS nicht möglich ist. \autocite{Rauschmayer2014}
 
 \begin{lstlisting}[
     label=listing:commonjs_nonstatic,
@@ -172,7 +185,7 @@ if (Math.random()) {
 }
 \end{lstlisting}
 
-Bei der CommonJS Deklaration aus Beispiel \ref{listing:commonjs_nonstatic} wird erst bei der Ausführung des Codes entschieden welcher Import beziehungsweise Export verwendet wird. Es6 Module besitzen nicht diese Flexibilität. Sie zwingen den Entwickler oder die Entwicklerin dazu eine flache und statische Modul Strukturen zu verwenden.Neben den Verlust der Flexibilität bringt dies jedoch einige Vorteile mit sich. \autocite{AxelRauschmayer2014}
+Bei der CommonJS Deklaration aus Beispiel \ref{listing:commonjs_nonstatic} wird erst bei der Ausführung des Codes entschieden welcher Import beziehungsweise Export verwendet wird. Es6 Module besitzen nicht diese Flexibilität. Sie zwingen den Entwickler oder die Entwicklerin dazu eine flache und statische Modul Strukturen zu verwenden.Neben den Verlust der Flexibilität bringt dies jedoch einige Vorteile mit sich. \autocite{Rauschmayer2014}
 
 \subsubsection{Vorteile}
 
@@ -180,7 +193,7 @@ Bei der CommonJS Deklaration aus Beispiel \ref{listing:commonjs_nonstatic} wird 
 
 CommonJS liefert beim Anfordern von abhängigen Modulen ein Objekt zurück. Beim Aufruf von zum Beispiel \lstinline{lib.someFunc();} muss ein langsamer Property Lookup durchgeführt werden.
 
-Im Gegensatz dazu sind die Inhalte bei dem Import einer ES6 Moduls bekannt. Der Zugriff auf die Properties kann daher optimiert werden. \autocite{AxelRauschmayer2014}
+Im Gegensatz dazu sind die Inhalte bei dem Import einer ES6 Moduls bekannt. Der Zugriff auf die Properties kann daher optimiert werden. \autocite{Rauschmayer2014}
 
 \bigskip
 
@@ -192,43 +205,30 @@ Dank der statischen Modul Struktur, sind die verfügbaren Variablen innerhalb ei
 \item Modul Importe
 \item Modul Variablen
 \end{itemize}
-Dies bietet eine große Hilfe für Entwickler und Entwicklerinnen. Durch eine statische Überprüfung mit einem Linter werden frühzeitige Tippfehler oder auch nicht verfügbare Variablen erkannt.\autocite{AxelRauschmayer2014}
+Dies bietet eine große Hilfe für Entwickler und Entwicklerinnen. Durch eine statische Überprüfung mit einem Linter werden frühzeitige Tippfehler oder auch nicht verfügbare Variablen erkannt.\autocite{Rauschmayer2014}
 
 \bigskip
 
 \textbf{3. Macro Support}
 
-(scheint nicht wirklich viel verwendet zu werden weiterer research nötig)
-
-\begin{lstlisting}[
-    label=listing:sweetjs_macro,
-    caption=Macros in Javascript,
-	language=JavaScript
-]
-syntax hi = function (ctx) {
-  return #`console.log('hello, world!')`;
-};
-hi
-\end{lstlisting}
-
-
+Wenn eine JavaScript Engine Macros unterstützen, können Entwickler und Entwicklerinnen neue Sytaxen der Sprache hinzufügen.
 
 \bigskip
 
 \textbf{4. Type Support}
 
-(scheint nicht wirklich viel verwendet zu werden weiterer research nötig)
+Eine statische Typprüfung ist nur möglich, wenn die Typdefinitionen statisch gefunden werden. In weitere Folge können Typen aus Modulen importier werden, wenn diese eine statische Struktur besitzen.
 
 \bigskip
 
-\textbf{5. Unterstützung mehrerer Sprachen}
+\textbf{5. Unterstützung anderer Sprachen}
 
-(scheint nicht wirklich viel verwendet zu werden weiterer research nötig)
+Um das Kompilieren von Sprachen mit Macros und statischen Typen zu JavaScript zu ermöglichen, sollten die Module, aus den 2 zuvor gennanten Gründen, eine statische Struktur aufweisen.
 
 \subsubsection{Imports}
 \label{subsubsection:importes}
 
-CommonJS sind Importe Kopien der exportierten Werte. Module Importe in ECMAScript 6 hingegen sind schreibgeschützte Views auf die exportierten Entitäten. Dies bedeutet das Variablen die innerhalb eines Modules deklariert wurden wärend der gesamten Programmlaufzeit bestehen bleiben. \autocite{AxelRauschmayer2018}
+CommonJS sind Importe Kopien der exportierten Werte. Module Importe in ECMAScript 6 hingegen sind schreibgeschützte Views auf die exportierten Entitäten. Dies bedeutet das Variablen die innerhalb eines Modules deklariert wurden wärend der gesamten Programmlaufzeit bestehen bleiben. \autocite{Rauschmayer2018}
 
 
 \begin{lstlisting}[
@@ -254,14 +254,14 @@ console.log(counter); // 4
 counter++; // TypeError
 \end{lstlisting}
 
-In anderen Worten jeder Import ist eine Live-Verbindung zu den exportierten Daten. \textcite{AxelRauschmayer2018} zeigt die Unterschiede zwischen verschiedenen Importen in ES6:
+In anderen Worten jeder Import ist eine Live-Verbindung zu den exportierten Daten. \textcite{Rauschmayer2018} zeigt die Unterschiede zwischen verschiedenen Importen in ES6:
 \begin{itemize}
 \item Unqualified imports wie zum Beispiel \lstinline{import x from 'foo'} verhalten sich wie mit \lstinline{const} deklarierte Variablen.
 \item Wird ein gesamtes Module Objekt importiert \lstinline{import * as foo from 'foo'}, so verält es sich wie  ein mit \lstinline{Object.freeze} geschütztes Objekt.
 \end{itemize}
 
 Gemäß \textcite{ECMAScript} erzeugt die Methode \lstinline{CreateImportBinding(N, M, N2)} eine unveränderbare indirekte Bindung zu dem Exporten eines anderen Moduls. Dabei wird überprüft ob bereits ein Binding mit dem Namen \textbf{N} existiert. \textbf{M} ist die Bezeichnung des Moduls und \textbf{N2} ist der Name des von \textbf{M} exportierten Objekts.
-Im Weiteren is ebenfalls zu beachten, dass es nicht möglich ist die Werte von Importen zu ändern, man kann jedoch die Objekte ändern auf welche verwiesen wird. \autocite{AxelRauschmayer2018}
+Im Weiteren is ebenfalls zu beachten, dass es nicht möglich ist die Werte von Importen zu ändern, man kann jedoch die Objekte ändern auf welche verwiesen wird. \autocite{Rauschmayer2018}
 
 \begin{lstlisting}[
     label=listing:readonly_imports,
@@ -284,7 +284,7 @@ Exporte in ES6 werden über den Export Eintrag verwaltet. Bis auf reexportierte 
 \item Local Name: Ist der Name unter dem der Export im Module gespeichert ist.
 \item Export Name: Importierende Module verwenden diesen Namen, um Zugang zu dem Export zu erhalten. Nachdem importieren einer Entität, wird diese stehts mittels des Pointers erreicht. Der Pointer besteht dabei aus 2 Teilen Modul und Local Name und referenziert auf ein Binding innerhalb des Moduls.
 \end{itemize}
-\autocite{AxelRauschmayer2018}
+\autocite{Rauschmayer2018}
 
 Die nachfolgende angepasste Tabelle aus \textcite{ECMAScript} gibt einen Überblick über die Local und Export Namen verschiedener Export Varianten:
 
@@ -720,7 +720,7 @@ Nach der Installation wird mit dem Befehl \lstinline{yo eslint:plugin} der Gener
 \begin{itemize}
 	\item \textbf{Name:} silltho
     \item \textbf{Plugin-Id:} threeshaking
-    \item \textbf{Beschreibung:} --todo--
+    \item \textbf{Beschreibung:} Webpack Tree Shaking Support
     \item \textbf{Werden Benutzerdefinierte Regeln verwendet?:} Ja
     \item \textbf{Werden Processors verwendet?:} Nein
 \end{itemize}
@@ -735,7 +735,7 @@ Die daraus resultierende package.json Datei sieht wie folgt aus:
 {
   "name": "eslint-plugin-treeshaking",
   "version": "0.0.0",
-  "description": "test",
+  "description": "Webpack Tree Shaking Support",
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -763,13 +763,7 @@ Die daraus resultierende package.json Datei sieht wie folgt aus:
 In weiterer Folge wurde neben der \lstinline{README.md} Datei auch ein \lstinline{lib} und \lstinline{tests} Ordner im Projektverzeichnis erstellt. Der Ordner \lstinline{lib/rules} wird später den Programmcode für die neu erstellten Regeln beinhalten.
 
 \subsection{Entwicklungsumgebung}
-Für die Programmierung wird die integrierte Entwicklungsumgebung (IDE) WebStorm von JetBrains in der Version 2018.1.2 verwendet. 
-
--eslint 3.9.1
--astexplorer
--mocha test suite
--prettier
--husky
+Für die Programmierung wird die integrierte Entwicklungsumgebung (IDE) WebStorm von JetBrains in der Version 2018.1.2 verwendet. Um Zeitpunkt dieser Arbeit ist die aktuellste verfügbare ESLint Version 4.19.1. In weitere Folge wird Prettier\footnote{https://prettier.io/ - besucht am 04.07.2018} für die Code Formatierung genutzt. Anschließend wurde noch Husky\footnote{https://github.com/typicode/husky - besucht am 04.07.2018} verwendet um Git Hooks für Prettier und die Teste Suite zu registrieren.
 
 
 \section{Die Implementierung neuer Regeln}
@@ -806,9 +800,8 @@ Die nachfolgenden Kapitel beschreiben die Implementierung der Regeln die benöti
 \label{tbl:empty_imports}
 \begin{tabular}{|l|l|}
 \hline
-Rule-ID: & empty-imports \\ \hline
-Beschreibung: & todo \\ \hline
-Beispiel für fehlerhaften Code: & todo \\ \hline
+Rule-ID: & no-empty-imports \\ \hline
+Beschreibung: & disallow Empty Imports \\ \hline
 \end{tabular}
 \end{table}
 
@@ -944,9 +937,8 @@ Beim erneuten Ausführen der Tests werden alle erfolgreich abgeschloßen. Die Re
 \label{tbl:empty_imports}
 \begin{tabular}{|l|l|}
 \hline
-Rule-ID: & named-exports-sideeffects \\ \hline
-Beschreibung: & todo \\ \hline
-Beispiel für fehlerhaften Code: & todo \\ \hline
+Rule-ID: & no-named-exports-sideeffects \\ \hline
+Beschreibung: & disallow SideEffects onto Named Exports \\ \hline
 \end{tabular}
 \end{table}
 
@@ -1137,13 +1129,12 @@ Indirekte SideEffects wie \lstinline{incCounter()} aus Listing \ref{listing:name
 \label{tbl:sideeffects}
 \begin{tabular}{|l|l|}
 \hline
-Rule-ID: & entry-point-sideeffects \\ \hline
-Beschreibung: & todo \\ \hline
-Beispiel für fehlerhaften Code: & todo \\ \hline
+Rule-ID: & no-entry-point-sideeffects \\ \hline
+Beschreibung: & disallow SideEffects in the Entry Point \\ \hline
 \end{tabular}
 \end{table}
 
-Die Startdatei oder Entry Point einer JavaScript Libary ist ein wichtiger Bestandteil für die Effektivität von Tree Shaking. (einleitungsteil)
+Die Startdatei oder Entry Point einer JavaScript Libary ist ein wichtiger Bestandteil für die Effektivität von Tree Shaking.
 
 \begin{lstlisting}[
     label=listing:entry_point_sideeffects_test,
