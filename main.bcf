@@ -3577,9 +3577,9 @@
     <bcf:citekey order="49">WebpackTreeShaking</bcf:citekey>
     <bcf:citekey order="50">WebpackTreeShaking</bcf:citekey>
     <bcf:citekey order="51">WebpackTreeShaking</bcf:citekey>
-    <bcf:citekey order="52">Rauschmayer2018</bcf:citekey>
+    <bcf:citekey order="52">NodeJSModules</bcf:citekey>
     <bcf:citekey order="53">Rauschmayer2018</bcf:citekey>
-    <bcf:citekey order="54">TamasSallai</bcf:citekey>
+    <bcf:citekey order="54">Rauschmayer2018</bcf:citekey>
     <bcf:citekey order="55">Johnson1978</bcf:citekey>
     <bcf:citekey order="56">Johnson1978</bcf:citekey>
     <bcf:citekey order="57">Louridas2006</bcf:citekey>
@@ -3600,13 +3600,10 @@
     <bcf:citekey order="72">ESLintAbout</bcf:citekey>
     <bcf:citekey order="73">ESLintAbout</bcf:citekey>
     <bcf:citekey order="74">ESLintNewRules</bcf:citekey>
-    <bcf:citekey order="75">Bush</bcf:citekey>
-    <bcf:citekey order="76">NodeJSModules</bcf:citekey>
-    <bcf:citekey order="77">ESLintNewRules</bcf:citekey>
-    <bcf:citekey order="79">https://astexplorer.net/ - besucht am 26.06.2018</bcf:citekey>
-    <bcf:citekey order="80">WebpackTreeShaking</bcf:citekey>
-    <bcf:citekey order="81">WebpackTreeShaking</bcf:citekey>
-    <bcf:citekey order="82">https://eslint.org/docs/developer-guide/selectors - besucht am 29.06.2018</bcf:citekey>
+    <bcf:citekey order="75">ESLintNewRules</bcf:citekey>
+    <bcf:citekey order="77">https://astexplorer.net/ - besucht am 26.06.2018</bcf:citekey>
+    <bcf:citekey order="78">WebpackTreeShaking</bcf:citekey>
+    <bcf:citekey order="79">WebpackTreeShaking</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="cms">

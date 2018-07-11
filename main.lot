@@ -7,8 +7,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {1}{\ignorespaces Local und Export Namen verschiedene Export Varianten\relax }}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2}{\ignorespaces Yeoman Generator: Empty Imports\relax }}{22}
+\contentsline {table}{\numberline {2}{\ignorespaces Yeoman Generator: Empty Imports\relax }}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3}{\ignorespaces Yeoman Generator: Named Exports SideEffects\relax }}{25}
+\contentsline {table}{\numberline {3}{\ignorespaces Yeoman Generator: Named Exports SideEffects\relax }}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4}{\ignorespaces Yeoman Generator: Entry Point SideEffects\relax }}{29}
+\contentsline {table}{\numberline {4}{\ignorespaces Yeoman Generator: Entry Point SideEffects\relax }}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5}{\ignorespaces ESLint Optionen f\IeC {\"u}r graphql-js\relax }}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6}{\ignorespaces ESLint Optionen f\IeC {\"u}r vue\relax }}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7}{\ignorespaces ESLint Optionen f\IeC {\"u}r lodash\relax }}{34}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {8}{\ignorespaces ESLint Optionen f\IeC {\"u}r d3\relax }}{35}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {9}{\ignorespaces ESLint Optionen f\IeC {\"u}r immutable-js\relax }}{35}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {10}{\ignorespaces ESLint Optionen f\IeC {\"u}r moment\relax }}{37}

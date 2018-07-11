@@ -1,4 +1,3 @@
-
 \section{Einleitung}
 
 Für Javascript Webentwickler ist das NPM Registry eines der wichtigsten Werkzeuge. Es bietet eine Plattform für Entwickler, um Sourcecode mit anderen zu teilen, bestehende Module herunterzuladen und in die eigenen Anwendung zu integrieren. Seit dem Release wurden über 600.000 verschiedene Software Pakete hinzugefügt und mit mehr als einer Millarden Downloads pro Woche ist es zu einer zentralen Bibliothek von Frameworks, Libaries und Werkzeuge für die Javascript Entwicklung geworden. \autocite{Npmdocs}
@@ -468,35 +467,16 @@ Der Unterschied zwischen den Bundlern liegt in der Art und weise wie die einzeln
 
 RollupJS verwendet im Gegensatz die Möglichkeiten von ES6. Der gesamte Code landet an einem Platz und wird in einem Durchgang verarbeitet. Damit wird der Code schlanker und kann schneller starten. \autocite{RichHarris}
 
-\subsection{Hindernisse}
-\label{section:schwierigkeiten_beim_tree_shaking}
+\subsection{Side Effects}
+\label{subsection:side_effects}
 In dieser Arbeit wird Tree Shaking aus der Perspektive zweier Entwicklergruppen betrachtet. 
 
 Zum einen jene Entwickler und Entwicklerinnen welche viel projektinternen JavaScript Code in ihren Webpack Projekten verwenden. Ihr Ziel ist es eine oder mehrere möglichst kleiner Bundle Dateien an den Client auszuliefern, für schnelle Seitenaufrufe und eine angenehmes Benutzererlebnis.
 
 Die zweite Gruppe ist jene der Javascript Libary und Framework Entwickler. Ihr Sourcecode wird von vielen Projekten in verschiedener Art und Weise verwendet. In vielen Fällen wird in den Javascript Projekten nur ein kleiner klein der importierten Libaries verwendet. Wenn diese Tree Shaking unterstützt, können jedoch Bundler wie Webpack, den unnötig Code beim kompilieren der Bundle Datei entfernen.
 
-In diesem Kapitel werden meherere Hindernisse für die beiden Benutzergruppen veranschaulicht und in weitere Folge Maßnahmen zu Vermeidung dieser ermittelt. 
+In diesem Kapitel werden meherere Hindernisse für die beiden Benutzergruppen im Bezug auf Side Effects im Code veranschaulicht und in weitere Folge Maßnahmen zu Vermeidung dieser ermittelt. 
 
-(http://www.syntaxsuccess.com/viewarticle/tree-shaking-with-webpack)
-
-\subsubsection{Richtiges Importieren und Exportieren}
-
-Wie bereits in den Kapitel \ref{subsubsection:default_exports} und \ref{subsubsection:named_exports} beschrieben können Javascript Module mittels Namend oder Default Export
-
-nicht
-	import Test from 'module1'
-    Test.func1()
-besser 
-	import {func1} from 'module1'
-
-\subsubsection{Exportieren}
-keine default exporte ?
-
-alles was importiert wird sollte auch exportiert werden (stimmt nicht ganz es können sideeffects enthalten sein sideeffect: [*.css])
-
-\subsubsection{Side Effects}
-\label{subsubsection:side_effects}
 Umfangreiche und weitverbreitete JavaScript Libaries wie zum Beispiel Lodash\footnote{https://lodash.com/ - besucht am 26.05.2018} und jQuery\footnote{https://jquery.com/ - besucht am 26.05.2018} bieten eine große Anzahl an nützlichen Tools. Sie werden meistens als NPM Modul installiert und anschließend in den Projektdateien als Import eingebunden. Zu meist werden nur Teile von den zu Verfügung gestellten Funktionalitäten auch wirklich verwendet. Das kann dazuführen das ein erheblich Teil der von Webpack erzeugten Bundledatei aus nicht benötigten Code besteht. Plugins wie der Webpack Visualizer bieten eine einfache Möglichkeit, um festzustellen, welche Module in der von Webpack generierten Bundle Datei am meisten Speicherplatz einnehmen.
 
 Jedoch bietet unter anderem Webpack eine Möglichkeit für Libary Entwickler und Entwicklerinnen diese so zu Implementieren ,dass der nicht benötigte Libary Sourcecode beim builden entfernt wird.
@@ -582,7 +562,38 @@ CSS Dateien sind ein gutes Beispiel für Importe die in jedem Fall in dem gebün
 Listing \ref{listing:sideeffectful.js} zeigt ein JavaScript Modul, welches die CSS Datei \lstinline{styles.css} importiert. Mit der \lstinline{sideEffects: false} Webpack Konfiguration wird \lstinline{import './styles.css'} in Zeile 1 als "unused export" erkannt und ist in den gebündelten Anwendung nicht mehr vorhanden. \lstinline{console.log('sideeffectful file')} und \lstinline{export const sideeffect = 'sideeffect'} werden jedoch noch ausgeführt.
 Im Gegensatz dazu wird \lstinline{sideEffects: ["*.css"]} in der Konfigurationsdatei verwendet. Wird der CSS Import mit in die Bundle Datei übernommen. Auch wenn dies wegen dem Minify Schritt nicht sofort erkenntlich ist. Ist folgendes Code Segment darin zu finden \lstinline|function(e,n,o){(e.exports=o(2)(!1)).push([e.i,".myClass {\n    background-color: blue;\n}",""])}|.\autocite{WebpackTreeShaking}
 
-Anhand dieser Eigenschaften wurden die folgenden Annahmen in Bezug zur Vermeidung von Side Effects ermittelt, diese werden bei der Implementierung berücksichtigt und am Ende diese Arbeit auf ihre Wirksamkeit überprüft.
+\subsubsection{Untersuchung von JavaScript Libaries}
+\label{subsubsection:untersuchung_von_js_libs}
+Es existieren bereits Projekte auf NPM die Tree Shaking verwenden. Durch eine Sourcecode Analyse sollen zusätzliche Erkenntnisse gewonnen werden, über die zum Einsatz kommenden Design Patterns und Möglichkeiten die Entwickler und Entwicklerinnen mit Linting bei der Implementierung dieser zu unterstützen.
+In weitere Folge werden am Ende dieser Arbeit, die ausgewählten Projekte mit dem ES Lint Tree Shaking Plugin auf Fehler und Warnungen getestet. Dabei sollten keine Fehler angezeigt werden, um die richtige Funktionweise des Plugins sicherzustellen.
+
+\textbf{Auswahlkriterien}
+
+Die wichtigsten Kriterien für die zur Analyse ausgewählten Projekte ist zum einen die Verwendung eines Static Bundler und zum anderen eine bereits bestehende Implementierung von Tree Shaking. Um dies festzustellen wird zuerst geprüft ob eine package.json Datei im Repository existiert.
+
+Anschließend wird in dieser nach \lstinline{sideeffects} gesucht. Wie bereits im Kapitel \ref{subsubsection:side_effects} veranschaulicht diehnt die \lstinline{sideeffect} Einstellung dazu dem Bundler anzuzeigen, dass nur die verwendeten Exporte in dem gebuildeten Programmcode benötigt werden.
+Die ausgewählten JavaScript Repositories sollten  für eine möglichst große Anzahl an Entwicklern und Entwicklerinnen von relevanter Bedeutung sein. Für die Auswahl werden daher jene NPM Module verwendet, welche am häufigsten in Webprojekten verwendeten werden. Es existiert bereits eine generische Liste \footnote{https://www.npmjs.com/browse/depended - besucht am 06.06.2018} die diese Module beinhaltet.
+
+Auf NPM befinden sich neben Bibliotheken welche ES6 verwenden, auch welche die für NodeJS entwicklert wurden. Dabei werden der NodeJS Module verwendet und sind daher für diese Arbeit nicht geeignet \autocite{NodeJSModules}. Ein weiteres Kriterium für die Auswahl der zu untersuchenden Projekte ist daher die Verwendung von ES6 Modulen.
+Anhand dieser Auswahlkriterien wurde folgende drei Projekte ermittelt, welche Tree Shaking und ES6  implementieren:
+
+\begin{itemize}
+	\item{lodash\footnote{https://github.com/lodash/lodash/tree/es - besucht am 15.06.2018}}
+	\item{vue\footnote{https://github.com/vuejs/vue - besucht am 15.06.2018}}
+	\item{graphql\footnote{https://github.com/graphql/graphql-js - besucht am 15.06.2018}}
+\end{itemize}
+
+\textbf{Implementierung von Tree Shaking}
+
+In den ausgewählten Repositories wurde Tree Shaking mit \lstinline{SideEffects: false} in der pakage.json Datei aktiviert. Somit werden bei der Verwendung Named Imports wie zum Beispiel \lstinline|import {add} from 'lodash'|, diese aufgelöst zu \lstinline{import add from 'lodash/add'}. In der weiteren Folge wird sämtlicher nicht genutzter Programmcode der Libary entfernt und nur die verwendeten Module in die Bundle Datei integriert.
+
+Webpack startet mit der Erzeugung des Bundles bei dem definierten Entry Point. In den untersuchten Repositories dient diese Datei, um die gewünschten Funktionalitäten nach außen zu exportieren. Wie bereits im Kapitel \ref{subsubsection:side_effects} festgestellt wurde können mögliche Sideeffects in dieser Datei entfernt werden. In allen drei Fällen werden daher lediglich \lstinline{import} und \lstinline{export} verwendet.
+
+Da Programmcode außerhalb des benötigten Moduls nicht garantiert in der Bundle Datei enthalten ist, wurde der gesamte Sourcecode in für sich eigenständige Module aufgeteilt. Dies bedeudet, dass Module wie zum Beispiel \lstinline{add.js} alle Resourcen, welche für die ordnungsgemäße Funktionalität benötigt werden, importieren müssen.
+
+\subsubsection{Best Practices zur Vermeidung von SideEffects}
+
+Anhand der Untersuchten Eigenschaften und Libaries wurden die folgenden Annahmen in Bezug zur Vermeidung von Side Effects ermittelt, diese werden bei der Implementierung berücksichtigt und am Ende diese Arbeit auf ihre Wirksamkeit überprüft.
 
 \begin{itemize}
 \item Besitzt ein Modul Named Exports ist darauf zu achten, dass auf diese keine SideEffects wirken.
@@ -590,15 +601,6 @@ Anhand dieser Eigenschaften wurden die folgenden Annahmen in Bezug zur Vermeidun
 \item Importe welche den Body eines Moduls ausführen werden von \textcite{Rauschmayer2018} als Empty Imports bezeichnet, können beim bündlen entfernt werden und müssen deshalb als SideEffect in der \lstinline{package.json} Datei vermerkt werden.
 \item Der Entry Point einer Libary sollte für sich eigenständige Module importieren und diese als Named Exports zur Verfügung stellen. Dieser sollte keine SideEffects beinhalten.
 \end{itemize}
-
-(named export sind ok solange se nicht nur imports sind)
-
--------------BSP von webpack------------------
-
--des weiteren muss jeder import auch exportiert werden
-https://stackoverflow.com/questions/49160752/what-does-webpack-4-expect-from-a-package-with-sideeffects-false
-
-\autocite{TamasSallai}
 
 \section{Linting}
 Der Begriff Lint wurde erstmals in den 1970er in Verbindung mit der Softwareentwicklung erwähnt. \textcite{Johnson1978} entwicklete es an den Bell Laboratories um die Schwächen der damaligen C Compiler auszugleichen und undendteckte Fehlerin bereits kompilierten Programmen zu finden.
@@ -635,7 +637,6 @@ Ziel dieser Arbeit ist es bereits implementierte Regeln für die Optimierung von
 
 ESLint wird bereits mit mehr als 200 allgemein gültige Regeln ausgeliefert. Diese werden als Core Regeln bezeichnet. Gemäß \autocite{ESLintNewRules} muss eine eigene Regel die folgenden 6 Eigenschaften erfüllen um diese der Core Liste hinzuzufügen:
 
-
 \textbf{1. Allgemeine Anwendbarkeit}
 Core Regeln sollten relevant für eine große Anzahl an Entwickler und Entwicklerinnen sein. Regeln für Individuelle Präferenzen oder Edge Cases werden nicht akzeptiert.
 
@@ -656,7 +657,6 @@ Keine Regel sollte sich mit anderen Regeln überschneiden. Zum Beispiel gibt es 
 
 (ich mache keine core regeln wegen dem 1. punkt - die anderen Eigenschaften sollten jedoch erfüllt werden)
 
-
 https://eslint.org/docs/developer-guide/working-with-rules
 
 (Runtime Rules vs Core Rules)
@@ -674,41 +674,6 @@ Client config verwendung
 
 \subsubsection{Formatters}
 https://eslint.org/docs/user-guide/formatters/
-
-\subsection{Dependency Graph}
-Neben statischen Mustern wie nicht initialisierten Funktionen und Variablen oder Formatierungsfehler, gibt es eine weitere Kategorie, die der dynamischen Bugs. Dabei werden unter anderen die Ausführungspfade innerhalb des Applikation Codes verfolgt und Fehler in der dynamischen Natur einer Programmiersprache entdeckt. \autocite{Bush}
-
------todo-----
-
-Static Checker können Fehler in verschiedener Art entdecken und makieren. Dazu zählen: Code Smells, Formatierungs Fehler und Fehler im Ablauf 
-
-\section{Untersuchung von JavaScript Libaries}
-Es existieren bereits Projekte auf NPM die Tree Shaking verwenden. Durch eine Sourcecode Analyse sollen zusätzliche Erkenntnisse gewonnen werden, über die zum Einsatz kommenden Design Patterns und Möglichkeiten die Entwickler und Entwicklerinnen mit Linting bei der Implementierung dieser zu unterstützen.
-
-In weitere Folge werden am Ende dieser Arbeit, die ausgewählten Projekte mit dem ES Lint Tree Shaking Plugin auf Fehler und Warnungen getestet. Dabei sollten keine Fehler angezeigt werden, um die richtige Funktionweise des Plugins sicherzustellen.
-
-\subsection{Auswahlkriterien}
-Die wichtigsten Kriterien für die zur Analyse ausgewählten Projekte ist zum einen die Verwendung eines Static Bundler und zum anderen eine bereits bestehende Implementierung von Tree Shaking. Um dies festzustellen wird zuerst geprüft ob eine package.json Datei im Repository existiert. Anschließend wird in dieser nach \lstinline{sideeffects} gesucht. Wie bereits im Kapitel \ref{subsubsection:side_effects} veranschaulicht diehnt die \lstinline{sideeffect} Einstellung dazu dem Bundler anzuzeigen, dass nur die verwendeten Exporte in dem gebuildeten Programmcode benötigt werden.
-
-Die ausgewählten JavaScript Repositories sollten  für eine möglichst große Anzahl an Entwicklern und Entwicklerinnen von relevanter Bedeutung sein. Für die Auswahl werden daher jene NPM Module verwendet, welche am häufigsten in Webprojekten verwendeten werden. Es existiert bereits eine generische Liste \footnote{https://www.npmjs.com/browse/depended - besucht am 06.06.2018} die diese Module beinhaltet.
-
-Auf NPM befinden sich neben Bibliotheken welche ES6 verwenden, auch welche die für NodeJS entwicklert wurden. Dabei werden der NodeJS Module verwendet und sind daher für diese Arbeit nicht geeignet \autocite{NodeJSModules}. Ein weiteres Kriterium für die Auswahl der zu untersuchenden Projekte ist daher die Verwendung von ES6 Modulen.
-
-Anhand dieser Auswahlkriterien wurde folgende drei Projekte ermittelt, welche Tree Shaking und ES6  implementieren:
-
-\begin{itemize}
-	\item{lodash\footnote{https://github.com/lodash/lodash/tree/es - besucht am 15.06.2018}}
-	\item{rxjs\footnote{https://github.com/ReactiveX/rxjs - besucht am 15.06.2018}}
-	\item{graphql\footnote{https://github.com/graphql/graphql-js - besucht am 15.06.2018}}
-\end{itemize}
-
-
-\subsection{Implementierung von Tree Shaking}
-In den ausgewählten Repositories wurde Tree Shaking mit \lstinline{SideEffects: false} in der pakage.json Datei aktiviert. Somit werden bei der Verwendung Named Imports wie zum Beispiel \lstinline|import {add} from 'lodash'|, diese aufgelöst zu \lstinline{import add from 'lodash/add'}. In der weiteren Folge wird sämtlicher nicht genutzter Programmcode der Libary entfernt und nur die verwendeten Module in die Bundle Datei integriert.
-
-Webpack startet mit der Erzeugung des Bundles bei dem definierten Entry Point. In den untersuchten Repositories dient diese Datei, um die gewünschten Funktionalitäten nach außen zu exportieren. Wie bereits im Kapitel \ref{subsubsection:side_effects} festgestellt wurde können mögliche Sideeffects in dieser Datei entfernt werden. In allen drei Fällen werden daher lediglich \lstinline{import} und \lstinline{export} verwendet.
-
-Da Programmcode außerhalb des benötigten Moduls nicht garantiert in der Bundle Datei enthalten ist, wurde der gesamte Sourcecode in für sich eigenständige Module aufgeteilt. Dies bedeudet, dass Module wie zum Beispiel \lstinline{add.js} alle Resourcen, welche für die ordnungsgemäße Funktionalität benötigt werden, importieren müssen.
 
 \section{Erstellen des Plugins}
 \subsection{Setup}
@@ -794,7 +759,7 @@ Die nachfolgenden Kapitel beschreiben die Implementierung der Regeln die benöti
 
 \subsection{Empty Imports}
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Yeoman Generator: Empty Imports}
 \label{tbl:empty_imports}
@@ -805,7 +770,7 @@ Beschreibung: & disallow Empty Imports \\ \hline
 \end{tabular}
 \end{table}
 
-Gemäß den Erkenntnissen aus  Kapitel\ref{subsubsection:side_effects}, müssen Empty Imports wie zum Beispiel \lstinline{import 'module1'} als Side effect gekennzeichnet werden. Diese werden sonst beim bündeln des Programmcodes als Unused Imports erkannt und entfernt. Ziel dieser Regel ist es die Aufmerksamkeit von Entwicklern und Entwicklerinnen auf diese Art von Imports zu richten und sie daran zu erinnern diese in der  \lstinline{package.json} Datei als SideEffect zu vermerken.
+Gemäß den Erkenntnissen aus  Kapitel\ref{subsection:side_effects}, müssen Empty Imports wie zum Beispiel \lstinline{import 'module1'} als Side effect gekennzeichnet werden. Diese werden sonst beim bündeln des Programmcodes als Unused Imports erkannt und entfernt. Ziel dieser Regel ist es die Aufmerksamkeit von Entwicklern und Entwicklerinnen auf diese Art von Imports zu richten und sie daran zu erinnern diese in der  \lstinline{package.json} Datei als SideEffect zu vermerken.
 
 Um diese Funktionsweise zu gewährleisten wurden folgende Test Datei \lstinline{test/lib/rules/empty-imports.js} erstellt: 
 
@@ -931,7 +896,7 @@ Beim erneuten Ausführen der Tests werden alle erfolgreich abgeschloßen. Die Re
 
 \subsection{Named Exports SideEffects}
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Yeoman Generator: Named Exports SideEffects}
 \label{tbl:empty_imports}
@@ -942,7 +907,7 @@ Beschreibung: & disallow SideEffects onto Named Exports \\ \hline
 \end{tabular}
 \end{table}
 
-Ein weiterer Code Smell aus Kapitel \ref{subsubsection:side_effects} ist der Gebrauch von SideEffects auf Named Exports.
+Ein weiterer Code Smell aus Kapitel \ref{subsection:side_effects} ist der Gebrauch von SideEffects auf Named Exports.
 
 \begin{lstlisting}[
     label=listing:counter.js,
@@ -1123,7 +1088,7 @@ Indirekte SideEffects wie \lstinline{incCounter()} aus Listing \ref{listing:name
 
 \subsection{Entry Point SideEffects}
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Yeoman Generator: Entry Point SideEffects}
 \label{tbl:sideeffects}
@@ -1216,6 +1181,324 @@ ruleTester.run('entry-point-sideeffects', rule, {
 })
 \end{lstlisting}
 
-Die Regel soll, jede Node im Entry Point bei der es sich weder um einen Import noch einen Export handelt, für Entwickler  und Entwicklerinnen eine Meldung anzeigen. Für die Implementierung werden die Node Types \lstinline{ImportDeclaration}, \lstinline{ExportNamedDeclaration}, \lstinline{ExportDefaultDeclaration} und \lstinline{Program} benötigt. In weiterer Folge wird zusätzlich der \lstinline{:not} Selector benötigt. Eine Beischreibung dazu lieferte der ESLint Selector Guide\footcite{https://eslint.org/docs/developer-guide/selectors - besucht am 29.06.2018}. Der gesamte Selector um alle möglichen SideEffects in einem Modul zu finden ist: \lstinline{Program > :not(ImportDeclaration, ExportNamedDeclaration, ExportDefaultDeclaration)}.
+Die Regel soll, jede Node im Entry Point bei der es sich weder um einen Import noch einen Export handelt, für Entwickler  und Entwicklerinnen eine Meldung anzeigen. Für die Implementierung werden die Node Types \lstinline{ImportDeclaration}, \lstinline{ExportNamedDeclaration}, \lstinline{ExportDefaultDeclaration}, \lstinline{ExportAllDeclaration} und \lstinline{Program} benötigt. In weiterer Folge wird zusätzlich der \lstinline{:not} Selector verwendet. Eine Beischreibung dazu lieferte der ESLint Selector Guide\footnote{https://eslint.org/docs/developer-guide/selectors - besucht am 29.06.2018}. Der gesamte Selector um alle möglichen SideEffects in einem Modul zu finden ist: \lstinline{Program > :not(ImportDeclaration, ExportNamedDeclaration, ExportDefaultDeclaration, ExportAllDeclaration)}.
 
 Anschließend muss noch überprüft werden, ob es sich bei dem aktuellen Modul, um den Entry Point handelt. Der Benutzer oder die Benutzerin kann dies durch eine Option steuern. Die Entry Point SideEffects Regel erwartet als Parameter einen Golb Pattern String. Dieser diehnt dazu den Entry Point festzulegen. Nur dieser soll absolut frei von SideEffects sein und darf lediglich Importe und Exporte Deklarationen beinhalten.
+
+\section{Testen des Plugins}
+
+Um die Funktionsweise des Plugins \lstinline{eslint-plugin-treeshaking} zu überprüfen wird eine Testreihe mit JavaScript Repositories von Github\footnote{https://github.com/ - besucht am 07.07.2018} durchgeführt. Als Test Subjekte werden, sowohl Bibliotheken welche bereits Tree Shaking unterstützen, als auch welche die nicht darauf optimiert wurden benötigt. In dem Kapitel \ref{subsubsection:untersuchung_von_js_libs} wurden bereits drei Repositories mit der \lstinline{sideEffects: false} Konfiguration ermittelt, diese werden für die Testreihe erneut verwendet. Die drei nicht in Bezug auf Tree Shaking optimierte Bibliotheken werden der selben Liste\footnote{https://www.npmjs.com/browse/depended - besucht am 06.06.2018} entnommen. 
+
+\paragraph{Tree Shaking optimiert:}
+\begin{itemize}
+\item graphql-js\footnote{https://github.com/graphql/graphql-js - besucht am 15.06.2018} 
+\item vue\footnote{https://github.com/vuejs/vue - besucht am 15.06.2018} 
+\item lodash\footnote{https://github.com/lodash/lodash - besucht am 15.06.2018}
+\end{itemize}
+
+\paragraph{kein Tree Shaking}
+\begin{itemize}
+\item d3\footnote{https://github.com/d3/d3 - besucht am 08.07.2018}
+\item immutable-js\footnote{https://github.com/facebook/immutable-js - besucht am 08.07.2018}
+\item moment\footnote{https://github.com/moment/moment - besucht am 15.06.2018}
+\end{itemize}
+
+\subsection{Aufbau}
+
+Für die Durchführung der Tests wird von allen Testsubjekten mit dem \lstinline{git clone} Befehl eine lokale Arbeitskopie angelegt. In weitere Folge wird ESLint benötigt. In allen Repositories muss eine statische Code Analyse mit dem Tree Shaking Plugin durchgeführt werden. Am besten ist dies möglich mit dem Tool  ESLint-CLI\footnote{https://github.com/eslint/eslint-cli - besucht am 09.07.2018}. Dies ermöglicht die Tests direkt mittels Konsoleneingabe zu starten und wird mit dem Befehl \lstinline{npm install -g eslint-cli} global installiert.
+
+\begin{lstlisting}[
+    label=listing:eslintrc,
+	caption=Beispiel für eine Test Konfiguration,
+	language=JavaScript,
+]
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["treeshaking"],
+  "rules": {
+    "treeshaking/no-empty-imports": ["warn",["*.css"]],
+    "treeshaking/no-named-exports-sideeffects": "warn",
+    "treeshaking/no-entry-point-sideeffects": ["warn", "index.js"]
+  }
+}
+\end{lstlisting}
+
+Für die Konfiguration der Analyse wird eine \lstinline{.eslintrc} Datei verwendet. Listing \ref{listing:eslintrc} zeigt ein Beispiel für diese Datei. Zwischen den verschiedenen Repositories ist es nötig die Optionen bei den drei aktivierten Regeln anzupassen.
+
+Eine weitere Abhängigkeit ist das Tree Shaking Plugin\footnote{https://github.com/silltho/eslint-plugin-treeshaking}. Dieses wird durch den Befehl \lstinline{npm install git+ssh://git@github.com/silltho/eslint-plugin-treeshaking.git} installiert. Auch ESLint muss als Projektinteres Modul zur Verfügung stehen. Der Befehl \lstinline{npm install eslint} wird also ebenfalls in jeden Repository ausgeführt.
+
+Sollte eine Libary bereits ESLint verwenden, werden alle Abhängigkeiten mit \lstinline{npm install} installiert. Anschließend wird eine Analyse ohne jegliche Anpassungen durchgeführt. Dadurch werden bereits bekannte Warnungen oder Probleme ermittelt und können von den Ergebnissen ausgeschloßen werden. Zuletzt  wird die bereits bestehende Konfiguration um das Tree Shaking Plugin und die dazugehörigen drei Regeln erweitert und eine erneuter Analyse gestartet.
+
+\subsection{Ablauf}
+
+Für den Ablauf wird zuerst der Entry Point der zu Untersuchenden Bibliothek ermittelt. Der Einstiegspunkt für das Programm wird mit der Option \lstinline{main} in der \lstinline{package.json} Datei gesetzt. Dieser wird als Option für die Regel \lstinline{treeshaking/no-entry-point-sideeffects} benötigt.
+
+Anschließend wird die \lstinline{.eslintrc} Datei, wie in Listing \ref{listing:eslintrc} gezeigt wurde, erstellt und die Optionen für das jeweilige Repository angepasst.
+
+In weitere Folge muss ermittelt werden wo sich die Source Dateien der Bibliotheken befinden. Für den ESLint Befehl wird ein Glob Pattern benötigt, welches alle den gesamten Source Code abdeckt. Schließlich kann die Analyse mit dem Befehl \lstinline{eslint} durchgeführt werden. Für die Berichte werden die Optionen \lstinline{-o lint.html} und \lstinline{-f html} für eine Ausgabe als HTML Datei verwendet.
+
+Sowohl die projektspezifischen ESLint Optionen, als auch der der Befehl zum durchführen der Tests werden als Tabelle bei den Ergebnissen mit präsentiert. 
+
+\subsection{Ergebnisse}
+
+\subsubsection{graphql-js}
+\begin{table}[H]
+\centering
+\caption{ESLint Optionen für graphql-js}
+\label{tbl:graphql-js-options}
+\begin{tabular}{|l|l|}
+\hline
+no-empty-imports             & {[}"warn",{[}{]}{]}         \\ \hline
+no-named-exports-sideeffects & "warn"                      \\ \hline
+no-entry-point-sideeffects   & {[}"warn", "**/index.js"{]} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\textbf{Default Lint Befehl:} \lstinline{eslint src/**/*.js -o lint_default.html -f html --rulesdir ./resources/lint}\linebreak 
+\textbf{Lint Befehl:} \lstinline{eslint src/**/*.js -o lint.html -f html --rulesdir ./resources/lint}
+\end{center}
+
+GraphQL verwendet bereits ESLint und es existiert im Repository eine \lstinline{.eslintrc} Datei. Durch eine Analyse der in \lstinline{package.json} befindlichen Konfiguration, wird das Script \lstinline{"lint": "eslint --rulesdir ./resources/lint src || (printf '\\033[33mTry: \\033[7m npm run lint -- --fix \\033[0m\\n' && exit 1)"} zur durchführung einer statischen Analyse verwendet. \lstinline{--rulesdir ./resources/lint} definiert repository spezifische Regeln und muss für den Test adaptiert werden, um Fehler zu vermeiden. Die Konfiguration wurde in den Default Lint Befehl übernommen. Die daraus resultierende HTML Datei zeigt, dass sich keine bekannten Fehler im Repository befinden. Anschließend wurde das Tree Shaking Plugin mit den in der Tabelle \ref{tbl:graphql-js-options} ersichtlichen Regeln hinzugefügt. Auch hierbei wurden wie erhofft keine warnung oder Fehler angezeigt. Die GraphQl Bibliothek unterstützt Tree Shaking aus der Sicht des Plugins wie erwartet.
+
+\subsubsection{vue}
+\begin{table}[H]
+\centering
+\caption{ESLint Optionen für vue}
+\label{tbl:vue-options}
+\begin{tabular}{|l|l|}
+\hline
+no-empty-imports             & {[}"warn",{[}{]}{]}         \\ \hline
+no-named-exports-sideeffects & "warn"                      \\ \hline
+no-entry-point-sideeffects   & {[}"warn", "**/src/core/index.js"{]} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\textbf{Default Lint Befehl:} \lstinline{eslint src/**/*.js -o lint_default.html -f html}\linebreak 
+\textbf{Lint Befehl:} \lstinline{eslint src/**/*.js -o lint.html -f html}
+\end{center}
+
+Im Vue Repository befindet sich bereits eine \lstinline{.eslintrc}. Somit muss zuerst ein Lint Bericht ohne dem Tree Shaking Plugin erstellt werden. Anders wie bei GraphQl gibt es jedoch keine Projektspezifische Konfiguration oder Regeln. Für die Erstellung des Prüfberichts musste der \lstinline{eslint} Befehl nicht angepasst werden und \lstinline{default.html} zeigte keine Projektinternen Fehler. Darauf folgend wurde die das Tree Shaking Plugin der Konfiguration hinzugefügt, die Optionen wie in der Tabelle \ref{tbl:vue-options} ersichtlich gesetzt und ein neuer Bericht erstellt.
+
+\lstinline{lint.html} zeigt insgesamt 5 Warnung in Entry Point Datei \lstinline{src/core/index.js}. Alle zeigen die selbe Nachricht \lstinline{Sideeffects in the entry-point are not allowed.}.
+
+\begin{lstlisting}[
+    label=listing:vue_entry_point,
+	caption=Vue Entry Point Datei (src/core/index.js),
+	language=JavaScript,
+]
+import Vue from './instance/index'
+import { initGlobalAPI } from './global-api/index'
+import { isServerRendering } from 'core/util/env'
+import { FunctionalRenderContext } from 'core/vdom/create-functional-component'
+
+initGlobalAPI(Vue)
+
+Object.defineProperty(Vue.prototype, '$isServer', {
+  get: isServerRendering
+})
+
+Object.defineProperty(Vue.prototype, '$ssrContext', {
+  get () {
+    /* istanbul ignore next */
+    return this.$vnode && this.$vnode.ssrContext
+  }
+})
+
+// expose FunctionalRenderContext for ssr runtime helper installation
+Object.defineProperty(Vue, 'FunctionalRenderContext', {
+  value: FunctionalRenderContext
+})
+
+Vue.version = '__VERSION__'
+
+export default Vue
+\end{lstlisting}
+
+Listing \ref{listing:vue_entry_point} zeigt die Entry Point Datei der Vue Libary. Diese besitzt wie das Tree Shaking Plugin anzeigt mehrere Side Effects. Wenn man den Code betrachtet wird ersichtlich das lediglich ein Default Export und keine Named Exports verwendet wird. Side Effects werden somit immer inkludiert und stellen keine Gefahr für die Funktionweise des exportierten Objekts. Jedoch ist es dadurch nicht möglich nur einzelne Teile der Vue Bibliothek zu verwenden. Sollte eine Warnung angezeigt werden, wenn der Entry Point nur einen Default Export anbietet? Sind Side Effects im Entry Point erlaubt, wenn nur ein Default export verwendet wird? Weitere Forschung wäre nötig ,um die daraus resultierenden Fragen zu klären und das Plugin dahingehenden zu erweitern. 
+
+\subsubsection{lodash}
+\begin{table}[H]
+\centering
+\caption{ESLint Optionen für lodash}
+\label{tbl:lodash-options}
+\begin{tabular}{|l|l|}
+\hline
+no-empty-imports             & {[}"warn",{[}{]}{]}         \\ \hline
+no-named-exports-sideeffects & "warn"                      \\ \hline
+no-entry-point-sideeffects   & {[}"warn", "lodash.js"{]} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\textbf{Default Lint Befehl:} \lstinline{eslint *.js -o lint_default.html -f html}\linebreak 
+\textbf{Lint Befehl:} \lstinline{eslint *.js -o lint.html -f html}
+\end{center}
+
+Lodash verwendet ebenso wie GraphQL und Vue ESLint. Beim erstellen des Prüfberichts werden drei bereits bekannte Fehler angezeigt. \lstinline{Unable to resolve path to module './.internal/createFind.js'.} scheint ein Problem beim Auflösen von Pfaden zu sein. Diese werden voerst ignoriert und wieder wird das Tree Shaking Plugin hinzugefügt und die Optionen dem Repository angepasst. Bei der erneuten Durchführung der statischen Analyse werden die selben drei Fehler wie im Default Bericht angezeigt. Es konnten keine Warnungen in Bezug auf Tree Shaking gefunden werden.
+
+\subsubsection{d3}
+\begin{table}[H]
+\centering
+\caption{ESLint Optionen für d3}
+\label{tbl:d3-options}
+\begin{tabular}{|l|l|}
+\hline
+no-empty-imports             & {[}"warn",{[}{]}{]}         \\ \hline
+no-named-exports-sideeffects & "warn"                      \\ \hline
+no-entry-point-sideeffects   & {[}"warn", "index.js"{]} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\textbf{Default Lint Befehl:} \lstinline{eslint *.js -o lint_default.html -f html} \linebreak 
+\textbf{Lint Befehl:} \lstinline{eslint *.js -o lint.html -f html}
+\end{center}
+
+Die D3 Libary ist die erste, welche nicht die \lstinline{sideEffect} Option in der \lstinline{package.json} Datei verwendet. Tree Shaking wurde somit nicht aktiviert und unbenützter Code kann nicht entfernt werden. Das Tree Shaking Plugin soll Entwicklern und Entwicklerinnen dabei helfen dies zu ändern und Stellen aufdecken bei dennen Anpassungen nötig sind. D3 verwendet kein ESLint und besitzt auch keine \lstinline{.eslintrc} Datei. Deshalb wird für den Default Bericht diese Datei erstellt:
+
+\begin{lstlisting}[
+    label=listing:eslintrc_d3,
+	caption=Default Konfiguration für die d3 Bibliothek,
+	language=JavaScript,
+]
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": [],
+  "rules": {}
+}
+\end{lstlisting}
+
+Der erstellte Bericht zeigt keine Fehler oder Warnungen im Repository. Nach dem Hinzufügen des Tree Shaking Plugins und seiner Konfiguration wird ein erneuter Lint Bericht \lstinline{lint.html} erstellt. Dieser zeigt ebenso keine Fehler oder Warnungen. Damit sollte die d3 Bibliothek bereits Tree Shaking unterstützen. Es fehlt lediglich die \lstinline{sideEffects: false} Einstellung in der \lstinline{package.json} Datei.
+
+\subsubsection{immutable-js}
+\begin{table}[H]
+\centering
+\caption{ESLint Optionen für immutable-js}
+\label{tbl:immutable-options}
+\begin{tabular}{|l|l|}
+\hline
+no-empty-imports             & {[}"warn",{[}{]}{]}         \\ \hline
+no-named-exports-sideeffects & "warn"                      \\ \hline
+no-entry-point-sideeffects   & {[}"warn", "src/Immutable.js"{]} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\textbf{Default Lint Befehl:} \lstinline{eslint src/**/*.js -o lint_default.html -f html}\linebreak 
+\textbf{Lint Befehl:} \lstinline{eslint src/**/*.js -o lint.html -f html}
+\end{center}
+
+Wie bereits bei eingen Test Subjekten zuvor verwendet die Immutable-JS Bibliothek bereits ESLint und besitzt eine Konfigurations Datei. Nach installieren der dafür benötigten Abhängigkeiten wird ein erster Lint Bericht ohne die Verwendung des Tree Shaking Plugins, erstellt. Dabei treten weder Warnung noch Probleme auf. Beim Linting mit dem Tree Shaking Plugin werden 6 Warnungen in der Date \lstinline{src/CollectionImpl} gefunden. Alle sind vom Typ no-named-exports-sideeffects. Der von der Regel generierte Hinweis lautet: "Effects on reexported modules (Collection) could be prune by TreeShaking".
+
+\begin{lstlisting}[
+    label=listing:immutable_sideeffects,
+	caption=immutable-js Warnungen (src/CollectionImpl),
+	language=JavaScript,
+]
+	import {
+		Collection,
+		KeyedCollection,
+		IndexedCollection,
+		SetCollection,
+	} from './Collection';
+
+	// Note: all of these methods are deprecated.
+	Collection.isIterable = isCollection;
+	Collection.isKeyed = isKeyed;
+	Collection.isIndexed = isIndexed;
+	Collection.isAssociative = isAssociative;
+	Collection.isOrdered = isOrdered;
+
+	Collection.Iterator = Iterator;
+	
+	export {
+  		Collection,
+  		KeyedCollection,
+  		IndexedCollection,
+  		SetCollection,
+  		CollectionPrototype,
+  		IndexedCollectionPrototype,
+	};
+\end{lstlisting}
+
+Der Programmcode in Listing \ref{listing:immutable_sideeffects} zeigt die von ESLint makierten Zeilen und die dazugehörigen Import und Export Deklarationen. Bei der Verwendung von Tree Shaking könnten die Zeilen 9 bis 15 unbeabsichtig entfernt werden. Weitere Nachforschungen sind nötig,
+ ,um genauer festzustellen ob die vom Plugin makierten Zeilen auch wirklich zu Fehlern bei der Verwendung von \lstinline{Collection} führen. 
+
+\subsubsection{moment}
+\begin{table}[H]
+\centering
+\caption{ESLint Optionen für moment}
+\label{tbl:moment-options}
+\begin{tabular}{|l|l|}
+\hline
+no-empty-imports             & {[}"warn",{[}{]}{]}         \\ \hline
+no-named-exports-sideeffects & "warn"                      \\ \hline
+no-entry-point-sideeffects   & {[}"warn", "src/moment.js"{]} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{center}
+\textbf{Default Lint Befehl:} \lstinline{eslint src/**/*.js -o lint_default.html -f html}\linebreak 
+\textbf{Lint Befehl:} \lstinline{eslint src/**/*.js -o lint.html -f html}
+\end{center}
+
+Moment ist die letzte Javascript Bliobliothek die für die Überprüfung des Tree Shaking Plugins untersucht wird. Ebenso wie d3 und immutable-js ermöglicht Sie kein Tree Shaking. Ebenso wurde für die Entwicklung nicht ESLint verwendet. Somit wird eine \lstinline{.eslintrc} Datei ohne aktivierten Regeln erstellt und eine Analyse damit durchgeführt. Der resultierende Bericht zeigt keine Fehler  in den Source Dateien. Nach dem Hinzufügen der Tree Shaking Regeln wie in Tabelle \ref{moment-options} gezeigt, werden im Bericht insgesamt 19 Warnungen angezeigt. Diese betreffen vier Dateien und sind vom Typ no-empty-imports.
+
+Die vier betroffenen Dateien sind:
+\begin{itemize}
+\item src/lib/duration/duration.js
+\item src/lib/locale/en.js
+\item src/lib/locale/locale.js
+\item src/lib/units/units.js
+\end{itemize}
+
+\begin{lstlisting}[
+    label=listing:moment_sideeffects,
+	caption=moment Datei mit Warnungen (src/lib/duration/duration.js),
+	language=JavaScript,
+]
+	import {
+		Collection,
+		KeyedCollection,
+		IndexedCollection,
+		SetCollection,
+	} from './Collection';
+
+	// Side effect imports
+	import './prototype';
+
+	import { createDuration } from './create';
+	import { isDuration } from './constructor';
+	import {
+    		getSetRelativeTimeRounding,
+    		getSetRelativeTimeThreshold
+	} from './humanize';
+
+	export {
+    		createDuration,
+    		isDuration,
+    		getSetRelativeTimeRounding,
+    		getSetRelativeTimeThreshold
+	};
+\end{lstlisting}
+
+Listing \ref{listing:moment_sideeffects} zeigt in Zeile 9 einen Empty Import der die Warnung in dieser Datei verursacht. Er wurde bereits vorab von einem Entwickler oder einer Entwicklerin als Side Effect makiert. Die genaue Fehler Meldungen des Tree Shaking Plugins für diese Zeile lautet: "empty imports are removed by tree shaking. Make sure you add ./prototype to package.json sideEffects option". Durch die Verwendung eines Arrays von Strings statt false für die sideEffects Konfiguration, kann Webpack informiert werden diese Datei aufjedenfall mit einzubinden. Die dafür nötige Einstellung wäre \lstinline{sideEffects: ['prototype']}. Die no-empty-imports Regel bietet ebenso an dies durch eine Option zu konfigurieren. Es wird daher der Eintrag für no-empty-imports in der \lstinline{.eslintrc} Datei angepasst zu \lstinline{"treeshaking/no-empty-imports": ["warn", ["prototype"]]}. Ein erneuter Bericht wird erstellt und dieser zeigt die Warnung in der Datei aus Listing \ref{listing:moment_sideeffects} nicht an. Wiederum wären weitere Forschungen nötig ,um die richtige Funktionsweise von Tree Shaking an dieser Stelle genauer zu evaluieren.
+
+\section{Zukünftige Arbeiten}
+
+\section{Schlussfolgerung}
+

@@ -1,24 +1,23 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is 'main.blg'
-[47] biber-darwin:313> INFO - === Wed Jul  4, 2018, 09:58:16
-[77] Biber.pm:371> INFO - Reading 'main.bcf'
-[235] Biber.pm:857> INFO - Found 28 citekeys in bib section 0
-[249] Biber.pm:3976> INFO - Processing section 0
-[261] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[263] bibtex.pm:1500> INFO - LaTeX decoding ...
-[292] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
-[293] Utils.pm:193> WARN - Duplicate entry key: 'RichHarris' in file 'bibliography.bib', skipping ...
-[294] Utils.pm:193> WARN - Possible typo (case mismatch) between citation and datasource keys: 'Npmdocs' and 'NpmDocs' in file 'bibliography.bib'
-[371] Utils.pm:193> WARN - month field 'feb' in entry 'Bessey2010' is not an integer - this will probably not sort properly.
-[392] Utils.pm:193> WARN - I didn't find a database entry for 'Npmdocs' (section 0)
-[392] Utils.pm:193> WARN - I didn't find a database entry for 'ESLintNewRules' (section 0)
-[392] Utils.pm:193> WARN - I didn't find a database entry for 'https://astexplorer.net/ - besucht am 26.06.2018' (section 0)
-[392] Utils.pm:193> WARN - I didn't find a database entry for 'https://eslint.org/docs/developer-guide/selectors - besucht am 29.06.2018' (section 0)
-[428] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'level = 4' with 'level = 2'
-[428] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[428] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[428] Biber.pm:3804> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'de-DE'
-[429] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[456] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[470] bbl.pm:720> INFO - Output to main.bbl
-[470] Biber.pm:110> INFO - WARNINGS: 7
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[37] biber-darwin:313> INFO - === Wed Jul 11, 2018, 09:47:39
+[65] Biber.pm:371> INFO - Reading 'main.bcf'
+[210] Biber.pm:857> INFO - Found 26 citekeys in bib section 0
+[223] Biber.pm:3976> INFO - Processing section 0
+[234] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[236] bibtex.pm:1500> INFO - LaTeX decoding ...
+[265] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[267] Utils.pm:193> WARN - Duplicate entry key: 'RichHarris' in file 'bibliography.bib', skipping ...
+[268] Utils.pm:193> WARN - Possible typo (case mismatch) between citation and datasource keys: 'Npmdocs' and 'NpmDocs' in file 'bibliography.bib'
+[344] Utils.pm:193> WARN - month field 'feb' in entry 'Bessey2010' is not an integer - this will probably not sort properly.
+[355] Utils.pm:193> WARN - I didn't find a database entry for 'Npmdocs' (section 0)
+[355] Utils.pm:193> WARN - I didn't find a database entry for 'ESLintNewRules' (section 0)
+[355] Utils.pm:193> WARN - I didn't find a database entry for 'https://astexplorer.net/ - besucht am 26.06.2018' (section 0)
+[394] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[394] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'level = 4' with 'level = 2'
+[394] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[394] Biber.pm:3804> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'de-DE'
+[394] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[418] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[431] bbl.pm:720> INFO - Output to main.bbl
+[432] Biber.pm:110> INFO - WARNINGS: 6

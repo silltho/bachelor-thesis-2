@@ -756,36 +756,6 @@
       \verb https://auth0.com/blog/javascript-module-systems-showdown/
       \endverb
     \endentry
-    \entry{TamasSallai}{misc}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=164df5d9e59006ca8b0924e33c50515c}{%
-           family={{Tam{á}s Sallai}},
-           familyi={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{164df5d9e59006ca8b0924e33c50515c}
-      \strng{fullhash}{164df5d9e59006ca8b0924e33c50515c}
-      \strng{bibnamehash}{164df5d9e59006ca8b0924e33c50515c}
-      \strng{authorbibnamehash}{164df5d9e59006ca8b0924e33c50515c}
-      \strng{authornamehash}{164df5d9e59006ca8b0924e33c50515c}
-      \strng{authorfullhash}{164df5d9e59006ca8b0924e33c50515c}
-      \field{sortinit}{T}
-      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{url}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Why Webpack 2's Tree Shaking is not as effective as you think - Advanced Web Machinery}}
-      \field{urlday}{25}
-      \field{urlmonth}{3}
-      \field{urlyear}{2018}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://advancedweb.hu/2017/02/07/treeshaking/
-      \endverb
-      \verb{url}
-      \verb https://advancedweb.hu/2017/02/07/treeshaking/
-      \endverb
-    \endentry
     \entry{WebpackComparison}{misc}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=7069bd865e76a4c979af79004e1fbd76}{%
@@ -880,7 +850,6 @@
   \missing{ESLintNewRules}
   \missing{Npmdocs}
   \missing{https://astexplorer.net/ - besucht am 26.06.2018}
-  \missing{https://eslint.org/docs/developer-guide/selectors - besucht am 29.06.2018}
 \endrefsection
 \endinput
 
