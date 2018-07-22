@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  11 JUL 2018 09:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  22 JUL 2018 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -697,9 +697,6 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 
 LaTeX Warning: Label `listing:empty_import_rule_3' multiply defined.
 
-
-LaTeX Warning: Label `tbl:empty_imports' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -805,21 +802,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                ESLintNewRules
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Npmdocs
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                https://astexplorer.net/ - besucht am 26.06.2018
+(biblatex)                Bush
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -890,15 +873,15 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 \openout5 = `main.toc'.
 
  [5] (./body.tex
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 10.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 12.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
 
-Overfull \hbox (14.0036pt too wide) in paragraph at lines 11--12
+Overfull \hbox (14.0036pt too wide) in paragraph at lines 13--14
 []\OT1/ptm/m/n/12 1 Se-kun-de h[]alt den Ge-dan-ken-fluss des Be-nut-zers naht-
 los. Be-nut-zer k[]onnen ei-ne Verz[]ogerung
  []
@@ -906,41 +889,58 @@ los. Be-nut-zer k[]onnen ei-ne Verz[]ogerung
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 28.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [2]
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 39.
+Overfull \hbox (2.70723pt too wide) in paragraph at lines 21--23
+\OT1/ptm/m/it/12 Static Mo-du-le Bund-ler \OT1/ptm/m/n/12 wie Web-pack und Rol-
+lupJS er-mit-te-len al-le f[]ur die An-wen-dung ben[]otigten
+ []
 
-[3] [4] [5]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 30.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (13.75223pt too wide) in paragraph at lines 30--31
+\OT1/ptm/m/n/12 die-se in der rich-ti-gen Rei-hen-fol-ge zur Verf[]ugung ge-ste
+llt wer-den. Je kom-ple-xer die Abh[]angigkeiten
+ []
+
+[2]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 41.
+ [3] [4] [5] [6]
 Overfull \hbox (13.00783pt too wide) in paragraph at lines 207--208
 \OT1/ptm/m/n/12 Dies bie-tet ei-ne gro^^Ye Hil-fe f[]ur Ent-wick-ler und Ent-wi
 ck-le-rin-nen. Durch ei-ne sta-ti-sche []Uberpr[]ufung
  []
 
 
-Overfull \hbox (56.08327pt too wide) in paragraph at lines 207--208
-\OT1/ptm/m/n/12 mit ei-nem Lin-ter wer-den fr[]uhzeitige Tipp-feh-ler oder auch
- nicht verf[]ugbare Va-ria-blen er-kannt.([]Rauschmayer
+Overfull \hbox (56.3711pt too wide) in paragraph at lines 207--208
+\OT1/ptm/m/n/12 mit ei-nem \OT1/ptm/m/it/12 Lin-ter \OT1/ptm/m/n/12 wer-den fr[
+]uhzeitige Tipp-feh-ler oder auch nicht verf[]ugbare Va-ria-blen er-kannt.([]Ra
+uschmayer
  []
 
-[6]
+
 Overfull \hbox (13.1598pt too wide) in paragraph at lines 225--226
 []\OT1/ptm/m/n/12 Um das Kom-pi-lie-ren von Spra-chen mit Ma-cros und sta-ti-sc
 hen Ty-pen zu Ja-vaS-cript zu erm[]oglichen,
  []
 
 
-Overfull \hbox (8.04057pt too wide) in paragraph at lines 256--257
+Overfull \hbox (8.04057pt too wide) in paragraph at lines 258--259
 []\OT1/ptm/m/n/12 In an-de-ren Wor-ten je-der Im-port ist ei-ne Live-Verbindung
  zu den ex-por-tier-ten Da-ten. []Rauschmayer
  []
 
 [7] [8] [9] [10] [11]
-Overfull \hbox (0.22581pt too wide) in paragraph at lines 482--484
-\OT1/ptm/m/n/12 jekt-co-de an-zu-wen-den, son-dern eben-falls auf den Co-de der
- sich im Li-ba-ry Ord-ner [][]
+Overfull \hbox (3.4048pt too wide) in paragraph at lines 443--445
+\OT1/ptm/m/n/12 Da-tei in-ner-halb der Li-bra-ry, wird Web-pack mit-ge-teilt da
+s \OT1/ptm/m/it/12 Tree Sha-king \OT1/ptm/m/n/12 nicht nur auf den []ublichen
+ []
+
+
+Overfull \hbox (16.89369pt too wide) in paragraph at lines 443--445
+\OT1/ptm/m/n/12 Pro-jekt-co-de an-zu-wen-den, son-dern eben-falls auf den Co-de
+ der sich im Li-ba-ry Ord-ner [][]
  []
 
 [12] [13] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -948,98 +948,76 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-) [14]
-
-LaTeX Warning: Reference `subsubsection:side_effects' on page 15 undefined on i
-nput line 574.
-
-
-LaTeX Warning: Reference `subsubsection:side_effects' on page 15 undefined on i
-nput line 590.
-
-[15]
-Overfull \hbox (20.47989pt too wide) in paragraph at lines 596--597
-\OT1/ptm/m/n/12 zug zur Ver-mei-dung von Si-de Ef-fects er-mit-telt, die-se wer
--den bei der Im-ple-men-tie-rung ber[]ucksichtigt
+)
+Overfull \hbox (26.36385pt too wide) in paragraph at lines 523--525
+\OT1/ptm/m/n/12 den [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
-[16] [17] [18] [19]
+[14]
+Overfull \hbox (0.40852pt too wide) in paragraph at lines 535--537
+\OT1/ptm/m/n/12 die ver-wen-de-ten Ex-por-te in dem ge-buil-de-ten Pro-gramm-co
+-de ben[]otigt wer-den. Die aus-gew[]ahlten
+ []
 
-LaTeX Warning: Reference `section:schwierigkeiten_beim_tree_shaking' on page 20
- undefined on input line 735.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 549.
+[15] [16] [17]
+Overfull \hbox (0.61398pt too wide) in paragraph at lines 608--610
+[]\OT1/ptm/b/n/12 Atomar: \OT1/ptm/m/n/12 Re-geln soll-ten voll-kom-men selbsts
+t[]andig funk-tio-nie-ren. Abh[]angikeiten zwi-schen zwei
+ []
 
-[20]
-Overfull \hbox (4.27852pt too wide) in paragraph at lines 753--754
+[18]
+Overfull \hbox (2.30766pt too wide) in paragraph at lines 631--631
+[]\OT1/ptm/b/n/17.28 Erweiterte Ana-ly-se durch die Er-stel-lung ei-nes ESLint 
+Plug-
+ []
+
+[19] [20]
+Overfull \hbox (4.27852pt too wide) in paragraph at lines 706--707
 []\OT1/ptm/b/n/12 docs/rules/(rule-id).md \OT1/ptm/m/n/12 - Do-ku-men-ta-ti-on 
 der Re-gel und der Kon-fi-gu-ra-ti-on M[]oglichkeiten. 
  []
 
-[21] [22]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 830.
-
-
-LaTeX Warning: Reference `empty_import_rule_1' on page 23 undefined on input li
-ne 849.
-
-
-Overfull \hbox (18.75244pt too wide) in paragraph at lines 851--852
-\OT1/ptm/m/n/12 Aufl[]osung der Side-Ef-fect Pro-per-ty die Bi-blio-thek Mi-cro
--match [] ver-wen-det wird. F[]ur die Aufl[]osung
+[21]
+Overfull \hbox (1.73729pt too wide) in paragraph at lines 728--729
+[]\OT1/ptm/m/n/12 Um die-se Funk-ti-ons-wei-se zu gew[]ahrleisten, wur-de fol-g
+en-de Test Da-tei [][][][][][][][][][][][][][][][][][][][]
  []
 
-[23] [24] [25] [26]
-Overfull \hbox (44.49753pt too wide) in paragraph at lines 1080--1082
-\OT1/ptm/m/n/12 Ar-ray ge-spei-chert. Dies ge-schieht mit der Hil-fe des [][][]
-[][][] und [][]
- []
-
-[27]
-Overfull \hbox (14.42468pt too wide) in paragraph at lines 1083--1085
-\OT1/ptm/m/n/12 eben-falls in ei-nem Ar-ray ge-spei-chert. Der daf[]ur ver-wen-
-de-te No-de Se-lec-tor ist [][]
- []
-
-[28] [29]
-Overfull \hbox (71.05283pt too wide) in paragraph at lines 1184--1185
-\OT1/ptm/m/n/12 rung wer-den die No-de Ty-pes [][][][][][], [][][][][][], [][]
+[22] [23] [24]
+Overfull \hbox (2.5818pt too wide) in paragraph at lines 901--902
+[]\OT1/ptm/m/n/12 Listing 25[], 26[] und 27[] zei-gen ein Bei-spiel f[]ur einen
+ \OT1/ptm/m/it/12 Si-de Ef-fect\OT1/ptm/m/n/12 . Ob-wohl die Me-tho-de [][]
  []
 
 
-Overfull \hbox (78.75589pt too wide) in paragraph at lines 1184--1185
-[][][][][][][][][][][][][][][][][][][][][][][][][][][]
+Overfull \hbox (50.51982pt too wide) in paragraph at lines 903--904
+\OT1/ptm/m/n/12 da-zu-geh[]origen \OT1/ptm/m/it/12 No-de Ty-pes [][][][][][]\OT
+1/ptm/m/n/12 , [][][][][][] und [][]
  []
 
-[30] [31]
-Overfull \hbox (6.75589pt too wide) in paragraph at lines 1268--1269
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][][][][][][][][][][][][][]
+[25] [26]
+Overfull \hbox (21.51668pt too wide) in paragraph at lines 1033--1035
+\OT1/ptm/m/n/12 und [][][][][][] ge-spei-chert. Im n[]achsten Schritt wer-den a
+l-le \OT1/ptm/m/it/12 Si-de Ef-fects \OT1/ptm/m/n/12 mit dem [][]
  []
 
-[32] [33]
-Overfull \hbox (19.38222pt too wide) in paragraph at lines 1345--1346
-\OT1/ptm/m/n/12 den drei be-reits be-kann-te Feh-ler an-ge-zeigt. [][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
+Overfull \hbox (28.52025pt too wide) in paragraph at lines 1033--1035
+\OT1/ptm/m/n/12 cher-ten \OT1/ptm/m/it/12 Ex-pres-si-on \OT1/ptm/m/n/12 mit den
+ \OT1/ptm/m/it/12 Na-med Ex-ports \OT1/ptm/m/n/12 und \OT1/ptm/m/it/12 Im-ports
+ \OT1/ptm/m/n/12 ver-gli-chen wer-den und bei []Uberschneidungen
  []
 
-[34] [35]
-Overfull \hbox (20.23161pt too wide) in paragraph at lines 1405--1406
-\OT1/ptm/m/n/12 ESLint und be-sitzt ei-ne Kon-fi-gu-ra-ti-ons Da-tei. Nach in-s
-tal-lie-ren der daf[]ur ben[]otigten Abh[]angigkeiten
- []
-
-[36]
-
-LaTeX Warning: Reference `moment-options' on page 37 undefined on input line 14
-59.
-
-[37]) [38] (./abbreviations.tex) (./main.lof)
+[27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]) [39]
+(./abbreviations.tex) (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- (./main.lol [39
+ (./main.lol [40
 
 ])
 \tf@lol=\write7
@@ -1049,39 +1027,13 @@ LaTeX Warning: Reference `moment-options' on page 37 undefined on input line 14
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
-
-[40]
+ [41]
 LaTeX Font Info:    Font shape `OMS/ptm/m/sl' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 201.
- [41]
-Overfull \hbox (10.20839pt too wide) in paragraph at lines 202--202
-[][]\OT1/ptm/m/n/12 Sebastian Pey-rott. 2018. \OT1/ptm/m/sl/12 Ja-vaS-cript Mo-
-du-le Sys-tems Show-down: Com-mon-JS vs AMD vs ES2015.
- []
-
-[42] (./appendix.tex
-Overfull \hbox (12.60927pt too wide) in paragraph at lines 16--17
-[]\OT1/ptm/m/n/12 Rohdaten und auf-be-rei-te-te Da-ten der Eva-lu-ie-run-gen (L
-og-Daten, Ta-bel-len, Gra-phen, Scripts,
- []
-
-)
-Overfull \hbox (20.95569pt too wide) in paragraph at lines 19--216
-[]$\OT1/pcr/m/n/12 https : / / gitlab . mediacube . at / fhs123456 / Abschlussa
-rbeiten-[]Max-[]Muster$[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--216
-
- []
-
-[43
+ [42]
+[43] (./appendix.tex) [44
 
 ] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1090,13 +1042,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16326 strings out of 492649
- 276266 string characters out of 6129622
- 1123053 words of memory out of 5000000
- 19909 multiletter control sequences out of 15000+600000
- 36994 words of font info for 72 fonts, out of 8000000 for 9000
+ 16325 strings out of 492649
+ 276527 string characters out of 6129622
+ 1113224 words of memory out of 5000000
+ 19908 multiletter control sequences out of 15000+600000
+ 36997 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 79i,8n,129p,1235b,8267s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 79i,9n,129p,1278b,8267s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/20
@@ -1106,10 +1058,10 @@ s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (49 pages, 263822 bytes).
+Output written on main.pdf (50 pages, 279522 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 201 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,7 +11,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Modules in JavaScript}{2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}CommonJS}{2}
+\contentsline {subsection}{\numberline {3.1}CommonJS}{3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2}Asynchronous Model Definition (AMD)}{3}
 \defcounter {refsection}{0}\relax 
@@ -19,82 +19,64 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.1}Named Exports}{4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2}Default Exports}{4}
+\contentsline {subsubsection}{\numberline {3.3.2}Default Exports}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.3}Static Module Structure}{5}
+\contentsline {subsubsection}{\numberline {3.3.3}Static Module Structure}{6}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.4}Vorteile}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.5}Imports}{7}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.6}Syntax}{9}
+\contentsline {subsubsection}{\numberline {3.3.5}Schreibgesch\IeC {\"u}tzte Imports}{7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Tree Shaking}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Webpack}{11}
+\contentsline {subsection}{\numberline {4.1}Webpack}{10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}RollupJS}{12}
+\contentsline {subsection}{\numberline {4.2}RollupJS}{11}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}Side Effects}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1}Untersuchung von JavaScript Libaries}{15}
+\contentsline {subsubsection}{\numberline {4.3.1}Untersuchung von JavaScript Libraries}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.2}Best Practices zur Vermeidung von SideEffects}{16}
+\contentsline {subsubsection}{\numberline {4.3.2}Best Practices zur Vermeidung von Side Effects}{16}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Linting}{16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}ES Lint}{17}
+\contentsline {subsection}{\numberline {5.1}ESLint}{17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.1}Core Rules}{18}
+\contentsline {subsection}{\numberline {5.2}Core Rules}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.2}Komponenten eines Plugins}{19}
+\contentsline {subsection}{\numberline {5.3}Erzeugung und Traversierung des Abstract Syntax Tree}{19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.3}How to use}{19}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.4}Formatters}{19}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Erstellen des Plugins}{19}
+\contentsline {section}{\numberline {6}Erweiterte Analyse durch die Erstellung eines ESLint Plugins}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1}Setup}{19}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2}Entwicklungsumgebung}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Die Implementierung neuer Regeln}{21}
+\contentsline {subsection}{\numberline {6.3}Implementierung der Plugin Regeln}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Empty Imports}{21}
+\contentsline {subsubsection}{\numberline {6.3.1}Empty Imports}{21}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Named Exports SideEffects}{24}
+\contentsline {subsubsection}{\numberline {6.3.2}Named Exports Side Effects}{24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.3}Entry Point SideEffects}{28}
+\contentsline {subsubsection}{\numberline {6.3.3}Entry Point Side Effects}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Testen des Plugins}{30}
+\contentsline {subsection}{\numberline {6.4}Testen des Plugins}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Tree Shaking optimiert:}{30}
+\contentsline {paragraph}{\textit {Tree Shaking} optimiert:}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{kein Tree Shaking}{31}
+\contentsline {paragraph}{kein \textit {Tree Shaking}}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Aufbau}{31}
+\contentsline {subsubsection}{\numberline {6.4.1}Aufbau}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Ablauf}{32}
+\contentsline {subsubsection}{\numberline {6.4.2}Testablauf}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Ergebnisse}{32}
+\contentsline {subsubsection}{\numberline {6.4.3}Ergebnisse}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.1}graphql-js}{32}
+\contentsline {section}{\numberline {7}Ausblick auf zuk\IeC {\"u}nftige Arbeiten}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.2}vue}{33}
+\contentsline {section}{\numberline {8}Schlussfolgerung}{38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.3}lodash}{34}
+\contentsline {section}{Appendices}{44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.4}d3}{35}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.5}immutable-js}{35}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.3.6}moment}{37}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Zuk\IeC {\"u}nftige Arbeiten}{38}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Schlussfolgerung}{38}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendices}{43}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A}git-Repository}{43}
+\contentsline {subsection}{\numberline {A}git-Repository}{44}

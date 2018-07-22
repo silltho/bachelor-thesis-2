@@ -136,65 +136,6 @@
       \verb{doi}
       \verb 10.1145/1646353.1646374
       \endverb
-      \verb{file}
-      \verb :D$\backslash$:/Downloads/bessey2010.pdf:pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://portal.acm.org/citation.cfm?doid=1646353.1646374
-      \endverb
-      \verb{url}
-      \verb http://portal.acm.org/citation.cfm?doid=1646353.1646374
-      \endverb
-    \endentry
-    \entry{Bush}{article}{}
-      \name{author}{4}{}{%
-        {{uniquename=0,uniquepart=base,hash=0953720d431c70abdeb5f357eb283e98}{%
-           family={Bush},
-           familyi={B\bibinitperiod},
-           given={WR},
-           giveni={W\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=eb0b29ad81cca33bf848bbf045ee777a}{%
-           family={Pincus},
-           familyi={P\bibinitperiod},
-           given={JD},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=ca0422957cf785d3484e41700f5ddc3f}{%
-           family={And},
-           familyi={A\bibinitperiod},
-           given={DJ\bibnamedelima Sielaff\bibnamedelimb -\bibnamedelima Software-Practice},
-           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim \bibinithyphendelim \bibinithyphendelim \bibinitperiod\bibinitdelim S\bibinithyphendelim P\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=04f34e3dedb2992a783af164dfdbef90}{%
-           family={2000},
-           familyi={2\bibinitperiod},
-           prefix={undefined},
-           prefixi={u\bibinitperiod},
-           prefixun=0}}%
-      }
-      \strng{namehash}{91265ef4bb149f5922e04d6fd4e921c7}
-      \strng{fullhash}{0645fcf0e3b3ee188e7b0ab928595f3b}
-      \strng{bibnamehash}{0645fcf0e3b3ee188e7b0ab928595f3b}
-      \strng{authorbibnamehash}{0645fcf0e3b3ee188e7b0ab928595f3b}
-      \strng{authornamehash}{91265ef4bb149f5922e04d6fd4e921c7}
-      \strng{authorfullhash}{0645fcf0e3b3ee188e7b0ab928595f3b}
-      \field{sortinit}{B}
-      \field{sortinithash}{276475738cc058478c1677046f857703}
-      \field{labeldatesource}{nodate}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{web2.cs.columbia.edu}
-      \field{title}{{A static analyzer for finding dynamic programming errors}}
-      \verb{file}
-      \verb :C$\backslash$:/Users/sille/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Bush et al. - Unknown - A static analyzer for finding dynamic programming errors.pdf:pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://web2.cs.columbia.edu/{~}junfeng/08fa-e6998/sched/readings/prefix.pdf
-      \endverb
-      \verb{url}
-      \verb http://web2.cs.columbia.edu/%7B~%7Djunfeng/08fa-e6998/sched/readings/prefix.pdf
-      \endverb
     \endentry
     \entry{CanIUseUsageTable}{misc}{}
       \name{author}{1}{}{%
@@ -350,8 +291,98 @@
       \verb https://eslint.org/docs/about/
       \endverb
     \endentry
-    \entry{Johnson}{article}{}
-      \name{author}{4}{uniquelist=1}{%
+    \entry{ESLintEspree}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=5fe27f9bc3fb010aeeacd50e136f4c34}{%
+           family={ESLintEspree},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5fe27f9bc3fb010aeeacd50e136f4c34}
+      \strng{fullhash}{5fe27f9bc3fb010aeeacd50e136f4c34}
+      \strng{bibnamehash}{5fe27f9bc3fb010aeeacd50e136f4c34}
+      \strng{authorbibnamehash}{5fe27f9bc3fb010aeeacd50e136f4c34}
+      \strng{authornamehash}{5fe27f9bc3fb010aeeacd50e136f4c34}
+      \strng{authorfullhash}{5fe27f9bc3fb010aeeacd50e136f4c34}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Introducing Espree, an Esprima alternative - ESLint - Pluggable JavaScript linter}}
+      \field{urlday}{12}
+      \field{urlmonth}{7}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://eslint.org/blog/2014/12/espree-esprima
+      \endverb
+      \verb{url}
+      \verb https://eslint.org/blog/2014/12/espree-esprima
+      \endverb
+    \endentry
+    \entry{ESLintNewRules}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=c7a72f73bf08800ec29a7af8be47961e}{%
+           family={ESLintNewRules},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7a72f73bf08800ec29a7af8be47961e}
+      \strng{fullhash}{c7a72f73bf08800ec29a7af8be47961e}
+      \strng{bibnamehash}{c7a72f73bf08800ec29a7af8be47961e}
+      \strng{authorbibnamehash}{c7a72f73bf08800ec29a7af8be47961e}
+      \strng{authornamehash}{c7a72f73bf08800ec29a7af8be47961e}
+      \strng{authorfullhash}{c7a72f73bf08800ec29a7af8be47961e}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{New Rules - ESLint - Pluggable JavaScript linter}}
+      \field{urlday}{4}
+      \field{urlmonth}{4}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://eslint.org/docs/developer-guide/contributing/new-rules
+      \endverb
+      \verb{url}
+      \verb https://eslint.org/docs/developer-guide/contributing/new-rules
+      \endverb
+    \endentry
+    \entry{ESLintRules}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=e5549877409af362ee4c10284981169e}{%
+           family={ESLintRules},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5549877409af362ee4c10284981169e}
+      \strng{fullhash}{e5549877409af362ee4c10284981169e}
+      \strng{bibnamehash}{e5549877409af362ee4c10284981169e}
+      \strng{authorbibnamehash}{e5549877409af362ee4c10284981169e}
+      \strng{authornamehash}{e5549877409af362ee4c10284981169e}
+      \strng{authorfullhash}{e5549877409af362ee4c10284981169e}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Working with Rules - ESLint - Pluggable JavaScript linter}}
+      \field{urlday}{12}
+      \field{urlmonth}{7}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://eslint.org/docs/developer-guide/working-with-rules
+      \endverb
+      \verb{url}
+      \verb https://eslint.org/docs/developer-guide/working-with-rules
+      \endverb
+    \endentry
+    \entry{Johnson2013}{inproceedings}{}
+      \name{author}{4}{}{%
         {{uniquename=0,uniquepart=base,hash=b25b51b95a7d8f03a1ae99d393caef2b}{%
            family={Johnson},
            familyi={J\bibinitperiod},
@@ -385,22 +416,15 @@
       \strng{authorfullhash}{2a5530e96915ba6484ef205a7b411991}
       \field{sortinit}{J}
       \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{pdfs.semanticscholar.org}
+      \field{booktitle}{35th International Conference on Software Engineering (ICSE)}
       \field{title}{{Why Don't Software Developers Use Static Analysis Tools to Find Bugs?}}
-      \verb{file}
-      \verb :C$\backslash$:/Users/sille/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Johnson et al. - Unknown - Why Don't Software Developers Use Static Analysis Tools to Find Bugs.pdf:pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://pdfs.semanticscholar.org/060c/c5c0fa6bed9a39bdb6f9c995586f4709006e.pdf
-      \endverb
-      \verb{url}
-      \verb https://pdfs.semanticscholar.org/060c/c5c0fa6bed9a39bdb6f9c995586f4709006e.pdf
-      \endverb
+      \field{year}{2013}
     \endentry
-    \entry{Johnson1978}{book}{}
+    \entry{Johnson1978}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=f28e3e73233dc88f6e85c050b1304ed3}{%
            family={Johnson},
@@ -421,14 +445,35 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Science Technical Report}
       \field{title}{{Lint, a C program checker}}
+      \field{volume}{65}
       \field{year}{1978}
-      \verb{urlraw}
-      \verb https://pdfs.semanticscholar.org/7461/7cffa3c6438d04aa99bef1cca415de47d0d3.pdf
-      \endverb
-      \verb{url}
-      \verb https://pdfs.semanticscholar.org/7461/7cffa3c6438d04aa99bef1cca415de47d0d3.pdf
-      \endverb
+    \endentry
+    \entry{Jones2003}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=fd0c5126de687182cfd513a4bf8cadb9}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Joel},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fd0c5126de687182cfd513a4bf8cadb9}
+      \strng{fullhash}{fd0c5126de687182cfd513a4bf8cadb9}
+      \strng{bibnamehash}{fd0c5126de687182cfd513a4bf8cadb9}
+      \strng{authorbibnamehash}{fd0c5126de687182cfd513a4bf8cadb9}
+      \strng{authornamehash}{fd0c5126de687182cfd513a4bf8cadb9}
+      \strng{authorfullhash}{fd0c5126de687182cfd513a4bf8cadb9}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 10th conference on pattern languages of programs (plop2003)}
+      \field{title}{{Abstract Syntax Tree Implementation Idioms}}
+      \field{year}{2003}
     \endentry
     \entry{Louridas2006}{article}{}
       \name{author}{1}{}{%
@@ -459,15 +504,6 @@
       \range{pages}{4}
       \verb{doi}
       \verb 10.1109/MS.2006.114
-      \endverb
-      \verb{file}
-      \verb :C$\backslash$:/Users/sille/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Software, 2006 - Unknown - Static code analysis.pdf:pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://ieeexplore.ieee.org/abstract/document/1657940/
-      \endverb
-      \verb{url}
-      \verb http://ieeexplore.ieee.org/abstract/document/1657940/
       \endverb
     \endentry
     \entry{Nielson1997}{misc}{}
@@ -596,6 +632,36 @@
       \endverb
       \verb{url}
       \verb https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/
+      \endverb
+    \endentry
+    \entry{NpmDocs}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=a6b1bc962f2699acad3becf9109bbeff}{%
+           family={NpmDocs},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{a6b1bc962f2699acad3becf9109bbeff}
+      \strng{fullhash}{a6b1bc962f2699acad3becf9109bbeff}
+      \strng{bibnamehash}{a6b1bc962f2699acad3becf9109bbeff}
+      \strng{authorbibnamehash}{a6b1bc962f2699acad3becf9109bbeff}
+      \strng{authornamehash}{a6b1bc962f2699acad3becf9109bbeff}
+      \strng{authorfullhash}{a6b1bc962f2699acad3becf9109bbeff}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{What is npm?}}
+      \field{urlday}{11}
+      \field{urlmonth}{3}
+      \field{urlyear}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.npmjs.com/getting-started/what-is-npm
+      \endverb
+      \verb{url}
+      \verb https://docs.npmjs.com/getting-started/what-is-npm
       \endverb
     \endentry
     \entry{Rauschmayer2014}{misc}{}
@@ -847,9 +913,7 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{ESLintNewRules}
-  \missing{Npmdocs}
-  \missing{https://astexplorer.net/ - besucht am 26.06.2018}
+  \missing{Bush}
 \endrefsection
 \endinput
 
