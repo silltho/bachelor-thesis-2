@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  22 JUL 2018 19:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  22 JUL 2018 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,15 +798,7 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
-(./main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Bush
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+(./main.bbl)
 Package biblatex Info: Reference section=0 on input line 116.
 Package biblatex Info: Reference segment=0 on input line 116.
  (./title.tex
@@ -1000,16 +992,9 @@ Overfull \hbox (50.51982pt too wide) in paragraph at lines 903--904
  []
 
 [25] [26]
-Overfull \hbox (21.51668pt too wide) in paragraph at lines 1033--1035
-\OT1/ptm/m/n/12 und [][][][][][] ge-spei-chert. Im n[]achsten Schritt wer-den a
-l-le \OT1/ptm/m/it/12 Si-de Ef-fects \OT1/ptm/m/n/12 mit dem [][]
- []
-
-
-Overfull \hbox (28.52025pt too wide) in paragraph at lines 1033--1035
-\OT1/ptm/m/n/12 cher-ten \OT1/ptm/m/it/12 Ex-pres-si-on \OT1/ptm/m/n/12 mit den
- \OT1/ptm/m/it/12 Na-med Ex-ports \OT1/ptm/m/n/12 und \OT1/ptm/m/it/12 Im-ports
- \OT1/ptm/m/n/12 ver-gli-chen wer-den und bei []Uberschneidungen
+Overfull \hbox (44.49753pt too wide) in paragraph at lines 1033--1035
+\OT1/ptm/m/n/12 Ar-ray ge-spei-chert. Dies ge-schieht mit der Hil-fe des [][][]
+[][][] und [][]
  []
 
 [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]) [39]
@@ -1042,10 +1027,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16325 strings out of 492649
- 276527 string characters out of 6129622
- 1113224 words of memory out of 5000000
- 19908 multiletter control sequences out of 15000+600000
+ 16329 strings out of 492649
+ 276632 string characters out of 6129622
+ 1113305 words of memory out of 5000000
+ 19912 multiletter control sequences out of 15000+600000
  36997 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  79i,9n,129p,1278b,8267s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1058,7 +1043,7 @@ s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (50 pages, 279522 bytes).
+Output written on main.pdf (50 pages, 279219 bytes).
 PDF statistics:
  201 PDF objects out of 1000 (max. 8388607)
  138 compressed objects within 2 object streams

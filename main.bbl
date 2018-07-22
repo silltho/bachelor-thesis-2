@@ -137,6 +137,45 @@
       \verb 10.1145/1646353.1646374
       \endverb
     \endentry
+    \entry{Bush2000}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=8ed69d79d2b407e85a5f5941d3058290}{%
+           family={Bush},
+           familyi={B\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=025872e9b9a035d85c1073fd0a39f9e1}{%
+           family={Pincus},
+           familyi={P\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0689957751de831a29b068ca432cf392}{%
+           family={Sielaff},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{be6693564d7800fd4a5187c52fe38f65}
+      \strng{fullhash}{be6693564d7800fd4a5187c52fe38f65}
+      \strng{bibnamehash}{be6693564d7800fd4a5187c52fe38f65}
+      \strng{authorbibnamehash}{be6693564d7800fd4a5187c52fe38f65}
+      \strng{authornamehash}{be6693564d7800fd4a5187c52fe38f65}
+      \strng{authorfullhash}{be6693564d7800fd4a5187c52fe38f65}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Software: Practice and Experience}
+      \field{number}{7}
+      \field{title}{{A static analyzer for finding dynamic programming errors}}
+      \field{volume}{30}
+      \field{year}{2000}
+    \endentry
     \entry{CanIUseUsageTable}{misc}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=746ea0dff2a43414f7666b10ea1e62f3}{%
@@ -913,7 +952,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{Bush}
 \endrefsection
 \endinput
 

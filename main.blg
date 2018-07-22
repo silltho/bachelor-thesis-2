@@ -1,20 +1,19 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[51] biber-darwin:313> INFO - === Sun Jul 22, 2018, 19:14:50
-[90] Biber.pm:371> INFO - Reading 'main.bcf'
-[306] Biber.pm:857> INFO - Found 28 citekeys in bib section 0
-[323] Biber.pm:3976> INFO - Processing section 0
-[339] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[341] bibtex.pm:1500> INFO - LaTeX decoding ...
-[384] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
-[387] Utils.pm:193> WARN - Duplicate entry key: 'RichHarris' in file 'bibliography.bib', skipping ...
-[505] Utils.pm:193> WARN - month field 'feb' in entry 'Bessey2010' is not an integer - this will probably not sort properly.
-[528] Utils.pm:193> WARN - I didn't find a database entry for 'Bush' (section 0)
-[583] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'level = 4' with 'level = 2'
-[583] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[583] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[583] Biber.pm:3804> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'de-DE'
-[583] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[621] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[640] bbl.pm:720> INFO - Output to main.bbl
-[640] Biber.pm:110> INFO - WARNINGS: 3
+[45] biber-darwin:313> INFO - === Sun Jul 22, 2018, 19:18:58
+[81] Biber.pm:371> INFO - Reading 'main.bcf'
+[266] Biber.pm:857> INFO - Found 28 citekeys in bib section 0
+[279] Biber.pm:3976> INFO - Processing section 0
+[291] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[295] bibtex.pm:1500> INFO - LaTeX decoding ...
+[333] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[336] Utils.pm:193> WARN - Duplicate entry key: 'RichHarris' in file 'bibliography.bib', skipping ...
+[451] Utils.pm:193> WARN - month field 'feb' in entry 'Bessey2010' is not an integer - this will probably not sort properly.
+[519] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[519] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'level = 4' with 'level = 2'
+[519] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[519] Biber.pm:3804> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'de-DE'
+[519] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[549] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[566] bbl.pm:720> INFO - Output to main.bbl
+[566] Biber.pm:110> INFO - WARNINGS: 2
