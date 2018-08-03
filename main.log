@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  22 JUL 2018 19:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.14)  3 AUG 2018 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -998,27 +998,23 @@ Overfull \hbox (44.49753pt too wide) in paragraph at lines 1033--1035
  []
 
 [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]) [39]
-(./abbreviations.tex) (./main.lof)
-\tf@lof=\write6
-\openout6 = `main.lof'.
+(./abbreviations.tex) (./main.lol)
+\tf@lol=\write6
+\openout6 = `main.lol'.
 
- (./main.lol [40
+ (./main.lot [40
 
 ])
-\tf@lol=\write7
-\openout7 = `main.lol'.
-
- (./main.lot)
-\tf@lot=\write8
-\openout8 = `main.lot'.
+\tf@lot=\write7
+\openout7 = `main.lot'.
 
  [41]
 LaTeX Font Info:    Font shape `OMS/ptm/m/sl' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 201.
- [42]
-[43] (./appendix.tex) [44
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 200.
+ [42] [43]
+(./appendix.tex [44
 
-] (./main.aux)
+]) [45] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1027,10 +1023,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16329 strings out of 492649
- 276632 string characters out of 6129622
- 1113305 words of memory out of 5000000
- 19912 multiletter control sequences out of 15000+600000
+ 16325 strings out of 492649
+ 276604 string characters out of 6129622
+ 1113491 words of memory out of 5000000
+ 19911 multiletter control sequences out of 15000+600000
  36997 words of font info for 72 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  79i,9n,129p,1278b,8267s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1043,10 +1039,10 @@ s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (50 pages, 279219 bytes).
+Output written on main.pdf (51 pages, 280817 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
+ 204 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

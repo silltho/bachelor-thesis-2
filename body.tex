@@ -438,7 +438,7 @@ Die zweite Gruppe ist jene der Javascript Libary und Framework Entwickler. Ihr S
 
 In diesem Kapitel werden meherere Hindernisse für die beiden Benutzergruppen im Bezug auf Side Effects im Code veranschaulicht und in weitere Folge Maßnahmen zu Vermeidung dieser ermittelt. 
 
-Umfangreiche und weitverbreitete JavaScript Libaries wie zum Beispiel Lodash\footnote{https://lodash.com/ - besucht am 26.05.2018} und jQuery\footnote{https://jquery.com/ - besucht am 26.05.2018} bieten eine große Anzahl an nützlichen Tools. Sie werden oft als NPM Modul installiert und anschließend in den Projektdateien als Import eingebunden. Zu meist werden nur Teile von den zu Verfügung gestellten Funktionalitäten auch wirklich verwendet. Das kann dazuführen das ein erheblich Teil der von Webpack erzeugten \textit{Bundle} Dateien aus nicht benötigten Code besteht. Plugins wie der Webpack Visualizer\footnote{https://chrisbateman.github.io/webpack-visualizer/ - besucht am 12.07.2018} bieten eine einfache Möglichkeit, um festzustellen, welche Module in der von Webpack generierten \textit{Bundle} Datei am meisten Speicherplatz einnehmen.
+Umfangreiche und weitverbreitete JavaScript Libaries wie zum Beispiel Lodash\footnote{https://lodash.com/ - besucht am 26.05.2018} und jQuery\footnote{https://jquery.com/ - besucht am 26.05.2018} bieten eine große Anzahl an nützlichen Tools. Sie werden oft als NPM Modul installiert und anschließend in den Projektdateien als Import eingebunden. Zu meist werden nur Teile von den zu Verfügung gestellten Funktionalitäten auch wirklich verwendet. Das kann dazuführen das ein erheblich Teil der von Webpack erzeugten \textit{Bundle} Dateien aus nicht benötigten Code besteht. Plugins wie der \textit{Webpack Visualizer}\footnote{https://chrisbateman.github.io/webpack-visualizer/ - besucht am 12.07.2018} bieten eine einfache Möglichkeit, um festzustellen, welche Module in der von Webpack generierten \textit{Bundle} Datei am meisten Speicherplatz einnehmen.
 
 Jedoch bietet unter anderem Webpack eine Möglichkeit für Library Entwickler und Entwicklerinnen ES6 Module so zu implementieren, dass der nicht benötigte Library Sourcecode beim Builden entfernt wird.
 Durch die Verwendung von \lstinline{sideEffects: false} in der package.json Datei innerhalb der Library, wird Webpack mitgeteilt das \textit{Tree Shaking} nicht nur auf den üblichen Projektcode anzuwenden, sondern ebenfalls auf den Code der sich im Libary Ordner \lstinline{node_modules} befindet.
@@ -780,7 +780,7 @@ ruleTester.run("empty-imports", rule, {
 });
 \end{lstlisting}
 
-Im ersten Schritt werden mit dem AstExplorer \footnote{https://astexplorer.net/ - besucht am 26.06.2018} die 
+Im ersten Schritt werden mit dem AstExplorer\footnote{https://astexplorer.net/ - besucht am 26.06.2018} die 
 verschiedenen Import \textit{Nodes} analysiert. Der \textit{Node Type} für Importe in ES6 ist \lstinline{ImportDeclaration}. In weiterer Folge konnte festgestellt werden, dass \textit{Empty Import Nodes} keine \textit{Specifier} besitzen, somit ist \lstinline{importNode.specifiers.length === 0} true, falls es sich um einen \textit{Empty Import} handelt. Mit Hilfe dieser Erkenntnisse ist es bereits möglich \textit{Empty Imports} aufzuspüren und zu kennzeichnen.
 
 \begin{lstlisting}[
